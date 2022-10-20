@@ -1,7 +1,9 @@
 <?php 
-class Home{
+class Home extends Controller{
     public function index(){
-        echo "Halo ini home";
+        $this->view('Templates/header');
+        $this->view('Home/index');
+        $this->view('Templates/footer');
     }
 }
 ?>

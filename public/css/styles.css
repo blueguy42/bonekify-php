@@ -3,3 +3,116 @@
     text-align : center;
     font-family: spotify-circular, Helvetica, Arial, sans-serif;
 }
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    margin:0;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: black;
+    overflow: hidden;
+    padding:15px;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    color: #b3b3b3;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight:600;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    color: white;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    color: white;
+}
+
+.topnav img {
+    width:150px;
+    margin-right:100px;
+    float:left;
+}
+
+.topnav input[type=text] {
+    width:400px;
+    height:40px;
+    border-radius: 20px;
+    text-indent: 20px;
+    margin-top:6px;
+    margin-right:100px;
+}
+
+.dropdown{
+    float:right;
+}
+
+.dropdown button{
+    background:black;
+    color:white;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+#main{
+    background-color: #121212;
+    min-height:100vh;
+}
+
+#list-lagu{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#list-lagu tr th {
+    color: #b3b3b3;
+    font-size: 12px;
+    font-weight:100;
+    letter-spacing: 1px;
+    padding-top:50px;
+    padding-bottom:20px;
+    text-align:left;
+    border-bottom: 1px solid #b3b3b3;
+    line-height: 1em;
+}
+
+#list-lagu tr td img{
+    width : 50px;
+}
+
+#list-lagu tr td {
+    color : #b3b3b3;
+    padding-left : 5px;
+    padding-right : 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#list-lagu tr .judul-lagu{
+    color: white;
+    padding-right:10vw;
+}
+
+#list-lagu tr .deskripsi{
+    width:20vw;
+}
+
+#list-lagu tr td .penyanyi{
+    padding-top : 2px;
+    font-size: 14px;
+}
