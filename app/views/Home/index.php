@@ -7,7 +7,7 @@
     
     <tr>
         <td>
-            <img src="../../public/img/cover-album.jpg">
+            <img id ="logo" src="../../public/img/cover-album.jpg">
         </td>
         <td class="container">
             <div class="judul-lagu">Secukupnya</div>

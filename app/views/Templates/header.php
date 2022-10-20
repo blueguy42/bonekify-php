@@ -6,7 +6,7 @@
 </head>
 <body>
 <div class="topnav">
-  <img src="../../public/img/logowob.png">
+  <img src="../../public/img/bonekify.png">
   <input type="text" placeholder="Apa yang ingin kamu dengarkan ?">
   <a class="active" href="#home">Home</a>
   <a href="#news">Album</a>

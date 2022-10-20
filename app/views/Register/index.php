@@ -7,7 +7,7 @@
 
 <body class ="center">
     <div id="register-page">
-    <img src = "../../public/assets/logo.png">
+    <img src = "../../public/img/bonekify.png" id ="logo">
         <h1>Sign up for free to start<br>listening.</h1>
     </div> 
     <div>
