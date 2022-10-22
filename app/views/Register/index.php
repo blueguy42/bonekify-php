@@ -34,6 +34,6 @@
   
     <input type="submit" value="Submit">
   </form>
-  <p> <strong>Punya akun?</strong> <a id = "gantiwarna" href="http://localhost:8080/public/Login">Masuk.</a>
+  <p> <strong>Punya akun?</strong> <a id = "gantiwarna" href="/public/login">Masuk.</a>
 </div>
 </body>

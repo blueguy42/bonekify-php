@@ -22,6 +22,6 @@
   
     <input type="submit" value="Masuk">
   </form>
-  <p> <strong>Belum punya akun?</strong> <a id = "gantiwarna" href="http://localhost:8080/public/Register">Daftar.</a>
+  <p> <strong>Belum punya akun?</strong> <a id = "gantiwarna" href="/public/register">Daftar.</a>
 </div>
 </body>
