@@ -1,8 +1,64 @@
+/* BAGIAN REGISTER LOGIN START*/
+
+.center {
+    text-align: center;
+    margin : 0 auto;
+    width: 500px;
+}
+
 #register-page{
     margin: 50px; 
-    text-align : center;
     font-family: spotify-circular, Helvetica, Arial, sans-serif;
 }
+
+#register-form{
+    text-align: left;
+}
+
+#register-form label {
+    font-weight:bold;
+}
+
+#register-form input, #register-form label{
+    display: block;
+}
+
+#register-form input[type=text], #register-form input[type=password]{
+    width: 100%;
+    padding: 12px 20px;
+    margin-top:5px;
+    margin-bottom: 30px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  #register-form input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  #register-form p {
+    margin-top:5px;
+    margin-bottom:30px;
+  }
+  
+  #register-form input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  #gantiwarna:hover{
+    color: red;
+  }
+
+/* BAGIAN REGISTER END */
 
 body {
     font-family: Helvetica, Arial, sans-serif;
@@ -115,4 +171,9 @@ body {
 #list-lagu tr td .penyanyi{
     padding-top : 2px;
     font-size: 14px;
+}
+
+#logo {
+    max-width:200px;
+    height:auto;
 }
