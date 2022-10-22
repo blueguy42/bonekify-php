@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Waktu pembuatan: 20 Okt 2022 pada 16.10
--- Versi server: 8.0.31
--- Versi PHP: 8.0.19
+-- Generation Time: Oct 22, 2022 at 05:49 PM
+-- Server version: 8.0.31
+-- PHP Version: 8.0.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `Album`
+-- Table structure for table `Album`
 --
 
 CREATE TABLE `Album` (
@@ -40,7 +40,7 @@ CREATE TABLE `Album` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `Song`
+-- Table structure for table `Song`
 --
 
 CREATE TABLE `Song` (
@@ -56,7 +56,7 @@ CREATE TABLE `Song` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data untuk tabel `Song`
+-- Dumping data for table `Song`
 --
 
 INSERT INTO `Song` (`song_id`, `Judul`, `Penyanyi`, `Tanggal_terbit`, `Genre`, `Duration`, `Audio_path`, `Image_path`, `album_id`) VALUES
@@ -66,7 +66,7 @@ INSERT INTO `Song` (`song_id`, `Judul`, `Penyanyi`, `Tanggal_terbit`, `Genre`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `User`
+-- Table structure for table `User`
 --
 
 CREATE TABLE `User` (
@@ -78,34 +78,42 @@ CREATE TABLE `User` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
+-- Dumping data for table `User`
+--
+
+INSERT INTO `User` (`user_id`, `email`, `password`, `username`, `isAdmin`) VALUES
+(1, 'afanganteng@gmail.com', 'blueguy42', 'afan', 1),
+(2, 'HobiBolos@gmail.com', 'saul', 'saulsayerz', 0);
+
+--
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `Album`
+-- Indexes for table `Album`
 --
 ALTER TABLE `Album`
   ADD PRIMARY KEY (`album_id`);
 
 --
--- Indeks untuk tabel `Song`
+-- Indexes for table `Song`
 --
 ALTER TABLE `Song`
   ADD PRIMARY KEY (`song_id`),
   ADD KEY `FK_album_id` (`album_id`);
 
 --
--- Indeks untuk tabel `User`
+-- Indexes for table `User`
 --
 ALTER TABLE `User`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `Song`
+-- Constraints for table `Song`
 --
 ALTER TABLE `Song`
   ADD CONSTRAINT `FK_album_id` FOREIGN KEY (`album_id`) REFERENCES `Album` (`album_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
