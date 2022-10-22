@@ -13,8 +13,29 @@ function emailWarning(){
     }
 
     if(regex.test(inputform.value)){
-        warningteks.innerHTML = "Email sudah sesuai";
-        warningteks.setAttribute('style', 'color:green')
+        xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "register/checkemail", true);
+        xhttp.send();
+        console.log("sini2")
+        xhttp.onreadystatechange = function() {
+            console.log("sini3")
+          if (this.readyState == 4 && this.status == 200) {
+            console.log("sini4")
+            let data = JSON.parse(this.responseText);
+            console.log(data)
+
+            if (data[0].exist == true ){
+                warningteks.innerHTML = "Email sudah didaftarkan";
+                warningteks.setAttribute('style', 'color:red')
+            }
+            else {
+                warningteks.innerHTML = "Email bisa digunakan";
+                warningteks.setAttribute('style', 'color:green')
+            }
+          }
+        };
+
+
     }
     else{
         warningteks.innerHTML = "Tidak sesuai masukan input email";
