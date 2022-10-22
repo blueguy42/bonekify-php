@@ -2,6 +2,7 @@
 
 <head>
     <link href="../../public/css/styles.css" rel="stylesheet">
+    <script src="../../public/js/register.js"></script>
     <title>Bonekify Register Page</title>
 </head>
 
@@ -13,14 +14,20 @@
   </div> 
   <div>
   <form id = "register-form">
-    <label for="fname">Apa email kamu?</label>
-    <input type="text" id="email" name="email" placeholder="Masukkan email kamu..">
+    <div id ="div-email">
+      <label for="fname">Apa email kamu?</label>
+      <input type="text" id="email" name="email" onkeyup="emailWarning()" placeholder="Masukkan email kamu..">
+    </div> 
 
-    <label for="lname">Konfirmasi email kamu</label>
-    <input type="text" id="kemail" name="kemail" placeholder="Masukkan lagi email kamu..">
+    <div id ="div-sandi">
+      <label for="lname">Buat kata sandi</label>
+      <input type="password" autocomplete="off" id="sandi" name="sandi" onkeyup="sandiWarning()" placeholder="Masukkan kata sandi..">
+    </div> 
 
-    <label for="lname">Buat kata sandi</label>
-    <input type="text" id="sandi" name="sandi" placeholder="Masukkan kata sandi..">
+    <div id ="div-ksandi">
+      <label for="lname">Konfirmasi sandi kamu</label>
+      <input type="password" autocomplete="off" id="ksandi" name="ksandi" onkeyup="ksandiWarning()" placeholder="Masukkan lagi sandi kamu..">
+    </div> 
 
     <label for="lname">Siapa namamu?</label>
     <input type="text" id="nama" name="nama" placeholder="Masukkan nama profil..">
