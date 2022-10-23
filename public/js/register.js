@@ -14,17 +14,14 @@ function emailWarning(){
 
     if(regex.test(inputform.value)){
         xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "register/checkemail", true);
+        xhttp.open("GET", "register/checkemail/" + inputform.value , true);
         xhttp.send();
-        console.log("sini2")
         xhttp.onreadystatechange = function() {
-            console.log("sini3")
           if (this.readyState == 4 && this.status == 200) {
-            console.log("sini4")
             let data = JSON.parse(this.responseText);
             console.log(data)
 
-            if (data[0].exist == true ){
+            if (data.exists == true ){
                 warningteks.innerHTML = "Email sudah didaftarkan";
                 warningteks.setAttribute('style', 'color:red')
             }
