@@ -5,6 +5,21 @@
         <th>GENRE</th>
     </tr>
     
+    <?php foreach($data["song"] as $song){ ?>
+            <tr>
+                <td>
+                    <img id ="logo" src="../../public/img/<?$song["Image_path"]?>">
+                </td>
+                <td class="container">
+                    <div class="judul-lagu"><?$song["Judul"]?></div>
+                    <div class="penyanyi"><?$song["Penyanyi"]?></div>
+                </td>
+                <td class="deskripsi"><?$song["Tanggal_terbit"]?></td>
+                <td class="deskripsi"><?$song["Genre"]?></td>
+            </tr>
+    <?php    } ?>
+    
+
     <tr>
         <td>
             <img id ="logo" src="../../public/img/cover-album.jpg">
