@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 
 <head>
-    <link href="../../public/css/styles.css" rel="stylesheet">
-    <script src="../../public/js/register.js"></script>
+    <link href="<?echo BASEURL;?>/css/styles.css" rel="stylesheet">
+    <script src="<?echo BASEURL;?>/js/register.js"></script>
     <title>Bonekify Register Page</title>
 </head>
 
 <body class ="center">
   <div id  = "register-page">
-    <img src = "../../public/img/bonekify.png" id ="logo">
+    <img src = "<?echo BASEURL;?>/img/bonekify.png" id ="logo">
         <h1>Sign up for free to start<br>listening.</h1>
         <hr>
   </div> 

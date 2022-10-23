@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 
 <head>
-    <link href="../../public/css/styles.css" rel="stylesheet">
+    <link href="<?echo BASEURL;?>/css/styles.css" rel="stylesheet">
 
     <title>Bonekify</title>
 </head>
 
 <body class ="center">
     <div id="register-page">
-    <img src = "../../public/img/bonekify.png" id ="logo">
+    <img src = "<?echo BASEURL;?>/img/bonekify.png" id ="logo">
         <h4>Untuk melanjutkan, masuk ke Bonekify.</h4>
         <hr>
     </div> 
