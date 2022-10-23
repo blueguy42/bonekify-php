@@ -2,7 +2,7 @@ function emailWarning(){
     let div = document.getElementById("div-email");
     let inputform = document.getElementById("email")
     let warningteks = document.getElementById("warningEmail");
-    const regex = new RegExp(/[^@]+@[^@]+\.[^@]+$/);
+    const regex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
 
     // Mengambil atau mengubah teks warning
     if (warningteks) { //Berarti dah ada warningnya
@@ -19,9 +19,8 @@ function emailWarning(){
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
             let data = JSON.parse(this.responseText);
-            console.log(data)
 
-            if (data.exists == true ){
+            if (data.exists == 1 ){
                 warningteks.innerHTML = "Email sudah didaftarkan";
                 warningteks.setAttribute('style', 'color:red')
             }
