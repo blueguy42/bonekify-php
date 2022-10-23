@@ -3,7 +3,7 @@
 <head>
     <link href="<?echo BASEURL;?>/css/styles.css" rel="stylesheet">
 
-    <title>Bonekify</title>
+    <title>Bonekify | Login</title>
 </head>
 
 <body class ="center">

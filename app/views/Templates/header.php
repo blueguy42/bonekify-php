@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>BONEKIFY</title>
+    <title>Bonekify</title>
     <link href="<?echo BASEURL;?>/css/styles.css" rel="stylesheet">
 </head>
 <body>
