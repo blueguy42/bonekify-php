@@ -23,7 +23,7 @@
     display: block;
 }
 
-#register-form input[type=text], #register-form input[type=password]{
+#register-form input{
     width: 100%;
     padding: 12px 20px;
     margin-top:5px;
@@ -33,6 +33,14 @@
     border-radius: 4px;
     box-sizing: border-box;
   }
+
+  #register-form input[class=green]:focus{
+    border: 2px solid green !important;
+    }
+
+    #register-form input[class=red]{
+        border: 2px solid red !important;
+        }
   
   #register-form input[type=submit] {
     width: 100%;

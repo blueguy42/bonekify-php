@@ -23,10 +23,13 @@ function emailWarning(){
             if (data.exists == 1 ){
                 warningteks.innerHTML = "Email sudah didaftarkan";
                 warningteks.setAttribute('style', 'color:red')
+                inputform.setAttribute('style', 'border-color:red')
+                inputform.setAttribute('class', 'red')
             }
             else {
                 warningteks.innerHTML = "Email bisa digunakan";
                 warningteks.setAttribute('style', 'color:green')
+                inputform.setAttribute('class', 'green')
             }
           }
         };
@@ -36,6 +39,8 @@ function emailWarning(){
     else{
         warningteks.innerHTML = "Tidak sesuai masukan input email";
         warningteks.setAttribute('style', 'color:red')
+        inputform.setAttribute('style', 'border-color:red')
+        inputform.setAttribute('class', 'red')
     }
     
     inputform.setAttribute('style', 'margin-bottom:2px')
@@ -96,3 +101,16 @@ function ksandiWarning(){
     inputform.setAttribute('style', 'margin-bottom:2px')
     div.append(warningteks);
 }
+
+function debounce(func, timeout = 200){
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => { func.apply(this, args); }, timeout);
+    };
+  }
+  function saveInput(){
+    console.log('Saving data');
+}
+
+const emailChange = debounce(() => emailWarning());

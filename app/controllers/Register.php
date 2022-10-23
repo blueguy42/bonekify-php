@@ -8,5 +8,6 @@ class Register extends Controller{
         $data["exists"] = $this->model("user_model")->isEmailTaken($param1);
         echo json_encode($data);
     }
+
 }
 ?>
