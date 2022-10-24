@@ -198,9 +198,10 @@ body {
     padding-bottom: 5px;
 }
 
-#list-lagu tr .judul-lagu{
+#list-lagu tr .judul-lagu a {
     color: white;
     padding-right:10vw;
+    text-decoration: none; 
 }
 
 #list-lagu tr .deskripsi{
