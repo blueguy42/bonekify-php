@@ -53,7 +53,7 @@ INSERT INTO `Album` (`Judul`, `Penyanyi`, `Total_duration`, `Image_path`, `Tangg
 
 INSERT INTO `Song` (`Judul`, `Penyanyi`, `Tanggal_terbit`, `Genre`, `Duration`, `Audio_path`, `Image_path`, `album_id`) VALUES
 ('Strangers By Nature', 'Adele', '2019-11-19', 'Pop', 182, 'adele-strangers-by-nature.mp3', 'adele-30.png', 1),
-('Easy On Me', 'Adele', '2019-11-19', 'Pop', 224, 'adele-easy-on-me.mp3', 'adele-30.png', 1),
+('Easy On Me', 'Adele', '2019-11-19', 'Pop', 225, 'adele-easy-on-me.mp3', 'adele-30.png', 1),
 ('My Little Love', 'Adele', '2019-11-19', 'Pop', 389, 'adele-my-little-love.mp3', 'adele-30.png', 1),
 ('Cry Your Heart Out', 'Adele', '2019-11-19', 'Pop', 255, 'adele-cry-your-heart-out.mp3', 'adele-30.png', 1),
 ('Oh My God', 'Adele', '2019-11-19', 'Pop', 225, 'adele-oh-my-god.mp3', 'adele-30.png', 1),
