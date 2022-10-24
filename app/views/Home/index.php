@@ -1,7 +1,7 @@
 <table id='list-lagu'>
     <tr>
         <th colspan=2>JUDUL</th>
-        <th>TAHUN</th>
+        <th>TANGGAL TERBIT</th>
         <th>GENRE</th>
     </tr>
     <?php foreach($data["song"] as $id => $song){ ?>

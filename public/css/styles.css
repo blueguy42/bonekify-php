@@ -132,7 +132,7 @@ body {
 }
 
 .topnav img {
-    width:150px;
+    width:75px;
     margin-right:100px;
     float:left;
 }
@@ -273,4 +273,46 @@ body {
 .content p{
   font-size: 1.2em;
   color: #0d0d0d;
+}
+
+#container-putar-lagu{
+  width:350px;
+  margin: auto;
+}
+
+#container-putar-lagu img{
+  width: 100%;
+  margin:auto;
+  display:block;
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+#container-putar-lagu #judul{
+  color:white;
+  font-family: spotify-circular, Helvetica, Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.25px;
+}
+
+#container-putar-lagu #penyanyi{
+  color:#b3b3b3;
+  font-size: 20px;
+  padding: 15px 0 15px 0;
+}
+
+#container-putar-lagu audio{
+  width: 100%;
+  filter:invert(100%);
+}
+
+#container-putar-lagu audio::-webkit-media-controls-panel{
+  width:100%;
+  background-color: #ededed;
+}
+
+#container-putar-lagu audio::-webkit-media-controls-timeline-container{
+  background-color: #ededed;
 }

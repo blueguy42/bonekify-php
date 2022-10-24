@@ -13,7 +13,7 @@ class song_model{
         $db = db_util::connect();
         $query = "SELECT * FROM Song WHERE song_id=".$id;
         $result = mysqli_query($db, $query);
-        $json = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        $json = mysqli_fetch_assoc($result);
         return $json;
     }
 }
