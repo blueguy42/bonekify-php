@@ -34,8 +34,11 @@ class user_model{
 
     public function addAccount($email, $password, $nama){
         $db = db_util::connect();
+        $passwordHashed = password_hash($password, PASSWORD_DEFAULT);
+        
         $sql = "INSERT INTO User (email, password, username, isAdmin) VALUES
-        ('" . $email . "','" . $password . "','" . $nama ."',0)";
+        ('" . $email . "','" . $passwordHashed . "','" . $nama ."',0)";
+        mysqli_query($db, $sql) ;
     }
 }
 ?>

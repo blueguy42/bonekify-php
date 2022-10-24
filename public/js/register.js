@@ -1,8 +1,10 @@
 //KAMUS BUAT MEMPERMUDAH SUBMIT
-var emailAman = false
-var sandiAman= false
-var ksandiAman= false
-var namaAman= false
+window.onload = function() {
+    var emailAman = false
+    var sandiAman= false
+    var ksandiAman= false
+    var namaAman= false
+}
 
 function emailWarning(){
     emailAman = false;
