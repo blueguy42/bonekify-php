@@ -20,7 +20,12 @@ class Register extends Controller{
         $this->model("user_model")->addAccount($email,$sandi,$nama);
         $_SESSION["username"] = $nama;
         $_SESSION["admin"] = 0;
+
         header('Location: ' . BASEURL . '/home');
+    }
+
+    public function hash() {
+        echo password_hash("RizkySaul4f4n", PASSWORD_DEFAULT);
     }
 }
 ?>

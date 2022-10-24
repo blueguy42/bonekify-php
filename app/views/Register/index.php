@@ -13,7 +13,7 @@
         <hr>
   </div> 
   <div>
-  <form id = "register-form" method="post" onsubmit="return ValidateForm()" action="register/submit">
+  <form id = "register-form" method="post" onsubmit="return ValidateForm()" action="<?= BASEURL?>/register/submit">
     <div id ="div-email">
       <label for="fname">Apa email kamu?</label>
       <input type="text" id="email" name="email" onkeyup="emailChange()" placeholder="Masukkan email kamu..">

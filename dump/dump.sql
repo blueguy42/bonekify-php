@@ -42,8 +42,8 @@ CREATE TABLE IF NOT EXISTS `Song` (
 );
 
 INSERT INTO `User` (`email`, `password`, `username`, `isAdmin`) VALUES
-('afanganteng@gmail.com', 'blueguy42', 'afan', 1),
-('HobiBolos@gmail.com', 'saul', 'saulsayerz', 0);
+('rizkysaulafan@gmail.com', '$2y$10$luYHB8NjJfY6d17i8to/9O5mObiuOjbY8LeqvMYlLvKezh43igcGS', 'rizkysaulafan', 1),
+('randomuser@gmail.com', '$2y$10$jXKli50oWBGO/6zQIMMnv.wlQltLb6dgIP4oIPkuADkDHyG4NCCTK', 'anonimus', 0);
 
 INSERT INTO `Song` (`Judul`, `Penyanyi`, `Tanggal_terbit`, `Genre`, `Duration`, `Audio_path`, `Image_path`, `album_id`) VALUES
 ('Secukupnya', 'Hindia', '2019-05-03', 'Pop Indonesia', 205, 'hindia-secukupnya.mp3', 'hindia-secukupnya.jpg', NULL),
