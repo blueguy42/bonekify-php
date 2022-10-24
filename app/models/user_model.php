@@ -35,8 +35,7 @@ class user_model{
     public function addAccount($email, $password, $nama){
         $db = db_util::connect();
         $sql = "INSERT INTO User (email, password, username, isAdmin) VALUES
-        (" . $email . "," . $password . "," . $nama .",0)";
-        mysqli_query($db, $sql);
+        ('" . $email . "','" . $password . "','" . $nama ."',0)";
     }
 }
 ?>

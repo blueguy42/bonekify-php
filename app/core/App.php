@@ -4,6 +4,11 @@ class App{
     protected $method = 'index';
     protected $params =[];
     public function __construct(){
+        // AKTIVASI SESSION
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        
         //url[0] adalah nama file controller, url[1] adalah nama method
         $url = $this->parseURL();
 

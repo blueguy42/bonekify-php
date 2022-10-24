@@ -18,6 +18,8 @@ class Register extends Controller{
         $sandi = $_POST["sandi"];
         $nama = $_POST["nama"];
         $this->model("user_model")->addAccount($email,$sandi,$nama);
+        $_SESSION["username"] = $nama;
+        $_SESSION["admin"] = 0;
         header('Location: ' . BASEURL . '/home');
     }
 }

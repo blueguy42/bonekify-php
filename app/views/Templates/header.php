@@ -12,7 +12,14 @@
   <a href="<?echo BASEURL?>">Album</a>
 
   <div class="dropdown">
-    <button class="dropbtn">USERNAME</button>
+    <button class="dropbtn"><?php
+    if (isset($_SESSION["username"])){
+      echo $_SESSION["username"];
+    }
+    else {
+      echo 'username';
+    }
+    ?></button>
     <div id="myDropdown" class="dropdown-content">
         <a href="#">Logout</a>
     </div>
