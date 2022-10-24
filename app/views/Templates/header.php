@@ -13,11 +13,11 @@
 
   <div class="dropdown">
     <button class="dropbtn"><?php
-    if (isset($_SESSION["username"])){
-      echo $_SESSION["username"];
+    if (isset($_COOKIE["username"])){
+      echo $_COOKIE["username"];
     }
     else {
-      echo 'username';
+      echo 'Not Logged In';
     }
     ?></button>
     <div id="myDropdown" class="dropdown-content">

@@ -4,11 +4,13 @@ class App{
     protected $method = 'index';
     protected $params =[];
     public function __construct(){
-        // AKTIVASI SESSION
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
+        // set cookie penghitung jumlah lagu bila tidak sign in
+        if (!isset($_COOKIE["username"])) {
+            if (!isset($_COOKIE["playedSong_notLoggedIn"])) {
+                setcookie("playedSong_notLoggedIn", 0, time() + (86400 * 30), "/"); 
+            }
         }
-        
+
         //url[0] adalah nama file controller, url[1] adalah nama method
         $url = $this->parseURL();
 
