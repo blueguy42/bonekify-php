@@ -11,8 +11,9 @@ class Login extends Controller{
             $data = $this->model("user_model")->isLoginValid($emailnama,$sandi);
 
             if ($data["valid"] == 1){
-                $_SESSION["username"] = $data["username"];
-                $_SESSION["isAdmin"] = $data["isAdmin"];
+                setcookie("username", $data["username"], time() + (86400 * 30), "/"); 
+                setcookie("isAdmin", $data["isAdmin"], time() + (86400 * 30), "/"); 
+                setcookie("playedSong_notLoggedIn", null, time() - 3600);
                 header('Location: ' . BASEURL . '/home');
             }
             else{

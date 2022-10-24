@@ -18,14 +18,11 @@ class Register extends Controller{
         $sandi = $_POST["sandi"];
         $nama = $_POST["nama"];
         $this->model("user_model")->addAccount($email,$sandi,$nama);
-        $_SESSION["username"] = $nama;
-        $_SESSION["admin"] = 0;
+        setcookie("username", $nama, time() + (86400 * 30), "/"); 
+        setcookie("admin", 0, time() + (86400 * 30), "/"); 
+        setcookie("playedSong_notLoggedIn", null, time() - 3600);
 
         header('Location: ' . BASEURL . '/home');
-    }
-
-    public function hash() {
-        echo password_hash("RizkySaul4f4n", PASSWORD_DEFAULT);
     }
 }
 ?>
