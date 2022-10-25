@@ -11,18 +11,29 @@
   <a class="active" href="<?echo BASEURL?>">Home</a>
   <a href="<?echo BASEURL?>">Album</a>
 
+  <!-- DROP DOWN BOS -->
   <div class="dropdown">
     <button class="dropbtn"><?php
-    if (isset($_COOKIE["username"])){
-      echo $_COOKIE["username"];
-    }
-    else {
-      echo 'Not Logged In';
-    }
-    ?></button>
-    <div id="myDropdown" class="dropdown-content">
-        <a href="#">Logout</a>
-    </div>
+      if (isset($_COOKIE["username"])){
+        echo $_COOKIE["username"];
+      }
+      else {
+        echo 'Not Logged In';
+      }
+      ?></button>
+    <?php if (isset($_COOKIE["username"])){
+      echo "<div class=\"dropdown-content\">
+      <a href=\"#\">Log out</a>
+      <a href=\"#\">Delete Account</a>
+    </div>" ;}
+    else{
+      echo "<div class=\"dropdown-content\">
+      <a href=\"" . BASEURL . "\login\">Log in</a>
+    </div>" ;
+}
+    ?>
+
   </div>
+  
 </div>
 <div id='main'>
