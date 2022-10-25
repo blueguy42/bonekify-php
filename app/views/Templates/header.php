@@ -23,7 +23,7 @@
       ?></button>
     <?php if (isset($_COOKIE["username"])){
       echo "<div class=\"dropdown-content\">
-      <a href=\"#\">Log out</a>
+      <a href=\"" . BASEURL . "\home\logout\">Log out</a>
       <a href=\"#\">Delete Account</a>
     </div>" ;}
     else{

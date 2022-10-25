@@ -7,5 +7,11 @@ class Home extends Controller{
         $this->view('Home/index',$data);
         $this->view('Templates/footer');
     }
+    public function logout(){
+        setcookie("username", "", time() -3600, "/"); 
+        setcookie("admin", 0, time() -3600, "/"); 
+        $data["song"] = $this->model('song_model')->getAllSong();
+        header('Location: ' . BASEURL . '/home');
+    }
 }
 ?>
