@@ -13,7 +13,6 @@ class Login extends Controller{
                 if ($data["valid"] == 1){
                     setcookie("username", $data["username"], time() + (86400 * 30), "/"); 
                     setcookie("isAdmin", $data["isAdmin"], time() + (86400 * 30), "/"); 
-                    setcookie("playedSong_notLoggedIn", NULL, -1, "/"); 
                     header('Location: ' . BASEURL . '/home');
                 }
                 else{

@@ -24,7 +24,6 @@ class Register extends Controller{
         $this->model("user_model")->addAccount($email,$sandi,$nama);
         setcookie("username", $nama, time() + (86400 * 30), "/"); 
         setcookie("admin", 0, time() + (86400 * 30), "/"); 
-        setcookie("playedSong_notLoggedIn", NULL, -1, "/"); 
 
         header('Location: ' . BASEURL . '/home');
     }
