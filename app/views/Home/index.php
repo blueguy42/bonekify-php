@@ -13,7 +13,6 @@
             </td>
             <td class="container">
                 <div class="judul-lagu"><a href="<?echo BASEURL;?>/lagu/putar/<?echo $song["song_id"];?>" style="text-decoration:none;"><?echo $song["Judul"]?></a></div>
-                <!-- <div class="judul-lagu"><?echo $song["Judul"]?></div> -->
                 <div class="penyanyi"><?echo $song["Penyanyi"]?></div>
             </td>
             <td class="deskripsi"><?echo $song["Tanggal_terbit"]?></td>
