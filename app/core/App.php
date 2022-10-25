@@ -21,6 +21,9 @@ class App{
                 unset($url[0]);
             }
         }
+        else{
+            $this->controller = 'Home';
+        }
 
         require_once '../app/controllers/'.$this->controller.'.php';
         $this->controller = new $this->controller;

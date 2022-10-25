@@ -10,7 +10,6 @@ class Home extends Controller{
     public function logout(){
         setcookie("username", "", time() -3600, "/"); 
         setcookie("admin", 0, time() -3600, "/"); 
-        $data["song"] = $this->model('song_model')->getAllSong();
         header('Location: ' . BASEURL . '/home');
     }
 }
