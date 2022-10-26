@@ -16,5 +16,13 @@ class song_model{
         $json = mysqli_fetch_assoc($result);
         return $json;
     }
+
+    public function getSomeSong($firstdata, $rowsperpage){
+        $db = db_util::connect();
+        $query = "SELECT * FROM Song ORDER BY Judul ASC LIMIT $firstdata, $rowsperpage";
+        $result = mysqli_query($db, $query);
+        $json = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        return $json;
+    }
 }
 ?>

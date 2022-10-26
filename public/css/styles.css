@@ -101,12 +101,17 @@
 
 body {
     font-family: Helvetica, Arial, sans-serif;
-    margin:0;
+    margin:auto;
+}
+
+.bodyflex {
+  display:flex;
+  flex-direction:row;
 }
 
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: black;
+    background-color: rgb(19, 18, 18);
     overflow: hidden;
     padding:15px;
     display:flex;
@@ -141,12 +146,13 @@ body {
 }
 
 .topnav input[type=text] {
-    width:400px;
+    width:600px;
     height:40px;
     border-radius: 20px;
     text-indent: 20px;
     margin-top:6px;
     margin-right:100px;
+    margin-left:150px;
 }
 
 .dropdown{
@@ -168,13 +174,18 @@ body {
   }
 
 #main{
-    background-color: #121212;
+  width:100%;
+  margin:0px;
+  padding: 0px;
+    background-color: #1f1f1f;
     min-height:100vh;
+    display:flex;
+    flex-direction:column;
 }
 
 #list-lagu{
-    margin-left:auto;
-    margin-right:auto;
+  margin: 0 auto;
+  width: 75%;
 }
 
 #list-lagu tr th {
@@ -191,19 +202,22 @@ body {
 
 #list-lagu tr td img{
     width : 50px;
+    margin:0;
+    padding:0;
 }
 
 #list-lagu tr td {
     color : #b3b3b3;
-    padding-left : 5px;
-    padding-right : 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
 }
 
 #list-lagu tr .judul-lagu a {
     color: white;
     padding-right:10vw;
+    text-align:left;
+    float:left;
+    padding-left:0px;
+    margin-right:10px;
+    padding-bottom:10px;
     text-decoration: none; 
 }
 
@@ -212,12 +226,11 @@ body {
 }
 
 #list-lagu tr td .penyanyi{
-    padding-top : 2px;
     font-size: 14px;
 }
 
 #logo {
-    max-width:200px;
+  max-width:200px;
     height:auto;
 }
 
@@ -367,4 +380,96 @@ body {
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+/* ANIMATION */
+@-webkit-keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.pagination {
+  text-align:center;
+  margin:0 auto;
+  padding-top:30px;
+  width:400px;
+}
+
+.pagination a {
+  color: lightslategray;
+  text-decoration: none;
+  padding: 0 8px;
+}
+
+.pagination a[class="currentpage"] {
+  color: white;
+  text-decoration: none;
+  padding: 0 8px;
+}
+
+.pagination a:hover {
+  color: greenyellow;
+  text-decoration: none;
+}
+
+.pagination a:active{
+  color: green;
+  text-decoration: none;
+} 
+
+/* SIDEBAR */
+#sidebar{
+  width:150px;
+  background-color: black;
+  display:flex;
+  flex-direction:column;
+  text-align: center;
+}
+
+#side {
+  width:100%;
+  display:flex;
+  flex-direction: column;
+}
+
+.bodyflex a, .bodyflex button {
+  color: #b3b3b3;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight:600;
+}
+
+/* Change the color of links on hover */
+.bodyflex > a:hover {
+  color: white;
+}
+
+/* Add a color to the active/current link */
+.bodyflex a.active {
+  color: white;
+}
+
+#headerlogo{
+  margin:20px auto;
+  width:112px;
+}
+
+.container{
+  display:flex;
+  flex-direction: column;
 }

@@ -20,3 +20,16 @@
         </tr>
     <?php    } ?>
 </table>
+
+<?php 
+echo "<div class=\"pagination\">" ;
+for ($i = 1; $i <= $data["banyakpage"]; $i++) {
+    if ($i == $data["currentPage"]){
+        echo "<a class=\"currentpage\" href=\"?page=$i\">$i</a>";
+    }
+    else {
+        echo "<a href=\"?page=$i\">$i</a>";
+    }
+}
+echo "</div>" ;
+?>
