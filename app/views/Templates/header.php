@@ -28,7 +28,6 @@
     <?php if (isset($_SESSION["username"])){
       echo "<div class=\"dropdown-content\">
       <a href=\"" . BASEURL . "\home\logout\">Log out</a>
-      <a href=\"#\">Delete Account</a>
     </div>" ;}
     else{
       echo "<div class=\"dropdown-content\">

@@ -1,5 +1,9 @@
 var firstloadplay
 
+window.onload = function() {
+  firstloadplay = 0;
+}
+
 // Get the modal
 var modal_ganti_cover = document.getElementById("modal-ganti-cover");
 var modal_ganti_judul = document.getElementById("modal-ganti-judul");
@@ -83,9 +87,6 @@ window.onclick = function(event) {
     modal_ganti_lagu.style.display = "none";
   }
 }
-window.onload = function() {
-  firstloadplay = 0;
-}
 
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
@@ -114,23 +115,21 @@ function AddPlayCount(){
   let cookieVal = getCookie("playedSong_notLoggedIn");
   let cookieUser = getCookie("username");
   if (cookieUser == "") {
-    if (cookieVal != "") {
-      if (parseInt(cookieVal) >= 3) {
-        var x = document.getElementById("songplayer");
-        x.pause();
-        let div = document.getElementById("div-player");
-        div.innerHTML = "";
-        warningteks = document.createElement("p");
-        warningteks.setAttribute('id', 'warningPlayCount');
-        warningteks.setAttribute('class','warning');
-        warningteks.innerHTML = "Anda sudah memainkan 3 lagu hari ini!";
-        warningteks.setAttribute('style', 'color:red');
-        div.append(warningteks);
-      } else {
-        if (firstloadplay == 0) {
-          setCookie("playedSong_notLoggedIn", parseInt(cookieVal) + 1, 1);
-          firstloadplay++;
-        }
+    if (parseInt(cookieVal) >= 3) {
+      var x = document.getElementById("songplayer");
+      x.pause();
+      let div = document.getElementById("div-player");
+      x.style.display = "none";
+      warningteks = document.createElement("p");
+      warningteks.setAttribute('id', 'warningPlayCount');
+      warningteks.setAttribute('class','warning');
+      warningteks.innerHTML = "Anda sudah memainkan 3 lagu hari ini!";
+      warningteks.setAttribute('style', 'color:red');
+      div.append(warningteks);
+    } else {
+      if (firstloadplay == 0) {
+        setCookie("playedSong_notLoggedIn", parseInt(cookieVal) + 1, 1);
+        firstloadplay++;
       }
     }
   }
