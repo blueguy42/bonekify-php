@@ -112,10 +112,11 @@ function getCookie(cname) {
 }
 
 function AddPlayCount(){
-  let cookieVal = getCookie("playedSong_notLoggedIn");
+  let cookie_notloggedin = getCookie("playCount_notLoggedIn");
+  let cookie_loggedin = getCookie("playCount_LoggedIn");
   let cookieUser = getCookie("username");
   if (cookieUser == "") {
-    if (parseInt(cookieVal) >= 3) {
+    if (parseInt(cookie_notloggedin) >= 3) {
       var x = document.getElementById("songplayer");
       x.pause();
       let div = document.getElementById("div-player");
@@ -128,9 +129,14 @@ function AddPlayCount(){
       div.append(warningteks);
     } else {
       if (firstloadplay == 0) {
-        setCookie("playedSong_notLoggedIn", parseInt(cookieVal) + 1, 1);
+        setCookie("playCount_notLoggedIn", parseInt(cookie_notloggedin) + 1, 1);
         firstloadplay++;
       }
+    }
+  } else {
+    if (firstloadplay == 0) {
+      setCookie("playCount_LoggedIn", parseInt(cookie_loggedin) + 1, 1);
+      firstloadplay++;
     }
   }
 };

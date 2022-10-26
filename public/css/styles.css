@@ -380,6 +380,7 @@ body {
 /* Add a grey background color to dropdown links on hover */
 .dropdown-content a:hover {
   background-color: palegreen;
+  color: black;
 }
 
 /* Show the dropdown menu on hover */
@@ -540,4 +541,50 @@ body {
 .container{
   display:flex;
   flex-direction: column;
+}
+
+/* For List User */
+
+#list-user{
+  margin: 0 auto;
+  width: 75%;
+}
+
+#list-user tr th {
+    color: #b3b3b3;
+    font-size: 12px;
+    font-weight:100;
+    letter-spacing: 1px;
+    padding-top:50px;
+    padding-bottom:20px;
+    text-align:center;
+    border-bottom: 1px solid #b3b3b3;
+    line-height: 1em;
+}
+
+#list-user tr td {
+    color : #b3b3b3;
+    padding-top:20px;
+    padding-bottom:20px;
+    text-align: center;
+}
+
+#list-user tr .id{
+    width:10vw;
+}
+
+#list-user tr .username{
+  width:20vw;
+}
+
+#list-user tr .email{
+  width:30vw;
+}
+
+#list-user tr .admin{
+  width:20vw;
+}
+
+#list-user tr .playcount{
+  width:20vw;
 }

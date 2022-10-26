@@ -5,4 +5,6 @@ class TambahLagu extends Controller{
 
         $this->view('Templates/header');
         $this->view('Templates/footer');
+    }
 }
+?>

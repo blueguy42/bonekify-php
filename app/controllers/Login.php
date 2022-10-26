@@ -13,8 +13,10 @@ class Login extends Controller{
                 if ($data["valid"] == 1){
                     setcookie("username", $data["username"], time() + (86400 * 30), "/"); 
                     setcookie("isAdmin", $data["isAdmin"], time() + (86400 * 30), "/"); 
+                    setcookie("playCount_LoggedIn", $data["playCount"], time() + (86400 * 30), "/"); 
                     $_SESSION["username"] = $data["username"];
                     $_SESSION["isAdmin"] = $data["isAdmin"];
+                    $_SESSION["playCount_LoggedIn"] = $data["playCount"];
                     header('Location: ' . BASEURL . '/home');
                 }
                 else{

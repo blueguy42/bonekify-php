@@ -10,11 +10,10 @@ class App{
 
         // set cookie penghitung jumlah lagu bila tidak sign in
         if (!isset($_SESSION["username"])) {
-            if (!isset($_COOKIE["playedSong_notLoggedIn"])) {
-                setcookie("playedSong_notLoggedIn", 0, time() + (86400 * 1), "/"); 
+            if (!isset($_COOKIE["playCount_notLoggedIn"])) {
+                setcookie("playCount_notLoggedIn", 0, time() + (86400 * 1), "/"); 
             }
         }
-
         //url[0] adalah nama file controller, url[1] adalah nama method
         $url = $this->parseURL();
 
