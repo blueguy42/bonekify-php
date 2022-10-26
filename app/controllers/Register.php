@@ -1,7 +1,7 @@
 <?php 
 class Register extends Controller{
     public function index(){
-        if (!isset($_COOKIE["username"])) {
+        if (!isset($_SESSION["username"])) {
             $this->view('Register/index');
         } else {
             header('Location: ' . BASEURL . '/home');
@@ -23,8 +23,9 @@ class Register extends Controller{
         $nama = $_POST["nama"];
         $this->model("user_model")->addAccount($email,$sandi,$nama);
         setcookie("username", $nama, time() + (86400 * 30), "/"); 
-        setcookie("admin", 0, time() + (86400 * 30), "/"); 
-
+        setcookie("isAdmin", 0, time() + (86400 * 30), "/"); 
+        $_SESSION["username"] = $nama;
+        $_SESSION["isAdmin"] = 0;
         header('Location: ' . BASEURL . '/home');
     }
 }

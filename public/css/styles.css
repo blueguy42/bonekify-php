@@ -289,7 +289,11 @@ body {
   margin:auto;
   display:block;
   padding-top: 50px;
-  padding-bottom: 30px;
+  padding-bottom: 5px;
+}
+
+#container-putar-lagu #img-container{
+  padding-bottom: 20px;
 }
 
 #container-putar-lagu #judul{
@@ -299,12 +303,13 @@ body {
   font-weight: 400;
   line-height: 100%;
   letter-spacing: 0.25px;
+  padding-bottom:5px;
 }
 
-#container-putar-lagu #penyanyi{
+#container-putar-lagu .deskripsi{
   color:#b3b3b3;
   font-size: 20px;
-  padding: 10px 0 10px 0;
+  padding: 2px 0 2px 0;
 }
 
 #container-putar-lagu audio{
@@ -420,8 +425,13 @@ body {
   color:white;
 }
 
-#tombol-ganti-penyanyi{
-  margin-left: 10px;
+.tombol-ganti-file{
+  background-color: #ededed;
+  border-radius: 20px;
+  color:#0d0d0d;
+}
+
+.tombol-ganti-deskripsi{
   background-color: #0d0d0d;
   border-radius: 20px;
   border : 1px solid #b3b3b3;

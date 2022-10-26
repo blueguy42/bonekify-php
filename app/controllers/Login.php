@@ -1,7 +1,7 @@
 <?php 
 class Login extends Controller{
     public function index(){
-        if (!isset($_COOKIE["username"])) {
+        if (!isset($_SESSION["username"])) {
             //MENANGKAP KALAU TOMBOL SUBMIT DIPENCET
             if (isset($_POST["emailnama"])){
                 $data = array();
@@ -13,6 +13,8 @@ class Login extends Controller{
                 if ($data["valid"] == 1){
                     setcookie("username", $data["username"], time() + (86400 * 30), "/"); 
                     setcookie("isAdmin", $data["isAdmin"], time() + (86400 * 30), "/"); 
+                    $_SESSION["username"] = $data["username"];
+                    $_SESSION["isAdmin"] = $data["isAdmin"];
                     header('Location: ' . BASEURL . '/home');
                 }
                 else{
