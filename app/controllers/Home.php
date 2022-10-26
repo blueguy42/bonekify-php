@@ -20,7 +20,7 @@ class Home extends Controller{
     public function logout(){
         setcookie("username", "", time() -3600, "/"); 
         setcookie("admin", 0, time() -3600, "/"); 
-        header('Location: ' . BASEURL . '/home');
+        header('Location: ' . BASEURL . '/login');
     }
 }
 ?>

@@ -8,7 +8,7 @@
 
 <body class ="center">
   <div id  = "register-page">
-    <img src = "<?echo BASEURL;?>/img/bonekify.png" id ="logo">
+  <a href="<?echo BASEURL;?>/home" ><img src = "<?echo BASEURL;?>/img/bonekify.png" id ="logo"></a>
         <h1>Sign up for free to start<br>listening.</h1>
         <hr>
   </div> 
