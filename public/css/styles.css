@@ -186,6 +186,7 @@ body {
 #list-lagu{
   margin: 0 auto;
   width: 75%;
+  padding-bottom: 5vw;
 }
 
 #list-lagu tr th {
@@ -540,4 +541,8 @@ body {
 .container{
   display:flex;
   flex-direction: column;
+}
+
+.nomertabel{
+  width:5vw;
 }
