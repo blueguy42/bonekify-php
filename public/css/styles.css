@@ -186,6 +186,7 @@ body {
 #list-lagu{
   margin: 0 auto;
   width: 75%;
+  padding-bottom: 5vw;
 }
 
 #list-lagu tr th {
@@ -587,4 +588,8 @@ body {
 
 #list-user tr .playcount{
   width:20vw;
+}
+
+.nomertabel{
+  width:5vw;
 }
