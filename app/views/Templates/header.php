@@ -4,13 +4,17 @@
     <title>Bonekify</title>
     <link href="<?echo BASEURL;?>/css/styles.css" rel="stylesheet">
 </head>
-<body>
-<div class="topnav">
-  <img src="<?echo BASEURL;?>/img/bonekify.png">
-  <input type="text" placeholder="Apa yang ingin kamu dengarkan ?">
+<body class="bodyflex">
+<div id="sidebar">
+  <img id="headerlogo" src="<?echo BASEURL;?>/img/bonekify.png">
   <a class="active" href="<?echo BASEURL?>">Home</a>
   <a href="<?echo BASEURL?>">Album</a>
-
+  <?php 
+  ?>
+</div>
+<div id="side">
+<div class="topnav">
+  <input type="text" placeholder="Apa yang ingin kamu dengarkan ?">
   <!-- DROP DOWN BOS -->
   <div class="dropdown">
     <button class="dropbtn"><?php
