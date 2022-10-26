@@ -17,7 +17,7 @@ class Login extends Controller{
                     $_SESSION["username"] = $data["username"];
                     $_SESSION["isAdmin"] = $data["isAdmin"];
                     $_SESSION["playCount_LoggedIn"] = $data["playCount"];
-                    header('Location: ' . BASEURL . '/home');
+                    header('Location: ' . BASEURL . '/');
                 }
                 else{
                     $this->view('Login/index', $data);
@@ -27,7 +27,7 @@ class Login extends Controller{
                 $this->view('Login/index');
             }
         } else {
-            header('Location: ' . BASEURL . '/home');
+            header('Location: ' . BASEURL . '/');
         }
     }
 }

@@ -8,8 +8,8 @@
 
 <body class ="center">
     <div id="register-page">
-    <a href="<?echo BASEURL;?>/home" ><img src = "<?echo BASEURL;?>/img/bonekify.png" id ="logo"></a>
-        <h4>Untuk melanjutkan, masuk ke Bonekify.</h4>
+    <a href="<?echo BASEURL;?>/" ><img src = "<?echo BASEURL;?>/img/bonekify.png" id ="logo"></a>
+        <h1>To continue,<br> log in to Bonekify.</h1>
         <hr>
     </div> 
     <div>

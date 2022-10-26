@@ -26,7 +26,7 @@ class Home extends Controller{
         unset($_SESSION["username"]);
         unset($_SESSION['isAdmin']);
         unset($_SESSION['playCount_LoggedIn']);
-        header('Location: ' . BASEURL . '/home');
+        header('Location: ' . BASEURL . '/');
     }
 }
 ?>
