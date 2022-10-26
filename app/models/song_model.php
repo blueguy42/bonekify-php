@@ -119,5 +119,13 @@ class song_model{
         $json = mysqli_fetch_all($result, MYSQLI_ASSOC);
         return $json;
     }
+
+    public function getLatestSong(){
+        $db = db_util::connect();
+        $query = "SELECT * FROM (SELECT * FROM Song ORDER BY song_id DESC limit 10) AS t ORDER BY Judul ASC";
+        $result = mysqli_query($db, $query);
+        $json = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        return $json;
+    }
 }
 ?>
