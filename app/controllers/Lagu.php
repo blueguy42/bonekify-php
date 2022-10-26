@@ -23,8 +23,6 @@ class Lagu extends Controller{
             $berhasil = $this->model('song_model')->gantiLagu($id,$_FILES["lagu-baru"]);
         }
 
-        echo "bang";
-
         $data["song"] = $this->model('song_model')->getSong($id);
         $this->view('Templates/header');
         $this->view('Lagu/putar',$data);

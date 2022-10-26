@@ -302,7 +302,6 @@ body {
   width: 100%;
   margin:auto;
   display:block;
-  padding-top: 50px;
   padding-bottom: 5px;
 }
 
@@ -329,6 +328,7 @@ body {
 #container-putar-lagu audio{
   width: 100%;
   filter:invert(100%);
+  margin-top: 20px;
 }
 
 #container-putar-lagu audio::-webkit-media-controls-panel{
