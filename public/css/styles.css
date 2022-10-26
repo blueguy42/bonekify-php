@@ -302,7 +302,11 @@ body {
   margin:auto;
   display:block;
   padding-top: 50px;
-  padding-bottom: 30px;
+  padding-bottom: 5px;
+}
+
+#container-putar-lagu #img-container{
+  padding-bottom: 20px;
 }
 
 #container-putar-lagu #judul{
@@ -312,12 +316,13 @@ body {
   font-weight: 400;
   line-height: 100%;
   letter-spacing: 0.25px;
+  padding-bottom:5px;
 }
 
-#container-putar-lagu #penyanyi{
+#container-putar-lagu .deskripsi{
   color:#b3b3b3;
   font-size: 20px;
-  padding: 10px 0 10px 0;
+  padding: 2px 0 2px 0;
 }
 
 #container-putar-lagu audio{
@@ -382,6 +387,69 @@ body {
   display: block;
 }
 
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 500px; /* Could be more or less, depending on screen size */
+}
+
+.modal-content form label{
+  color:black !important;
+  font-size: 20px !important;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#tombol-ganti-judul{
+  margin-left: 10px;
+  background-color: #0d0d0d;
+  border-radius: 20px;
+  border : 1px solid white;
+  color:white;
+}
+
+.tombol-ganti-file{
+  background-color: #ededed;
+  border-radius: 20px;
+  color:#0d0d0d;
+}
+
+.tombol-ganti-deskripsi{
+  background-color: #0d0d0d;
+  border-radius: 20px;
+  border : 1px solid #b3b3b3;
+  color:#b3b3b3;
+}
 /* ANIMATION */
 @-webkit-keyframes fadeIn {
   from {

@@ -4,8 +4,12 @@ class App{
     protected $method = 'index';
     protected $params =[];
     public function __construct(){
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+
         // set cookie penghitung jumlah lagu bila tidak sign in
-        if (!isset($_COOKIE["username"])) {
+        if (!isset($_SESSION["username"])) {
             if (!isset($_COOKIE["playedSong_notLoggedIn"])) {
                 setcookie("playedSong_notLoggedIn", 0, time() + (86400 * 1), "/"); 
             }

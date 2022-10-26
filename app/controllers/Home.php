@@ -10,8 +10,10 @@ class Home extends Controller{
     }
     public function logout(){
         setcookie("username", "", time() -3600, "/"); 
-        setcookie("admin", 0, time() -3600, "/"); 
-        header('Location: ' . BASEURL . '/login');
+        setcookie("isAdmin", 0, time() -3600, "/"); 
+        unset($_SESSION["username"]);
+        unset($_SESSION['isAdmin']);
+        header('Location: ' . BASEURL . '/home');
     }
 }
 ?>

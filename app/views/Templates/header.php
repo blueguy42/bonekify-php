@@ -18,14 +18,14 @@
   <!-- DROP DOWN BOS -->
   <div class="dropdown">
     <button class="dropbtn"><?php
-      if (isset($_COOKIE["username"])){
-        echo $_COOKIE["username"];
+      if (isset($_SESSION["username"])){
+        echo $_SESSION["username"];
       }
       else {
         echo 'Not Logged In';
       }
       ?></button>
-    <?php if (isset($_COOKIE["username"])){
+    <?php if (isset($_SESSION["username"])){
       echo "<div class=\"dropdown-content\">
       <a href=\"" . BASEURL . "\home\logout\">Log out</a>
       <a href=\"#\">Delete Account</a>
