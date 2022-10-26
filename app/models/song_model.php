@@ -16,5 +16,21 @@ class song_model{
         $json = mysqli_fetch_assoc($result);
         return $json;
     }
+
+    public function gantiJudul($id,$judulbaru){
+        $db = db_util::connect();
+        $query = sprintf("UPDATE Song
+                SET Judul='%s'
+                WHERE song_id=%u;",$judulbaru,$id);
+        return mysqli_query($db,$query);
+    }
+
+    public function gantiPenyanyi($id,$penyanyibaru){
+        $db = db_util::connect();
+        $query = sprintf("UPDATE Song
+                SET Penyanyi='%s'
+                WHERE song_id=%u",$penyanyibaru,$id);
+        return mysqli_query($db,$query);
+    }
 }
 ?>
