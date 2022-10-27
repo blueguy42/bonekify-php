@@ -52,7 +52,7 @@ function livesearch(){
             else{
                 string = "<p id='kagakada' class='kagakada'>Tidak ada lagu dengan query tersebut :(</p>"
             }
-            for (var k = 0; k <= Math.ceil(data.banyakData/10); k++) {
+            for (var k = 1; k <= Math.ceil(data.banyakData/10); k++) {
                 stringpagination += '<button id="' + k + '" onClick="reply_click(this.id)">' +k+ '</button>';
             }
             document.getElementById("list-lagu").innerHTML = string;
