@@ -124,24 +124,15 @@
                         <!-- Modal content -->
                         <div class="modal-content">
                             <span class="close">x</span>
-                            <form action="#" method="post" enctype="multipart/form-data">
+                            <form id="form-upload-lagu" action="#" method="post" enctype="multipart/form-data">
                                 <label for="lagu-baru">Lagu baru :</label><br>
                                 <input type="file" name="lagu-baru" id="lagu-baru">
-                                <input type="submit">
+                                <input type="hidden" name="durasi-lagu-baru" id="durasi-lagu-baru">
+                                
+                                <!--<input type="submit">-->
                             </form>
+                            <button onclick=upload()>submit</button>
                         </div>
-
-                    <!-- Modal content -->
-                    <div class="modal-content">
-                        <span class="close">x</span>
-                        <form id="form-upload-lagu" action="#" method="post" enctype="multipart/form-data">
-                            <label for="lagu-baru">Lagu baru :</label><br>
-                            <input type="file" name="lagu-baru" id="lagu-baru">
-                            <input type="hidden" name="durasi-lagu-baru" id="durasi-lagu-baru">
-                            
-                            <!--<input type="submit">-->
-                        </form>
-                        <button onclick=upload()>submit</button>
                     </div>
                 </span>
             <?}
