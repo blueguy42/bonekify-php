@@ -1,10 +1,6 @@
 function livesearch(clicked_id = 1){ // CLICKED ID BUAT PAGINATION
     //CLEAR
     currentPage = 1
-    var kagakada = document.getElementById("kagakada");
-    if (kagakada != null){
-        kagakada.parentNode.removeChild(kagakada);
-    }
     // DAPET SEARCH
     let searchbox = document.getElementById("search")
     let searchquery
@@ -36,7 +32,6 @@ function livesearch(clicked_id = 1){ // CLICKED ID BUAT PAGINATION
     }
 
     let allquery = "search/livesearchphp/" + searchquery + '/' + clicked_id + '/' + sort1 + '-' + sort2 + '/' + filters
-    console.log(allquery)
     xhttp = new XMLHttpRequest();
     xhttp.open("GET", allquery, true);
     xhttp.send();
@@ -75,14 +70,17 @@ function livesearch(clicked_id = 1){ // CLICKED ID BUAT PAGINATION
 
                 string += "</tr>"
             }      
-        }
-        else{
+            document.getElementById("list-lagu").innerHTML = string;
+            document.getElementById("gaadacontainer").innerHTML = "";
+        } else{
             string = "<p id='kagakada' class='kagakada'>Tidak ada lagu dengan query tersebut :(</p>"
+            document.getElementById("gaadacontainer").innerHTML = string;
+            document.getElementById("list-lagu").innerHTML = "";
         }
         for (var k = 1; k <= Math.ceil(data.banyakData/10); k++) {
             stringpagination += '<button id="' + k + '" onClick="livesearch(this.id)">' +k+ '</button>';
         }
-        document.getElementById("list-lagu").innerHTML = string;
+        
         document.getElementById("pagination").innerHTML = stringpagination;
         }
     };
