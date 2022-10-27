@@ -15,7 +15,7 @@
                             <span class="close">x</span>
                             <form action="#" method="post" enctype="multipart/form-data">
                                 <label for="cover-baru">Cover baru :</label><br>
-                                <input type="file" name="cover-baru" id="cover-baru">
+                                <input type="file" name="cover-baru" id="cover-baru" accept="image/*">
                                 <input type="submit">
                             </form>
                         </div>
@@ -55,7 +55,9 @@
         <?echo $data["song"]["Penyanyi"];?> 
     </div>
     <div class="deskripsi">
-        <?echo $data["song"]["Tanggal_terbit"];?> 
+        <?
+            $dateTemp = explode('-', $data["song"]["Tanggal_terbit"]);
+            echo $dateTemp[2] . " " . DateTime::createFromFormat('!m', $dateTemp[1])->format('F') . " " . $dateTemp[0];?> 
         <?if(isset($_SESSION['username']) && isset($_SESSION['isAdmin'])){
             if($_SESSION['isAdmin']==='1'){?>
                 <span>
@@ -70,7 +72,7 @@
                             <span class="close">x</span>
                             <form action="#" method="post">
                                 <label for="tanggal-baru">Tanggal baru :</label><br>
-                                <input type="text" name="tanggal-baru" id="tanggal-baru">
+                                <input type="date" name="tanggal-baru" id="tanggal-baru">
                                 <input type="submit">
                             </form>
                         </div>
@@ -126,7 +128,7 @@
                             <span class="close">x</span>
                             <form id="form-upload-lagu" action="#" method="post" enctype="multipart/form-data">
                                 <label for="lagu-baru">Lagu baru :</label><br>
-                                <input type="file" name="lagu-baru" id="lagu-baru">
+                                <input type="file" name="lagu-baru" id="lagu-baru" accept=".mp3,.wav">
                                 <input type="hidden" name="durasi-lagu-baru" id="durasi-lagu-baru">
                                 
                                 <!--<input type="submit">-->
