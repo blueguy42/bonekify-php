@@ -12,6 +12,7 @@
   <a class="navbar-links <? echo ((isset($data["route"]) and $data["route"] == 'Home') ? " active": "") ?>" href="<?echo BASEURL?>">Home</a>
   <a class="navbar-links <? echo ((isset($data["route"]) and $data["route"] == 'Search') ? " active": "") ?>" href="<?echo BASEURL?>/search">Search</a>
   <? if (isset($_SESSION["isAdmin"]) and $_SESSION["isAdmin"] == 1) {
+    echo "<a class=\"navbar-links " . ((isset($data["route"]) and $data["route"] == 'Tambah Lagu') ? " active": "") . "\" href=\"" . BASEURL . "/tambahlagu\">Tambah Lagu</a>";
     echo "<a class=\"navbar-links " . ((isset($data["route"]) and $data["route"] == 'Tambah Album') ? " active": "") . "\" href=\"" . BASEURL . "/tambahalbum\">Tambah Album</a>";
   }?>
   <a href="<?echo BASEURL?>/album">Daftar Album</a>

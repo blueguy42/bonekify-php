@@ -10,22 +10,22 @@
       </div> 
       <div id ="div-judul">
         <label for="judul">Judul Album</label>
-        <input type="text" id="judul" name="judul" onkeyup="" placeholder="Masukkan judul album..">
+        <input type="text" id="judul" name="judul" placeholder="Masukkan judul album..">
       </div> 
 
       <div id ="div-penyanyi">
-        <label for="penyanyi">Nama Penyanyi</label>
-        <input type="text" id="penyanyi" name="penyanyi" onkeyup="" placeholder="Masukkan nama penyanyi..">
+        <label for="penyanyi">Penyanyi Album</label>
+        <input type="text" id="penyanyi" name="penyanyi" placeholder="Masukkan penyanyi album..">
       </div> 
 
       <div id ="div-tanggalterbit">
         <label for="tanggalterbit">Tanggal Terbit Album</label>
-        <input type="date" id="tanggalterbit" name="tanggalterbit" onkeyup="" placeholder="Masukkan tanggal terbit album..">
+        <input type="date" id="tanggalterbit" name="tanggalterbit" placeholder="Masukkan tanggal terbit album..">
       </div> 
 
       <div id ="div-genre">
-        <label for="genre">Genre</label>
-        <input type="text" id="genre" name="genre" onkeyup="" placeholder="Masukkan genre album..">
+        <label for="genre">Genre Album</label>
+        <input type="text" id="genre" name="genre" placeholder="Masukkan genre album..">
       </div>
     
       <input type="submit" value="Tambah Album">

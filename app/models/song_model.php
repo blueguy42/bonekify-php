@@ -109,10 +109,6 @@ class song_model{
         if (file_exists($target_file)) {
             return False;
         }
-        
-        if($fileType!=="mp3") {
-            return False;
-        }
 
         if(!move_uploaded_file($_FILES["lagu-baru"]["tmp_name"], $target_file)){
             return False;
@@ -284,6 +280,51 @@ class song_model{
         $result = mysqli_query($db, $query);
         $json = mysqli_fetch_all($result, MYSQLI_ASSOC);
         return $json;
+    }
+    
+    public function addSong($judul, $penyanyi, $tanggalterbit, $genre, $duration, $audio, $image, $album, $single){
+        $db = db_util::connect();
+        
+        if ($single) {
+            $target_dir = "img/";
+            $target_file = $target_dir . basename($image["name"]);
+            // Check if file already exists
+            if (file_exists($target_file)) {
+                return false;
+            }
+            
+            $check = getimagesize($image["tmp_name"]);
+            if($check == false) {
+                return false;
+            }
+    
+            if(!move_uploaded_file($image["tmp_name"], $target_file)){
+                return false;
+            }    
+        }
+        
+        $target_dir = "music/";
+        $target_file = $target_dir . basename($audio["name"]);
+        // Check if file already exists
+        if (file_exists($target_file)) {
+            return False;
+        }
+
+        if(!move_uploaded_file($audio["tmp_name"], $target_file)){
+            return False;
+        }
+
+        # insert song
+        if (!$single) {
+            $query = "INSERT INTO Song (judul, penyanyi, tanggal_terbit, genre, duration, audio_path, image_path, album_id) VALUES 
+            ('" . $judul . "', '" . $penyanyi . "', '" . $tanggalterbit . "', '" . $genre . "', " . $duration . ", '" . basename($audio["name"]) . "', '" . $image . "', " . ($album != -1 ? $album : "null") . ")";
+        } else {
+            $query = "INSERT INTO Song (judul, penyanyi, tanggal_terbit, genre, duration, audio_path, image_path, album_id) VALUES 
+            ('" . $judul . "', '" . $penyanyi . "', '" . $tanggalterbit . "', '" . $genre . "', " . $duration . ", '" . basename($audio["name"]) . "', '" . basename($image["name"]) . "', " . ($album != -1 ? $album : "null") . ")";
+        }
+        return mysqli_query($db,$query);
+
+
     }
 }
 ?>

@@ -17,7 +17,7 @@ class TambahAlbum extends Controller{
                 if ($_FILES["file"] != "" and $_POST["judul"] != "" and $_POST["penyanyi"] != "" and $_POST["tanggalterbit"] != "" and $_POST["genre"] != "") {
                     $this->model('album_model')->addAlbum($_FILES["file"], $_POST["judul"], $_POST["penyanyi"], $_POST["tanggalterbit"], $_POST["genre"]);
                     unset($_FILES["file"]);
-                header('Location: ' . BASEURL . '/tambahalbum');
+                    header('Location: ' . BASEURL . '/tambahalbum');
                 } else {
                     $data["error"] = "Pastikan semua field terisi<br><br>";
                 }

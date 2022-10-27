@@ -17,6 +17,14 @@ class album_model{
         return $json;
     }
     
+    public function getAlbum($id){
+        $db = db_util::connect();
+        $query = "SELECT * FROM Album WHERE album_id=".$id;
+        $result = mysqli_query($db, $query);
+        $json = mysqli_fetch_assoc($result);
+        return $json;
+    }
+
     public function addAlbum($file, $judul, $penyanyi, $tanggalterbit, $genre){
         $db = db_util::connect();
         
@@ -37,7 +45,7 @@ class album_model{
             return false;
         }
 
-        # insert cover
+        # insert album
         $query = "INSERT INTO Album (judul, penyanyi, total_duration, image_path, tanggal_terbit, genre) VALUES 
         ('" . $judul . "', '" . $penyanyi . "', 0, '" . basename($file["name"]) . "', '" . $tanggalterbit . "', '" . $genre . "')";
         return mysqli_query($db,$query);

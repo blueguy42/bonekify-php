@@ -199,7 +199,7 @@ body {
     font-size: 12px;
     font-weight:100;
     letter-spacing: 1px;
-    padding-top:50px;
+    padding-top:20px;
     padding-bottom:20px;
     text-align:left;
     border-bottom: 1px solid #b3b3b3;
@@ -832,11 +832,11 @@ label[for*=sort] {
   font-weight:bold;
 }
 
-#tambah-form input, #tambah-form label{
+#tambah-form input, #tambah-form label, #tambah-form select{
   display: block;
 }
 
-#tambah-form input{
+#tambah-form input, #tambah-form select{
   width: 100%;
   padding: 12px 20px;
   margin-top:8px;
@@ -849,23 +849,6 @@ label[for*=sort] {
   transition: 0.5s;
   background-color: white;
 }
-
-#tambah-form input[class=green]:focus {
-  outline:none;
-  border: 3px solid green;
-}
-#tambah-form input[class=red]:focus {
-  outline:none;
-  border: 3px solid red;
-}
-
-#tambah-form input[class=green] {
-  border: 2px solid green;
-}
-#tambah-form input[class=red]{
-  border: 2px solid red;
-}
-
 
 #tambah-form input[type=submit] {
   background-color: #4CAF50;
