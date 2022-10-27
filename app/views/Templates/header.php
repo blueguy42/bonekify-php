@@ -11,7 +11,7 @@
   <!-- SIDEBAR LINKS -->
   <a <? echo ((isset($data["route"]) and $data["route"] == 'Home') ? "class=\"active\"": "") ?> href="<?echo BASEURL?>">Home</a>
   <a <? echo ((isset($data["route"]) and $data["route"] == 'Search') ? "class=\"active\"": "") ?> href="<?echo BASEURL?>/search">Search</a>
-  <a href="<?echo BASEURL?>">Album</a>
+  <a href="<?echo BASEURL?>/album">Album</a>
   <? if (isset($_SESSION["isAdmin"]) and $_SESSION["isAdmin"] == 1) {
     echo "<a " . ((isset($data["route"]) and $data["route"] == 'Daftar User') ? "class=\"active\"": "") . " href=\"" . BASEURL . "/users\">Daftar User</a>";
   }

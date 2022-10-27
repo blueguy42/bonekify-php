@@ -775,3 +775,20 @@ body {
   display: flex;
   flex-direction: row;
 }
+
+.main-section {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 240px;
+  height: 280px;
+  margin: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  box-sizing: border-box;
+}
