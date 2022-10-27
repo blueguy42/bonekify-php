@@ -3,13 +3,14 @@
 <head>
     <link href="<?echo BASEURL;?>/css/styles.css" rel="stylesheet">
     <script src="<?echo BASEURL;?>/js/login.js"></script>
-    <title>Bonekify | Login</title>
+    <title>Login | Bonekify</title>
+    <link rel="shortcut icon" href="<?echo BASEURL;?>/img/favicon.ico" type="image/x-icon"/>
 </head>
 
 <body class ="center">
     <div id="register-page">
-    <img src = "<?echo BASEURL;?>/img/bonekify.png" id ="logo">
-        <h4>Untuk melanjutkan, masuk ke Bonekify.</h4>
+    <a href="<?echo BASEURL;?>/" ><img src = "<?echo BASEURL;?>/img/bonekify.png" id ="logo"></a>
+        <h1>To continue,<br> log in to Bonekify.</h1>
         <hr>
     </div> 
     <div>

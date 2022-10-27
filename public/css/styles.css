@@ -186,6 +186,7 @@ body {
 #list-lagu{
   margin: 0 auto;
   width: 75%;
+  padding-bottom: 5vw;
 }
 
 #list-lagu tr th {
@@ -211,18 +212,21 @@ body {
 }
 
 #list-lagu tr .judul-lagu a {
-    color: white;
-    padding-right:10vw;
-    text-align:left;
-    float:left;
-    padding-left:0px;
-    margin-right:10px;
-    padding-bottom:10px;
-    text-decoration: none; 
+  color: white;
+  width: 20vw;
+  text-align:left;
+  float:left;
+  padding-left:0px;
+  padding-bottom:10px;
+  text-decoration: none; 
 }
 
-#list-lagu tr .deskripsi{
-    width:20vw;
+#list-lagu tr .tahun-terbit{
+  width:20vw;
+}
+
+#list-lagu tr .genre{
+  width:25vw;
 }
 
 #list-lagu tr td .penyanyi{
@@ -295,13 +299,13 @@ body {
 #container-putar-lagu{
   width:350px;
   margin: auto;
+  padding: 30px 0px;
 }
 
 #container-putar-lagu img{
   width: 100%;
   margin:auto;
   display:block;
-  padding-top: 50px;
   padding-bottom: 5px;
 }
 
@@ -328,6 +332,7 @@ body {
 #container-putar-lagu audio{
   width: 100%;
   filter:invert(100%);
+  margin-top: 20px;
 }
 
 #container-putar-lagu audio::-webkit-media-controls-panel{
@@ -380,6 +385,7 @@ body {
 /* Add a grey background color to dropdown links on hover */
 .dropdown-content a:hover {
   background-color: palegreen;
+  color: black;
 }
 
 /* Show the dropdown menu on hover */
@@ -540,4 +546,54 @@ body {
 .container{
   display:flex;
   flex-direction: column;
+}
+
+/* For List User */
+
+#list-user{
+  margin: 0 auto;
+  width: 75%;
+}
+
+#list-user tr th {
+    color: #b3b3b3;
+    font-size: 12px;
+    font-weight:100;
+    letter-spacing: 1px;
+    padding-top:50px;
+    padding-bottom:20px;
+    text-align:center;
+    border-bottom: 1px solid #b3b3b3;
+    line-height: 1em;
+}
+
+#list-user tr td {
+    color : #b3b3b3;
+    padding-top:20px;
+    padding-bottom:20px;
+    text-align: center;
+}
+
+#list-user tr .id{
+    width:10vw;
+}
+
+#list-user tr .username{
+  width:20vw;
+}
+
+#list-user tr .email{
+  width:30vw;
+}
+
+#list-user tr .admin{
+  width:20vw;
+}
+
+#list-user tr .playcount{
+  width:20vw;
+}
+
+.nomertabel{
+  width:5vw;
 }

@@ -21,8 +21,16 @@ class Lagu extends Controller{
             $berhasil = $this->model('song_model')->gantiLagu($id,$_FILES["lagu-baru"]);
         }
 
+        if (isset($_SESSION["username"])) {
+            if ($_COOKIE["playCount_LoggedIn"] != $_SESSION["playCount_LoggedIn"]) {
+                $_SESSION["playCount_LoggedIn"] = $_COOKIE["playCount_LoggedIn"];
+                $this->model("user_model")->updatePlayCount($_SESSION["username"], $_SESSION["playCount_LoggedIn"]);
+            }
+        }
+
         $data["song"] = $this->model('song_model')->getSong($id);
-        $this->view('Templates/header');
+        $data["title"] = $data["song"]["Judul"] . ' - ' . $data["song"]["Penyanyi"] . " | Bonekify";
+        $this->view('Templates/header',$data);
         $this->view('Lagu/putar',$data);
         $this->view('Templates/footer');
     }

@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS `User` (
   `password` varchar(256) NOT NULL,
   `username` varchar(256) NOT NULL,
   `isAdmin` tinyint(1) NOT NULL,
+  `playCount` int NOT NULL,
   PRIMARY KEY (`user_id`),
   UNIQUE (`email`),
   UNIQUE (`username`)
@@ -41,9 +42,9 @@ CREATE TABLE IF NOT EXISTS `Song` (
   FOREIGN KEY (`album_id`) REFERENCES `Album`(`album_id`)
 );
 
-INSERT INTO `User` (`email`, `password`, `username`, `isAdmin`) VALUES
-('rizkysaulafan@gmail.com', '$2y$10$luYHB8NjJfY6d17i8to/9O5mObiuOjbY8LeqvMYlLvKezh43igcGS', 'rizkysaulafan', 1),
-('randomuser@gmail.com', '$2y$10$jXKli50oWBGO/6zQIMMnv.wlQltLb6dgIP4oIPkuADkDHyG4NCCTK', 'anonimus', 0);
+INSERT INTO `User` (`email`, `password`, `username`, `isAdmin`, `playCount`) VALUES
+('rizkysaulafan@gmail.com', '$2y$10$luYHB8NjJfY6d17i8to/9O5mObiuOjbY8LeqvMYlLvKezh43igcGS', 'rizkysaulafan', 1, 0),
+('randomuser@gmail.com', '$2y$10$jXKli50oWBGO/6zQIMMnv.wlQltLb6dgIP4oIPkuADkDHyG4NCCTK', 'anonimus', 0, 0);
 
 INSERT INTO `Album` (`Judul`, `Penyanyi`, `Total_duration`, `Image_path`, `Tanggal_terbit`, `Genre`) VALUES
 ('30', 'Adele', 3501, 'adele-30.png', '2019-11-19', 'Pop'),

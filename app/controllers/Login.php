@@ -13,9 +13,11 @@ class Login extends Controller{
                 if ($data["valid"] == 1){
                     setcookie("username", $data["username"], time() + (86400 * 30), "/"); 
                     setcookie("isAdmin", $data["isAdmin"], time() + (86400 * 30), "/"); 
+                    setcookie("playCount_LoggedIn", $data["playCount"], time() + (86400 * 30), "/"); 
                     $_SESSION["username"] = $data["username"];
                     $_SESSION["isAdmin"] = $data["isAdmin"];
-                    header('Location: ' . BASEURL . '/home');
+                    $_SESSION["playCount_LoggedIn"] = $data["playCount"];
+                    header('Location: ' . BASEURL . '/');
                 }
                 else{
                     $this->view('Login/index', $data);
@@ -25,7 +27,7 @@ class Login extends Controller{
                 $this->view('Login/index');
             }
         } else {
-            header('Location: ' . BASEURL . '/home');
+            header('Location: ' . BASEURL . '/');
         }
     }
 }

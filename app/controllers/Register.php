@@ -4,7 +4,7 @@ class Register extends Controller{
         if (!isset($_SESSION["username"])) {
             $this->view('Register/index');
         } else {
-            header('Location: ' . BASEURL . '/home');
+            header('Location: ' . BASEURL . '/');
         }
     }
     public function checkemail($param1){
@@ -26,7 +26,7 @@ class Register extends Controller{
         setcookie("isAdmin", 0, time() + (86400 * 30), "/"); 
         $_SESSION["username"] = $nama;
         $_SESSION["isAdmin"] = 0;
-        header('Location: ' . BASEURL . '/home');
+        header('Location: ' . BASEURL . '/');
     }
 }
 ?>
