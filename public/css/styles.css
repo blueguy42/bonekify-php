@@ -575,6 +575,7 @@ body {
 #list-user{
   margin: 0 auto;
   width: 75%;
+  border-collapse: collapse;
 }
 
 #list-user tr th {
@@ -594,6 +595,10 @@ body {
     padding-top:20px;
     padding-bottom:20px;
     text-align: center;
+}
+
+.list-user-item:hover {
+  background-color: #414141cf;
 }
 
 #list-user tr .bold{
