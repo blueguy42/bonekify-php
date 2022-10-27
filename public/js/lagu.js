@@ -7,7 +7,6 @@ window.onload = function() {
 // Get the modal
 var modal_ganti_cover = document.getElementById("modal-ganti-cover");
 var modal_ganti_judul = document.getElementById("modal-ganti-judul");
-var modal_ganti_penyanyi = document.getElementById("modal-ganti-penyanyi");
 var modal_ganti_tanggal = document.getElementById("modal-ganti-tanggal");
 var modal_ganti_genre = document.getElementById("modal-ganti-genre");
 var modal_ganti_lagu = document.getElementById("modal-ganti-lagu");
@@ -15,9 +14,8 @@ var modal_ganti_lagu = document.getElementById("modal-ganti-lagu");
 // Get the button that opens the modal
 var btn_ganti_cover = document.getElementsByClassName("tombol-ganti-file")[0];
 var btn_ganti_judul = document.getElementById("tombol-ganti-judul");
-var btn_ganti_penyanyi = document.getElementsByClassName("tombol-ganti-deskripsi")[0];
-var btn_ganti_tanggal = document.getElementsByClassName("tombol-ganti-deskripsi")[1];
-var btn_ganti_genre = document.getElementsByClassName("tombol-ganti-deskripsi")[2];
+var btn_ganti_tanggal = document.getElementsByClassName("tombol-ganti-deskripsi")[0];
+var btn_ganti_genre = document.getElementsByClassName("tombol-ganti-deskripsi")[1];
 var btn_ganti_lagu = document.getElementsByClassName("tombol-ganti-file")[1];
 
 // Get the <span> element that closes the modal
@@ -26,7 +24,6 @@ var span1 = document.getElementsByClassName("close")[1];
 var span2 = document.getElementsByClassName("close")[2];
 var span3 = document.getElementsByClassName("close")[3];
 var span4 = document.getElementsByClassName("close")[4];
-var span5 = document.getElementsByClassName("close")[5];
 
 // When the user clicks on the button, open the modal
 btn_ganti_cover.onclick = function() {
@@ -35,10 +32,6 @@ btn_ganti_cover.onclick = function() {
 
 btn_ganti_judul.onclick = function() {
   modal_ganti_judul.style.display = "block";
-}
-
-btn_ganti_penyanyi.onclick = function() {
-  modal_ganti_penyanyi.style.display = "block";
 }
 
 btn_ganti_tanggal.onclick = function() {
@@ -62,26 +55,21 @@ span1.onclick = function() {
 }
 
 span2.onclick = function() {
-  modal_ganti_penyanyi.style.display = "none";
-}
-
-span3.onclick = function() {
   modal_ganti_tanggal.style.display = "none";
 }
 
-span4.onclick = function() {
+span3.onclick = function() {
   modal_ganti_genre.style.display = "none";
 }
 
-span5.onclick = function() {
+span4.onclick = function() {
   modal_ganti_lagu.style.display = "none";
 }
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if ([modal_ganti_cover,modal_ganti_judul,modal_ganti_penyanyi,modal_ganti_tanggal,modal_ganti_genre,modal_ganti_lagu].includes(event.target)){
+  if ([modal_ganti_cover,modal_ganti_judul,modal_ganti_tanggal,modal_ganti_genre,modal_ganti_lagu].includes(event.target)){
     modal_ganti_cover.style.display = "none";
     modal_ganti_judul.style.display = "none";
-    modal_ganti_penyanyi.style.display = "none";
     modal_ganti_tanggal.style.display = "none";
     modal_ganti_genre.style.display = "none";
     modal_ganti_lagu.style.display = "none";
@@ -139,4 +127,25 @@ function AddPlayCount(){
       firstloadplay++;
     }
   }
+};
+
+function upload(){    
+    var files = document.getElementById('lagu-baru').files;
+    var file = files[0];
+    var reader = new FileReader();
+    var audio = document.createElement('audio');
+    reader.onload = async (e) => {
+        audio.src = e.target.result
+        audio.addEventListener('durationchange', function() {
+            console.log("durationchange: " + audio.duration);
+            var hidden_input= document.getElementById("durasi-lagu-baru");
+            hidden_input.value = Math.round(audio.duration);
+            document.getElementById("form-upload-lagu").submit();
+        },false);
+
+        audio.addEventListener('onerror', function() {
+            alert("Cannot get duration of this file.");
+        }, false);
+    };
+    reader.readAsDataURL(file);
 };
