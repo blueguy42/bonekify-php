@@ -1,4 +1,7 @@
+<div id="list-user-heading"><h1>Daftar User</h1></div>
+
 <table id='list-user'>
+
     <tr>
         <th>ID USER</th>
         <th>USERNAME</th>

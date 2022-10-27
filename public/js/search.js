@@ -6,13 +6,13 @@ function livesearch(clicked_id = 1){ // CLICKED ID BUAT PAGINATION
         kagakada.parentNode.removeChild(kagakada);
     }
     // DAPET SEARCH
-    let searchbox = document.getElementById("search")
+    let searchbox = document.getElementById("search");
 
     // DAPET SORTNYA
-    let sort1 = document.getElementById("sort1").value
-    let sort2 = document.getElementById("sort2").value
+    let sort1 = document.getElementById("sort1").value;
+    let sort2 = document.getElementById("sort2").value;
 
-    let allquery = "search/livesearchphp/" + searchbox.value + '/' + clicked_id + '/' + sort1 + '-' + sort2
+    let allquery = "search/livesearchphp/" + searchbox.value + '/' + clicked_id + '/' + sort1 + '-' + sort2;
     xhttp = new XMLHttpRequest();
     xhttp.open("GET", allquery, true);
     xhttp.send();
