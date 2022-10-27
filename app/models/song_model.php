@@ -25,14 +25,6 @@ class song_model{
         return mysqli_query($db,$query);
     }
 
-    public function gantiPenyanyi($id,$penyanyibaru){
-        $db = db_util::connect();
-        $query = sprintf("UPDATE Song
-                SET Penyanyi='%s'
-                WHERE song_id=%u",$penyanyibaru,$id);
-        return mysqli_query($db,$query);
-    }
-
     public function gantiTanggal($id,$tanggalbaru){
         $db = db_util::connect();
         $query = sprintf("UPDATE Song
@@ -87,17 +79,14 @@ class song_model{
         $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         // Check if file already exists
         if (file_exists($target_file)) {
-            echo "1";
             return False;
         }
         
         if($fileType!=="mp3") {
-            echo "2";
             return False;
         }
 
         if(!move_uploaded_file($_FILES["lagu-baru"]["tmp_name"], $target_file)){
-            echo "3";
             return False;
         }
 
@@ -112,6 +101,38 @@ class song_model{
         unset($_FILES["lagu-baru"]);
         return mysqli_query($db,$query);
     }
+
+    public function hapusLagu($id){
+        $db = db_util::connect();
+        $query = "SELECT Image_path,Audio_path,album_id FROM Song WHERE song_id=".$id;
+        $result = mysqli_query($db, $query);
+        $json = mysqli_fetch_assoc($result);
+        $album_id = $json['album_id'];
+        $img = $json['Image_path'];
+        $audio = $json['Audio_path'];
+
+        $query = "SELECT song_id FROM Song WHERE album_id=".$json['album_id'];
+        $result = mysqli_query($db, $query);
+        $json = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        $jumlah_lagu = count($json);
+
+        $query = "DELETE FROM Song WHERE song_id=".$id;
+        if(!mysqli_query($db,$query)){
+            return False;
+        }
+
+        #hapus album bila hanya terdiri dari satu lagu
+        if($jumlah_lagu===1){
+            $query = "DELETE FROM Album WHERE album_id=".$album_id;
+            unlink("img/".$img);
+        }
+
+        #hapus audio
+        unlink("music/".$audio);
+
+        return mysqli_query($db,$query);
+    }
+    
     public function getSomeSong($firstdata, $rowsperpage){
         $db = db_util::connect();
         $query = "SELECT * FROM Song ORDER BY Judul ASC LIMIT $firstdata, $rowsperpage";

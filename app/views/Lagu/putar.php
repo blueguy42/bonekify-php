@@ -53,29 +53,6 @@
     </div>
     <div class="deskripsi">
         <?echo $data["song"]["Penyanyi"];?> 
-        <?if(isset($_SESSION['username']) && isset($_SESSION['isAdmin'])){
-            if($_SESSION['isAdmin']==='1'){?>
-                <span>
-                    <!-- Trigger/Open The Modal -->
-                    <button class="tombol-ganti-deskripsi">edit</button>
-
-                    <!-- The Modal -->
-                    <div id="modal-ganti-penyanyi" class="modal">
-
-                        <!-- Modal content -->
-                        <div class="modal-content">
-                            <span class="close">x</span>
-                            <form action="#" method="post">
-                                <label for="penyanyi-baru">Penyanyi baru :</label><br>
-                                <input type="text" name="penyanyi-baru" id="penyanyi-baru">
-                                <input type="submit">
-                            </form>
-                        </div>
-
-                    </div>
-                </span>
-            <?}
-        }?>
     </div>
     <div class="deskripsi">
         <?echo $data["song"]["Tanggal_terbit"];?> 
@@ -155,6 +132,14 @@
 
                 </div>
             </span>
+        <?}
+    }?>
+    <?if(isset($_SESSION['username']) && isset($_SESSION['isAdmin'])){
+        if($_SESSION['isAdmin']==='1'){?>
+            <form action="#" method="post">
+                <input type="hidden" name="hapus-lagu" value="1">
+                <input type="submit" id="tombol-hapus" value="hapus">
+            </form>
         <?}
     }?>
 </div>

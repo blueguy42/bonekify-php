@@ -459,6 +459,15 @@ body {
   border : 1px solid #b3b3b3;
   color:#b3b3b3;
 }
+
+#tombol-hapus{
+  background-color:red;
+  color:white;
+  border : none;
+  border-radius: 15px;
+  padding: 2px 10px;
+  margin-top:10px;
+}
 /* ANIMATION */
 @-webkit-keyframes fadeIn {
   from {

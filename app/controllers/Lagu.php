@@ -20,6 +20,10 @@ class Lagu extends Controller{
         if(isset($_FILES["lagu-baru"])){
             $berhasil = $this->model('song_model')->gantiLagu($id,$_FILES["lagu-baru"]);
         }
+        if(isset($_POST["hapus-lagu"])){
+            $berhasil = $this->model('song_model')->hapusLagu($id);
+            header('Location: ' . BASEURL . '/');
+        }
 
         if (isset($_SESSION["username"])) {
             if ($_COOKIE["playCount_LoggedIn"] != $_SESSION["playCount_LoggedIn"]) {
