@@ -5,7 +5,7 @@
     <link href="<?echo BASEURL;?>/css/styles.css" rel="stylesheet">
     <link rel="shortcut icon" href="<?echo BASEURL;?>/img/favicon.ico" type="image/x-icon"/>
 </head>
-<body class="bodyflex">
+<body id="bodyflex">
 <div id="sidebar">
   <img id="headerlogo" src="<?echo BASEURL;?>/img/bonekify.png">
   <!-- SIDEBAR LINKS -->
@@ -14,7 +14,7 @@
   <? if (isset($_SESSION["isAdmin"]) and $_SESSION["isAdmin"] == 1) {
     echo "<a class=\"navbar-links " . ((isset($data["route"]) and $data["route"] == 'Tambah Album') ? " active": "") . "\" href=\"" . BASEURL . "/tambahalbum\">Tambah Album</a>";
   }?>
-  <a href="<?echo BASEURL?>">Daftar Album</a>
+  <a href="<?echo BASEURL?>/album">Daftar Album</a>
   <? if (isset($_SESSION["isAdmin"]) and $_SESSION["isAdmin"] == 1) {
     echo "<a class=\"navbar-links " . ((isset($data["route"]) and $data["route"] == 'Daftar User') ? " active": "") . "\" href=\"" . BASEURL . "/users\">Daftar User</a>";
   }?>

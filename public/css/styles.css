@@ -107,7 +107,7 @@ body {
     margin:auto;
 }
 
-.bodyflex {
+#bodyflex {
   display:flex;
   flex-direction:row;
 }
@@ -588,7 +588,7 @@ body {
   flex-direction: column;
 }
 
-.bodyflex a, .bodyflex button {
+#bodyflex a, #bodyflex button {
   color: #b3b3b3;
   text-align: center;
   padding: 14px 16px;
@@ -598,13 +598,13 @@ body {
 }
 
 /* Change the color of links on hover */
-.bodyflex > a:hover {
+#bodyflex > a:hover {
   transition: 0.3s;
   color: white;
 }
 
 /* Add a color to the active/current link */
-.bodyflex a.active {
+#bodyflex a.active {
   color: white;
 }
 
@@ -787,12 +787,73 @@ body {
 
 .card {
   width: 240px;
-  height: 280px;
-  margin: 16px;
-  border: 1px solid #ccc;
+  height: 350px;
+  padding-top:20px;
   border-radius: 8px;
-  background: #fff;
+  background: rgba(40,40,40,255);
   box-sizing: border-box;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card img{
+  width:85%;
+  margin: auto;
+  display:block;
+  border-radius:5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-sizing: border-box;
+}
+
+.clickable{
+  padding:0;
+  text-align:left !important;
+  margin:0!important;
+}
+
+.card:hover{
+  box-shadow: 0 4px 8px 0 rgba(100, 100, 100, 0.2), 0 6px 20px 0 rgba(100, 100, 100, 0.19);
+}
+
+.judul-album{
+  color:white;
+  font-size: 16px !important;
+  margin-left:20px;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+.deskripsi-album{
+  color:#b3b3b3;
+  margin-left:20px;
+  padding-top:2px;
+  padding-bottom:2px;
+}
+
+#detail-album{
+  display:flex;
+  flex-direction: row;
+}
+
+#detail-album span {
+  margin-top:60px;
+  margin-left:60px;
+}
+
+#detail-album span img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width : 300px;
+}
+
+#detail-album span .judul-album-detail{
+  color:white;
+  font-size: 80px;
+  padding-bottom:10px;
+}
+
+#detail-album span .deskripsi-album-detail{
+  color:#b3b3b3;
+  font-size: 30px;
+  padding-top:5px;
 }
 
 label[for*=sort] {
@@ -883,4 +944,8 @@ label[for*=sort] {
 #tambah-form input[type=submit]:hover {
   transition: 0.3s;
   background-color: #45a049;
+}
+
+.centergambarpak{
+  margin:0 auto;
 }

@@ -9,6 +9,14 @@ class song_model{
         return $json;
     }
 
+    public function getAlbumSong($id){
+        $db = db_util::connect();
+        $query = "SELECT * FROM Song WHERE album_id=".$id;
+        $result = mysqli_query($db, $query);
+        $json = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        return $json;
+    }
+
     public function getSong($id){
         $db = db_util::connect();
         $query = "SELECT * FROM Song WHERE song_id=".$id;

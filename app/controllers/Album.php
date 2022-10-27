@@ -4,8 +4,17 @@ class Album extends Controller{
         $data = [];
         $data['album'] = $this->model('album_model')->getAllAlbum();
         $data['route'] = 'album';
-        $this->view('Templates/header');
+        $this->view('Templates/header',$data);
         $this->view('Album/index',$data);
+        $this->view('Templates/footer');
+    }
+
+    public function detail($id){
+        $data['album_detail'] = $this->model('album_model')->getAlbumDetail($id);
+        $data['route'] = 'detail_album';
+        $data['song'] = $this->model('song_model')->getAlbumSong($id);
+        $this->view('Templates/header',$data);
+        $this->view('Album/detail',$data);
         $this->view('Templates/footer');
     }
 }

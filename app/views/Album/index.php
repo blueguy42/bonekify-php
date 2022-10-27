@@ -1,5 +1,21 @@
 <section class="main-section">
     <?foreach($data['album'] as $id=>$album){?>
-        <div class="card"></div>
+        <a class="clickable" href="<?=BASEURL?>/album/detail/<?=$album['album_id']?>">
+        <div class="card">
+            <img src="<?=BASEURL?>/img/<?=$album['Image_path']?>">
+            <div class='judul-album'>
+                <?=$album['Judul']?>
+            </div>
+            <div class='deskripsi-album'>
+                <?=$album['Penyanyi']?>
+            </div>
+            <div class='deskripsi-album'>
+                <?=$album['Tanggal_terbit']?>
+            </div>
+            <div class='deskripsi-album'>
+                <?=$album['Genre']?>
+            </div>
+        </div>
+        </a>
     <?}?>
 </section> 
