@@ -4,7 +4,7 @@ class Home extends Controller{
         // PAGINATION
         $rowsperpage = 8;
         $currentPage = (isset($_GET["page"])) ? $_GET["page"] : 1 ;
-        $startRow = ($rowsperpage * $currentPage) - $currentPage ;
+        $startRow = ($rowsperpage * $currentPage) - $rowsperpage ;
 
         $data=[];
         $temp = $this->model('song_model')->getAllSong();

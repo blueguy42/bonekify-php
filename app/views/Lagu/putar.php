@@ -146,9 +146,9 @@
                     <!-- Modal content -->
                     <div class="modal-content">
                         <span class="close">x</span>
-                        <form action="#" method="post">
+                        <form action="#" method="post" enctype="multipart/form-data">
                             <label for="lagu-baru">Lagu baru :</label><br>
-                            <input type="file" enctype="multipart/form-data" name="lagu-baru" id="lagu-baru">
+                            <input type="file" name="lagu-baru" id="lagu-baru">
                             <input type="submit">
                         </form>
                     </div>

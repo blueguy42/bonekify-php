@@ -15,15 +15,11 @@ class Lagu extends Controller{
             $berhasil = $this->model('song_model')->gantiGenre($id,$_POST["genre-baru"]);
         }
         if(isset($_FILES["cover-baru"])){
-            echo "masukk";
             $berhasil = $this->model('song_model')->gantiCover($id,$_FILES["cover-baru"]);
         }
         if(isset($_FILES["lagu-baru"])){
-            echo "masuk";
             $berhasil = $this->model('song_model')->gantiLagu($id,$_FILES["lagu-baru"]);
         }
-
-        echo "bang";
 
         $data["song"] = $this->model('song_model')->getSong($id);
         $this->view('Templates/header');

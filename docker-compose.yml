@@ -30,5 +30,6 @@ services:
     restart: always
     environment:
         PMA_HOST: db
+        UPLOAD_LIMIT: 1G
     depends_on:
         - db
