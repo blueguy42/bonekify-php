@@ -29,13 +29,13 @@ class Search extends Controller{
         }
     }
 
-    public function livesearchphp($search,$currentPage = 1){
+    public function livesearchphp($search,$currentPage, $orderby){
         // PAGINATION CONFIG
         $data=[];
         $rowsperpage = 10;
         $startRow = ($rowsperpage * $currentPage) - $rowsperpage ;
 
-        $data["song"] = $this->model('song_model')->getQuerySong($search, $startRow);
+        $data["song"] = $this->model('song_model')->getQuerySongLengkap($search, $startRow,$orderby);
         $data["banyakData"] = $this->model('song_model')->countQuerySong($search);
         $data["exists"] = (count($data["song"]) > 0) ? 1 : 0 ;
 

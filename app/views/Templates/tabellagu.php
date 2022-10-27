@@ -50,7 +50,7 @@
 <?php echo "<div id=\"pagination\" class=\"pagination\">" ;
 if (isset($data["banyakPage"]) && $data["banyakPage"]>1){
     for ($i = 1; $i <= $data["banyakPage"]; $i++) {
-        echo '<button id="' . $i . '" onClick="reply_click(this.id)">' . $i . '</button>';
+        echo '<button id="' . $i . '" onClick="livesearch(this.id)">' . $i . '</button>';
     }
 echo "</div>" ;
 }
