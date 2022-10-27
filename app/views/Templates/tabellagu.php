@@ -43,5 +43,5 @@
                     echo $second;
             }?></td>
         </tr>
-    <?php  $i++;  }} ?>
+    <?php  $i++;  }} else {echo "<p id='kagakada' class='kagakada'>Tidak ada lagu dengan query tersebut :(</p>";} ?>
 </table>

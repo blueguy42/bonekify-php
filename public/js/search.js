@@ -1,4 +1,10 @@
 function livesearch(){
+    //CLEAR
+    var kagakada = document.getElementById("kagakada");
+    if (kagakada != null){
+        kagakada.parentNode.removeChild(kagakada);
+    }
+    
     let searchbox = document.getElementById("search")
         xhttp = new XMLHttpRequest();
         xhttp.open("GET", "search/livesearchphp/" + searchbox.value, true);
@@ -41,7 +47,7 @@ function livesearch(){
                 }      
             }
             else{
-                string = "<p class='kagakada'>Tidak ada lagu dengan query tersebut :(</p>"
+                string = "<p id='kagakada' class='kagakada'>Tidak ada lagu dengan query tersebut :(</p>"
             }
             document.getElementById("list-lagu").innerHTML = string;
           }
