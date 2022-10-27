@@ -9,13 +9,15 @@
 <div id="sidebar">
   <img id="headerlogo" src="<?echo BASEURL;?>/img/bonekify.png">
   <!-- SIDEBAR LINKS -->
-  <a <? echo ((isset($data["route"]) and $data["route"] == 'Home') ? "class=\"active\"": "") ?> href="<?echo BASEURL?>">Home</a>
-  <a <? echo ((isset($data["route"]) and $data["route"] == 'Search') ? "class=\"active\"": "") ?> href="<?echo BASEURL?>/search">Search</a>
-  <a href="<?echo BASEURL?>">Album</a>
+  <a class="navbar-links <? echo ((isset($data["route"]) and $data["route"] == 'Home') ? " active": "") ?>" href="<?echo BASEURL?>">Home</a>
+  <a class="navbar-links <? echo ((isset($data["route"]) and $data["route"] == 'Search') ? " active": "") ?>" href="<?echo BASEURL?>/search">Search</a>
   <? if (isset($_SESSION["isAdmin"]) and $_SESSION["isAdmin"] == 1) {
-    echo "<a " . ((isset($data["route"]) and $data["route"] == 'Daftar User') ? "class=\"active\"": "") . " href=\"" . BASEURL . "/users\">Daftar User</a>";
-  }
-  ?>
+    echo "<a class=\"navbar-links " . ((isset($data["route"]) and $data["route"] == 'Tambah Album') ? " active": "") . "\" href=\"" . BASEURL . "/tambahalbum\">Tambah Album</a>";
+  }?>
+  <a href="<?echo BASEURL?>">Daftar Album</a>
+  <? if (isset($_SESSION["isAdmin"]) and $_SESSION["isAdmin"] == 1) {
+    echo "<a class=\"navbar-links " . ((isset($data["route"]) and $data["route"] == 'Daftar User') ? " active": "") . "\" href=\"" . BASEURL . "/users\">Daftar User</a>";
+  }?>
   <?php 
   ?>
 </div>

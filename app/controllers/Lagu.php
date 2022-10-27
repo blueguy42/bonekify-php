@@ -17,8 +17,8 @@ class Lagu extends Controller{
         if(isset($_FILES["cover-baru"])){
             $berhasil = $this->model('song_model')->gantiCover($id,$_FILES["cover-baru"]);
         }
-        if(isset($_FILES["lagu-baru"])){
-            $berhasil = $this->model('song_model')->gantiLagu($id,$_FILES["lagu-baru"]);
+        if(isset($_FILES["lagu-baru"]) && isset($_POST['durasi-lagu-baru'])){
+            $berhasil = $this->model('song_model')->gantiLagu($id,$_FILES["lagu-baru"],$_POST['durasi-lagu-baru']);
         }
         if(isset($_POST["hapus-lagu"])){
             $berhasil = $this->model('song_model')->hapusLagu($id);

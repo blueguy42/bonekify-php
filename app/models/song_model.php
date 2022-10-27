@@ -72,7 +72,7 @@ class song_model{
         return mysqli_query($db,$query);
     }
 
-    public function gantiLagu($id,$lagubaru){
+    public function gantiLagu($id,$lagubaru,$durasibaru){
         $db = db_util::connect();
         $target_dir = "music/";
         $target_file = $target_dir . basename($_FILES["lagu-baru"]["name"]);
@@ -91,25 +91,34 @@ class song_model{
         }
 
         #hapus lagu lama
-        $query = "SELECT Audio_path FROM Song WHERE song_id=".$id;
+        $query = "SELECT Audio_path,Duration,album_id FROM Song WHERE song_id=".$id;
         $result = mysqli_query($db,$query);
         $json = mysqli_fetch_assoc($result);
+        $durasilama = $json['Duration'];
+        $albumid = $json["album_id"];
         unlink("music/".$json['Audio_path']);
 
         #update lagu saat ini ke db
-        $query = sprintf("UPDATE Song SET Audio_path='%s' WHERE song_id=%u;",basename($_FILES["lagu-baru"]["name"]),$id);
+        $query = sprintf("UPDATE Song SET Audio_path='%s',Duration=%u WHERE song_id=%u;",basename($_FILES["lagu-baru"]["name"]),$durasibaru,$id);
+        if(!mysqli_query($db,$query)){
+            return False;
+        }
         unset($_FILES["lagu-baru"]);
+
+        #update total durasi
+        $query = sprintf("UPDATE Album SET Total_duration=Total_duration+%u-%u WHERE album_id=%u",$durasibaru,$durasilama,$albumid);
         return mysqli_query($db,$query);
     }
 
     public function hapusLagu($id){
         $db = db_util::connect();
-        $query = "SELECT Image_path,Audio_path,album_id FROM Song WHERE song_id=".$id;
+        $query = "SELECT Image_path,Audio_path,album_id,Duration FROM Song WHERE song_id=".$id;
         $result = mysqli_query($db, $query);
         $json = mysqli_fetch_assoc($result);
         $album_id = $json['album_id'];
         $img = $json['Image_path'];
         $audio = $json['Audio_path'];
+        $durasi = $json['Duration'];
 
         $query = "SELECT song_id FROM Song WHERE album_id=".$json['album_id'];
         $result = mysqli_query($db, $query);
@@ -121,16 +130,24 @@ class song_model{
             return False;
         }
 
+        $query = sprintf("UPDATE Album SET Total_duration=Total_duration-%u WHERE album_id=%u",$durasi,$album_id);
+        if(!mysqli_query($db,$query)){
+            return False;
+        }
+
         #hapus album bila hanya terdiri dari satu lagu
         if($jumlah_lagu===1){
             $query = "DELETE FROM Album WHERE album_id=".$album_id;
+            if(!mysqli_query($db,$query)){
+                return False;
+            }
             unlink("img/".$img);
         }
 
         #hapus audio
         unlink("music/".$audio);
 
-        return mysqli_query($db,$query);
+        return True;
     }
     
     public function getSomeSong($firstdata, $rowsperpage){
