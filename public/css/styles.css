@@ -620,6 +620,13 @@ body {
 
 /* For List User */
 
+#list-user-heading{
+  padding-top: 15px;
+  color: white; 
+  margin: 0 auto;
+  width: 75%;
+}
+
 #list-user{
   margin: 0 auto;
   width: 75%;
@@ -631,7 +638,7 @@ body {
     font-size: 12px;
     font-weight:100;
     letter-spacing: 1px;
-    padding-top:50px;
+    padding-top:20px;
     padding-bottom:20px;
     text-align:center;
     border-bottom: 1px solid #b3b3b3;
@@ -818,9 +825,11 @@ label[for*=sort] {
 /* Tambah Album Form */
 #tambah-form{
   text-align: left;
+  margin-bottom: 40px;
 }
 
 #tambah-form h1 {
+  padding-top: 15px;
   text-align: center;
   color: white;
 }
@@ -869,7 +878,7 @@ label[for*=sort] {
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   border: none;
   border-radius: 40px;
   cursor: pointer;
