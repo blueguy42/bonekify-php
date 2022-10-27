@@ -4,6 +4,7 @@ class Home extends Controller{
         $data=[];
         $data["song"] = $this->model('song_model')->getLatestSong();
         $data["route"] = 'Home';
+        $data["title"] = 'Home | Bonekify';
 
         if (isset($_SESSION["username"])) {
             if ($_COOKIE["playCount_LoggedIn"] != $_SESSION["playCount_LoggedIn"]) {

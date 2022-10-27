@@ -3,7 +3,7 @@
 <head>
     <link href="<?echo BASEURL;?>/css/styles.css" rel="stylesheet">
     <script src="<?echo BASEURL;?>/js/login.js"></script>
-    <title>Bonekify | Login</title>
+    <title>Login | Bonekify</title>
     <link rel="shortcut icon" href="<?echo BASEURL;?>/img/favicon.ico" type="image/x-icon"/>
 </head>
 

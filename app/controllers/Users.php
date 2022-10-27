@@ -12,6 +12,7 @@ class Users extends Controller{
             $data=[];
             $data["users"] = $this->model('user_model')->getListUser();
             $data["route"] = 'Daftar User';
+            $data["title"] = 'Daftar User | Bonekify';
             
             $this->view('Templates/header',$data);
             $this->view('Users/index',$data);

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Bonekify</title>
+    <title><? echo (isset($data["title"]) ? $data["title"] : "Bonekify")?></title>
     <link href="<?echo BASEURL;?>/css/styles.css" rel="stylesheet">
     <link rel="shortcut icon" href="<?echo BASEURL;?>/img/favicon.ico" type="image/x-icon"/>
 </head>
