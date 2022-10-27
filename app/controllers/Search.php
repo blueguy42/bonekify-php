@@ -7,6 +7,7 @@ class Search extends Controller{
         $currentPage = 1;
         $startRow = ($rowsperpage * $currentPage) - $rowsperpage ;
         $data["route"] = 'Search';
+        $data["genres"] = $this->model('song_model')->getGenres();
 
         if (isset($_POST["navbar-search"])){
             $data["song"] = $this->model('song_model')->getQuerySong($_POST["navbar-search"], $startRow);
@@ -29,17 +30,24 @@ class Search extends Controller{
         }
     }
 
-    public function livesearchphp($search,$currentPage, $orderby){
+    public function livesearchphp($search,$currentPage, $orderby, $filters){
         // PAGINATION CONFIG
         $data=[];
         $rowsperpage = 10;
         $startRow = ($rowsperpage * $currentPage) - $rowsperpage ;
 
-        $data["song"] = $this->model('song_model')->getQuerySongLengkap($search, $startRow,$orderby);
-        $data["banyakData"] = $this->model('song_model')->countQuerySong($search);
+        $data["song"] = $this->model('song_model')->getQuerySongLengkap($search,$startRow,$orderby,$filters);
+        $data["banyakData"] = $this->model('song_model')->countQuerySong($search,$filters);
         $data["exists"] = (count($data["song"]) > 0) ? 1 : 0 ;
 
         echo json_encode($data);
     }
+
+    public function getGenres(){
+        $data = array();
+        $data["genres"] = $this->model("user_model")->getGenres();
+        echo json_encode($data);
+    }
+
 }
 ?>
