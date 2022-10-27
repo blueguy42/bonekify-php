@@ -1,10 +1,6 @@
 <?php 
 class Home extends Controller{
-    public function index($page = 1){
-        // PAGINATION
-        $rowsperpage = 8;
-        $currentPage = (isset($_GET["page"])) ? $_GET["page"] : 1 ;
-        $startRow = ($rowsperpage * $currentPage) - $rowsperpage ;
+    public function index(){
 
         $data=[];
         $data["song"] = $this->model('song_model')->getLatestSong();
@@ -19,7 +15,7 @@ class Home extends Controller{
         }
 
         $this->view('Templates/header',$data);
-        $this->view('Home/index',$data);
+        $this->view('Templates/tabellagu',$data);
         $this->view('Templates/footer');
     }
     public function logout(){

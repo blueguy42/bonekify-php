@@ -148,5 +148,17 @@ class song_model{
         $json = mysqli_fetch_all($result, MYSQLI_ASSOC);
         return $json;
     }
+
+    public function getQuerySong($search, $firstdata, $rowsperpage){
+        $db = db_util::connect();
+        $query = "SELECT * FROM Song" ;
+        $query2 = " WHERE Judul LIKE '%$search%' OR Penyanyi LIKE '%$search%'";
+        $query3 = " ORDER BY Judul ASC LIMIT $firstdata, $rowsperpage";
+
+        $allquery = $query . $query2 . $query3;
+        $result = mysqli_query($db, $allquery);
+        $json = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        return $json;
+    }
 }
 ?>

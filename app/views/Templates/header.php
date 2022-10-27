@@ -10,6 +10,7 @@
   <img id="headerlogo" src="<?echo BASEURL;?>/img/bonekify.png">
   <!-- SIDEBAR LINKS -->
   <a <? echo ((isset($data["route"]) and $data["route"] == 'Home') ? "class=\"active\"": "") ?> href="<?echo BASEURL?>">Home</a>
+  <a <? echo ((isset($data["route"]) and $data["route"] == 'Search') ? "class=\"active\"": "") ?> href="<?echo BASEURL?>/search">Search</a>
   <a href="<?echo BASEURL?>">Album</a>
   <? if (isset($_SESSION["isAdmin"]) and $_SESSION["isAdmin"] == 1) {
     echo "<a " . ((isset($data["route"]) and $data["route"] == 'Daftar User') ? "class=\"active\"": "") . " href=\"" . BASEURL . "/users\">Daftar User</a>";
@@ -20,7 +21,9 @@
 </div>
 <div id="side">
 <div class="topnav">
-  <input type="text" placeholder="Apa yang ingin kamu dengarkan ?">
+  <form id="tes" method="post" action="<?= BASEURL?>/search">
+    <input id="navbar-search" name="navbar-search" type="text" placeholder="Apa yang ingin kamu dengarkan ?">
+  </form>
   <!-- DROP DOWN BOS -->
   <div class="dropdown">
     <button class="dropbtn"><?php

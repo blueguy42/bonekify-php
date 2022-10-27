@@ -19,7 +19,7 @@
                 <div class="penyanyi"><?echo $song["Penyanyi"]?></div>
             </td>
             <td class="tahun-terbit"><?echo explode("-", $song["Tanggal_terbit"])[0]?></td>
-            <td class="genre"><?echo $song["Genre"]?></td>,
+            <td class="genre"><?echo $song["Genre"]?></td>
             <td class="nomertabel"><?
                 $hour = floor($song["Duration"]/3600);
                 $left = $song["Duration"]%3600;
