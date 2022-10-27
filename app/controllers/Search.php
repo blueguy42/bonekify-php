@@ -37,7 +37,7 @@ class Search extends Controller{
         $startRow = ($rowsperpage * $currentPage) - $rowsperpage ;
 
         $data["song"] = $this->model('song_model')->getQuerySongLengkap($search,$startRow,$orderby,$filters);
-        $data["banyakData"] = $this->model('song_model')->countQuerySong($search);
+        $data["banyakData"] = $this->model('song_model')->countQuerySong($search,$filters);
         $data["exists"] = (count($data["song"]) > 0) ? 1 : 0 ;
 
         echo json_encode($data);

@@ -7,6 +7,13 @@ function livesearch(clicked_id = 1){ // CLICKED ID BUAT PAGINATION
     }
     // DAPET SEARCH
     let searchbox = document.getElementById("search")
+    let searchquery
+    if (searchbox.value == ''){
+        searchquery = 'tampilkansemua'
+    }
+    else{
+        searchquery = searchbox.value
+    }
 
     // DAPET SORTNYA
     let sort1 = document.getElementById("sort1").value
@@ -28,7 +35,7 @@ function livesearch(clicked_id = 1){ // CLICKED ID BUAT PAGINATION
         filters = "none"
     }
 
-    let allquery = "search/livesearchphp/" + searchbox.value + '/' + clicked_id + '/' + sort1 + '-' + sort2 + '/' + filters
+    let allquery = "search/livesearchphp/" + searchquery + '/' + clicked_id + '/' + sort1 + '-' + sort2 + '/' + filters
     console.log(allquery)
     xhttp = new XMLHttpRequest();
     xhttp.open("GET", allquery, true);
@@ -41,9 +48,9 @@ function livesearch(clicked_id = 1){ // CLICKED ID BUAT PAGINATION
         if (data.exists == 1) {
             string = "<tr><th>#</th><th colspan=2>JUDUL</th><th>TAHUN TERBIT</th><th>GENRE</th><th>DURASI</th></tr>"
             for (var i = 0; i < data.song.length; i++) {
-                string += "<tr><td class=\"nomertabel\">" + (i+1).toString() + "</td>";
+                string += "<tr class='list-lagu-item'><td class=\"nomertabel\">" + (10*(clicked_id-1)+i+1).toString() + "</td>";
 
-                string += "<td><a href =\"http://localhost:8080/public/lagu/putar/" + data.song[i].song_id + "\">"
+                string += "<td><a class='tabel-lagu-img' href =\"http://localhost:8080/public/lagu/putar/" + data.song[i].song_id + "\">"
                 string += "<img id = \"logo\" src=\"http://localhost:8080/public/img/" + data.song[i].Image_path + "\">"
                 string += "</a></td>"
 
