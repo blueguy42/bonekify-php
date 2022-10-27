@@ -5,7 +5,7 @@
             if($_SESSION['isAdmin']==='1'){?>
                 <span>
                     <!-- Trigger/Open The Modal -->
-                    <button class="tombol-ganti-file">edit</button>
+                    <button class="tombol-ganti-file">Edit Gambar Cover</button>
 
                     <!-- The Modal -->
                     <div id="modal-ganti-cover" class="modal">
@@ -111,36 +111,38 @@
             <source src="<?=BASEURL?>/music/<?=$data["song"]["Audio_path"]?>">
         </audio>
     </div>
-    <?if(isset($_SESSION['username']) && isset($_SESSION['isAdmin'])){
-        if($_SESSION['isAdmin']==='1'){?>
-            <span>
-                <!-- Trigger/Open The Modal -->
-                <button class="tombol-ganti-file">edit</button>
+    <div style="text-align:center;">
+        <?if(isset($_SESSION['username']) && isset($_SESSION['isAdmin'])){
+            if($_SESSION['isAdmin']==='1'){?>
+                <span>
+                    <!-- Trigger/Open The Modal -->
+                    <button class="tombol-ganti-file">Edit Audio Lagu</button>
 
-                <!-- The Modal -->
-                <div id="modal-ganti-lagu" class="modal">
+                    <!-- The Modal -->
+                    <div id="modal-ganti-lagu" class="modal">
 
-                    <!-- Modal content -->
-                    <div class="modal-content">
-                        <span class="close">x</span>
-                        <form action="#" method="post" enctype="multipart/form-data">
-                            <label for="lagu-baru">Lagu baru :</label><br>
-                            <input type="file" name="lagu-baru" id="lagu-baru">
-                            <input type="submit">
-                        </form>
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close">x</span>
+                            <form action="#" method="post" enctype="multipart/form-data">
+                                <label for="lagu-baru">Lagu baru :</label><br>
+                                <input type="file" name="lagu-baru" id="lagu-baru">
+                                <input type="submit">
+                            </form>
+                        </div>
+
                     </div>
-
-                </div>
-            </span>
-        <?}
-    }?>
-    <?if(isset($_SESSION['username']) && isset($_SESSION['isAdmin'])){
-        if($_SESSION['isAdmin']==='1'){?>
-            <form action="#" method="post">
-                <input type="hidden" name="hapus-lagu" value="1">
-                <input type="submit" id="tombol-hapus" value="hapus">
-            </form>
-        <?}
-    }?>
+                </span>
+            <?}
+        }?>
+        <?if(isset($_SESSION['username']) && isset($_SESSION['isAdmin'])){
+            if($_SESSION['isAdmin']==='1'){?>
+                <form action="#" method="post">
+                    <input type="hidden" name="hapus-lagu" value="1">
+                    <input type="submit" id="tombol-hapus" value="Hapus Lagu">
+                </form>
+            <?}
+        }?>
+    </div>
 </div>
 <script src="<?echo BASEURL;?>/js/lagu.js"></script>
