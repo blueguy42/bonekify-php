@@ -11,8 +11,25 @@ function livesearch(clicked_id = 1){ // CLICKED ID BUAT PAGINATION
     // DAPET SORTNYA
     let sort1 = document.getElementById("sort1").value
     let sort2 = document.getElementById("sort2").value
+    
+    // DAPET FILTERNYA
+    let filters = ""
+    let temp =""
+    const genres = document.getElementsByClassName("checkbox");
+    for (var l = 0; l < genres.length; l++) {
+        if (genres[l].checked){
+            temp = genres[l].id.replaceAll(" ", "xxx");
+            filters += temp + "-"
+        }
+    }
+    if (filters.length > 0){
+        filters = filters.slice(0, -1)
+    }else{
+        filters = "none"
+    }
 
-    let allquery = "search/livesearchphp/" + searchbox.value + '/' + clicked_id + '/' + sort1 + '-' + sort2
+    let allquery = "search/livesearchphp/" + searchbox.value + '/' + clicked_id + '/' + sort1 + '-' + sort2 + '/' + filters
+    console.log(allquery)
     xhttp = new XMLHttpRequest();
     xhttp.open("GET", allquery, true);
     xhttp.send();

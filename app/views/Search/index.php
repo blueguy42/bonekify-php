@@ -7,26 +7,12 @@
 <!-- FILTER -->
 <div id='labelfilter'><p>FILTERS:</p></div>
 <div id='checkboxes'>
-
-<label class="container">One
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
-
-<label class="container">Two
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
-
-<label class="container">Three
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
-
-<label class="container">Four
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
+<?php 
+foreach($data["genres"] as $id => $genre){ 
+echo "<label class=\"container\">" . $genre["GENRE"];
+echo "<input onclick=\"livesearch()\" class=\"checkbox\" type=\"checkbox\" id=\"" . $genre["GENRE"] ."\">";
+echo "</label>";
+}?>
 </div>
 
 <br><br>

@@ -178,17 +178,34 @@ class song_model{
         return $json;
     }
 
-    public function getQuerySongLengkap($search, $firstdata, $Orderby){
+    public function getQuerySongLengkap($search, $firstdata, $Orderby, $filters){
         $db = db_util::connect();
+        //SET ORDER
         $arr_OrderBy = explode('-', $Orderby);
         $Orderby_kiri = $arr_OrderBy[0];
         $Orderby_kanan = $arr_OrderBy[1];
+        //SET FILTERS
+        if ($filters == "none") {
+            $query3 = "";
+        }
+        else{
+            $arr_filters = explode('-', $filters);
+            $query3 = " AND (";
+            foreach ($arr_filters as $filter) {
+                $temp = str_replace("xxx"," ",$filter);
+                $query3 = $query3 .  "GENRE = '$temp'";
+                if (next($arr_filters)) {
+                    $query3 = $query3 . " OR ";
+                }
+            }
+            $query3 = $query3 . ") ";
+        }
 
         $query = "SELECT * FROM Song" ;
-        $query2 = " WHERE Judul LIKE '%$search%' OR Penyanyi LIKE '%$search%'";
-        $query3 = " ORDER BY $Orderby_kiri $Orderby_kanan LIMIT $firstdata, 10";
+        $query2 = " WHERE (Judul LIKE '%$search%' OR Penyanyi LIKE '%$search%')";
+        $query4 = " ORDER BY $Orderby_kiri $Orderby_kanan LIMIT $firstdata, 10";
 
-        $allquery = $query . $query2 . $query3;
+        $allquery = $query . $query2 . $query3 . $query4 ;
         $result = mysqli_query($db, $allquery);
         $json = mysqli_fetch_all($result, MYSQLI_ASSOC);
         return $json;
@@ -203,6 +220,15 @@ class song_model{
         $result = mysqli_query($db, $allquery);
         $json = mysqli_fetch_all($result, MYSQLI_ASSOC);
         return count($json);
+    }
+
+    public function getGenres(){
+        $db = db_util::connect();
+        $query = "SELECT DISTINCT GENRE FROM Song" ;
+    
+        $result = mysqli_query($db, $query);
+        $json = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        return $json;
     }
 }
 ?>
