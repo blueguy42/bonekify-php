@@ -178,6 +178,22 @@ class song_model{
         return $json;
     }
 
+    public function getQuerySongLengkap($search, $firstdata, $Orderby){
+        $db = db_util::connect();
+        $arr_OrderBy = explode('-', $Orderby);
+        $Orderby_kiri = $arr_OrderBy[0];
+        $Orderby_kanan = $arr_OrderBy[1];
+
+        $query = "SELECT * FROM Song" ;
+        $query2 = " WHERE Judul LIKE '%$search%' OR Penyanyi LIKE '%$search%'";
+        $query3 = " ORDER BY $Orderby_kiri $Orderby_kanan LIMIT $firstdata, 10";
+
+        $allquery = $query . $query2 . $query3;
+        $result = mysqli_query($db, $allquery);
+        $json = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        return $json;
+    }
+
     public function countQuerySong($search){
         $db = db_util::connect();
         $query = "SELECT * FROM Song" ;
