@@ -7,7 +7,7 @@
         <th>JUMLAH PUTAR</th>
     </tr>
     <?php foreach($data["users"] as $id => $user){ ?>
-        <tr>
+        <tr class="list-user-item">
             <? if (isset($_SESSION["username"]) and $_SESSION["username"] == $user["username"])  { ?>
                 <td class="id bold"><b><?echo $user["user_id"]?></b></td>
                 <td class="username bold"><b><?echo $user["username"]?></b></td>

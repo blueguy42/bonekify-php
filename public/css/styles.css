@@ -70,6 +70,7 @@
   }
   
   #register-form input[type=submit]:hover {
+    transition: 0.3s;
     background-color: #45a049;
   }
   .TOA {
@@ -131,6 +132,7 @@ body {
 
 /* Change the color of links on hover */
 .topnav > a:hover {
+  transition: 0.3s;
     color: white;
 }
 
@@ -177,16 +179,17 @@ body {
   width:100%;
   margin:0px;
   padding: 0px;
-    background-color: #1f1f1f;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
+  background-color: #1f1f1f;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
 }
 
 #list-lagu{
   margin: 0 auto;
   width: 75%;
   padding-bottom: 5vw;
+  border-collapse: collapse;
 }
 
 #list-lagu tr th {
@@ -230,7 +233,17 @@ body {
 }
 
 #list-lagu tr td .penyanyi{
-    font-size: 14px;
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+
+.list-lagu-item:hover {
+  transition: 0.3s;
+  background-color: #414141cf;
+}
+
+.tabel-lagu-img {
+  padding: 14px 16px 14px 0px !important;
 }
 
 #logo {
@@ -311,6 +324,7 @@ body {
 
 #container-putar-lagu #img-container{
   padding-bottom: 20px;
+  text-align: center;
 }
 
 #container-putar-lagu #judul{
@@ -361,6 +375,7 @@ body {
 /* Add a red background color to navbar links on hover */
 .navbar a:hover, .dropdown:hover .dropbtn {
   border: 1px solid cadetblue;
+  transition: 0.3s;
   border-radius:5px;
 }
 
@@ -384,12 +399,14 @@ body {
 
 /* Add a grey background color to dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: palegreen;
+  transition: 0.3s;
+  background-color: rgb(142, 255, 142);
   color: black;
 }
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
+  transition: 0.3s;
   display: block;
 }
 
@@ -434,6 +451,7 @@ body {
   color: black;
   text-decoration: none;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 #tombol-ganti-judul{
@@ -445,12 +463,31 @@ body {
   color:white;
 }
 
-.tombol-ganti-file{
-  background-color: #ededed;
-  padding: 10px 20px !important;
-  border-radius: 15px;
-  color:#0d0d0d;
+#tombol-ganti-judul:hover{
+  transition: 0.3s;
+  cursor: pointer;
+  background-color: white;
+  color: #0d0d0d;
 }
+
+.tombol-ganti-file{
+  background-color: #ffffff;
+  margin-top: 3px;
+  padding: 7px 15px !important;
+  border : 1px solid white;
+  border-radius: 15px;
+  color:#000000;
+}
+
+.tombol-ganti-file:hover{
+  transition: 0.3s;
+  cursor: pointer;
+  background-color: #000000;
+  border : 1px solid white;
+  border-radius: 15px;
+  color:#ffffff;
+}
+
 
 .tombol-ganti-deskripsi{
   background-color: #0d0d0d;
@@ -460,17 +497,32 @@ body {
   color:#b3b3b3;
 }
 
+.tombol-ganti-deskripsi:hover{
+  transition: 0.3s;
+  cursor: pointer;
+  background-color: #b3b3b3;
+  color:#0d0d0d;
+}
+
 #tombol-hapus{
-  background-color:red;
-  color:white;
+  background-color:rgba(255, 0, 0, 0.638);
+  color:rgba(255, 255, 255, 0.667);
   border : none;
   border-radius: 15px;
-  padding: 2px 10px;
+  padding: 7px 12px !important;
   margin-top:10px;
   width:70px;
   height: 30px;
   box-sizing: border-box;
 }
+
+#tombol-hapus:hover{
+  background-color:red;
+  color:white;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
 /* ANIMATION */
 @-webkit-keyframes fadeIn {
   from {
@@ -510,6 +562,7 @@ body {
 }
 
 .pagination a:hover {
+  transition: 0.3s;
   color: greenyellow;
   text-decoration: none;
 }
@@ -545,6 +598,7 @@ body {
 
 /* Change the color of links on hover */
 .bodyflex > a:hover {
+  transition: 0.3s;
   color: white;
 }
 
@@ -568,6 +622,7 @@ body {
 #list-user{
   margin: 0 auto;
   width: 75%;
+  border-collapse: collapse;
 }
 
 #list-user tr th {
@@ -587,6 +642,11 @@ body {
     padding-top:20px;
     padding-bottom:20px;
     text-align: center;
+}
+
+.list-user-item:hover {
+  transition: 0.3s;
+  background-color: #414141cf;
 }
 
 #list-user tr .bold{
@@ -615,6 +675,7 @@ body {
 
 .nomertabel{
   width:5vw;
+  text-align: center;
 }
 
 #search {
@@ -630,6 +691,7 @@ body {
 }
 
 .kagakada{
+  width: 45%;
   color:white;
   text-align: center;
   margin: 0 auto;
@@ -638,3 +700,79 @@ body {
   border: 2px solid white;
 }
 
+.container {
+  color: white;
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  margin-right: 20px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#checkboxes {
+  align-items: center;
+  justify-content: center;
+  margin : 0 auto;
+  display: flex;
+  flex-direction: row;
+}
