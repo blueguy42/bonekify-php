@@ -1,4 +1,4 @@
-
+<!-- TABEL LAGUNYA -->
 <table id='list-lagu'>
 <?php if (isset($data["song"]) && count($data["song"])>0) {?>
     <tr>
@@ -45,3 +45,13 @@
         </tr>
     <?php  $i++;  }} else {echo "<p id='kagakada' class='kagakada'>Tidak ada lagu dengan query tersebut :(</p>";} ?>
 </table>
+
+<!-- PAGINATION -->
+<?php echo "<div id=\"pagination\" class=\"pagination\">" ;
+if (isset($data["banyakPage"]) && $data["banyakPage"]>1){
+    for ($i = 1; $i <= $data["banyakPage"]; $i++) {
+        echo '<button id="' . $i . '" onClick="reply_click(this.id)">' . $i . '</button>';
+    }
+echo "</div>" ;
+}
+?>
