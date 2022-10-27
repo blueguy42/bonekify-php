@@ -2,7 +2,7 @@
     <tr>
         <th>#</th>
         <th colspan=2>JUDUL</th>
-        <th>TANGGAL</th>
+        <th>TAHUN TERBIT</th>
         <th>GENRE</th>
         <th>DURASI</th>
     </tr>
@@ -18,14 +18,28 @@
                 <div class="judul-lagu"><a href="<?echo BASEURL;?>/lagu/putar/<?echo $song["song_id"];?>" style="text-decoration:none;"><?echo $song["Judul"]?></a></div>
                 <div class="penyanyi"><?echo $song["Penyanyi"]?></div>
             </td>
-            <td class="deskripsi"><?echo $song["Tanggal_terbit"]?></td>
-            <td class="deskripsi"><?echo $song["Genre"]?></td>
-            <td class="nomertabel"><?echo floor($song["Duration"]/60) . ":" ;
-             if ($song["Duration"] % 60 < 10){
-                echo '0' . $song["Duration"] % 60;
-             }else{
-                echo $song["Duration"] % 60;
-             }?></td>
+            <td class="tahun-terbit"><?echo explode("-", $song["Tanggal_terbit"])[0]?></td>
+            <td class="genre"><?echo $song["Genre"]?></td>,
+            <td class="nomertabel"><?
+                $hour = floor($song["Duration"]/3600);
+                $left = $song["Duration"]%3600;
+                $minute = floor($left/60);
+                $second = $left%60;
+                if ($hour > 0) {
+                    echo $hour . ":";
+                    if ($minute < 10) {
+                        echo '0' . $minute . ":";
+                    } else {
+                        echo $minute . ":";
+                    }
+                } else {
+                    echo $minute . ":";
+                }
+                if ($second < 10) {
+                    echo '0' . $second;
+                } else {
+                    echo $second;
+            }?></td>
         </tr>
     <?php  $i++;  } ?>
 </table>

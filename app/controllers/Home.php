@@ -3,6 +3,7 @@ class Home extends Controller{
     public function index(){
         $data=[];
         $data["song"] = $this->model('song_model')->getLatestSong();
+        $data["route"] = 'Home';
 
         if (isset($_SESSION["username"])) {
             if ($_COOKIE["playCount_LoggedIn"] != $_SESSION["playCount_LoggedIn"]) {
@@ -11,7 +12,7 @@ class Home extends Controller{
             }
         }
 
-        $this->view('Templates/header');
+        $this->view('Templates/header',$data);
         $this->view('Home/index',$data);
         $this->view('Templates/footer');
     }
@@ -26,7 +27,7 @@ class Home extends Controller{
         unset($_SESSION["username"]);
         unset($_SESSION['isAdmin']);
         unset($_SESSION['playCount_LoggedIn']);
-        header('Location: ' . BASEURL . '/');
+        header('Location: ' . BASEURL . '/login');
     }
 }
 ?>

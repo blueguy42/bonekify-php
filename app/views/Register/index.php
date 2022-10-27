@@ -4,6 +4,7 @@
     <link href="<?echo BASEURL;?>/css/styles.css" rel="stylesheet">
     <script src="<?echo BASEURL;?>/js/register.js"></script>
     <title>Bonekify | Register</title>
+    <link rel="shortcut icon" href="<?echo BASEURL;?>/img/favicon.ico" type="image/x-icon"/>
 </head>
 
 <body class ="center">

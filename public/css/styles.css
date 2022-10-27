@@ -212,18 +212,21 @@ body {
 }
 
 #list-lagu tr .judul-lagu a {
-    color: white;
-    padding-right:10vw;
-    text-align:left;
-    float:left;
-    padding-left:0px;
-    margin-right:10px;
-    padding-bottom:10px;
-    text-decoration: none; 
+  color: white;
+  width: 20vw;
+  text-align:left;
+  float:left;
+  padding-left:0px;
+  padding-bottom:10px;
+  text-decoration: none; 
 }
 
-#list-lagu tr .deskripsi{
-    width:20vw;
+#list-lagu tr .tahun-terbit{
+  width:20vw;
+}
+
+#list-lagu tr .genre{
+  width:25vw;
 }
 
 #list-lagu tr td .penyanyi{

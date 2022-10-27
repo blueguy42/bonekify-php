@@ -3,12 +3,18 @@
 <head>
     <title>Bonekify</title>
     <link href="<?echo BASEURL;?>/css/styles.css" rel="stylesheet">
+    <link rel="shortcut icon" href="<?echo BASEURL;?>/img/favicon.ico" type="image/x-icon"/>
 </head>
 <body class="bodyflex">
 <div id="sidebar">
   <img id="headerlogo" src="<?echo BASEURL;?>/img/bonekify.png">
-  <a class="active" href="<?echo BASEURL?>">Home</a>
+  <!-- SIDEBAR LINKS -->
+  <a <? echo ((isset($data["route"]) and $data["route"] == 'Home') ? "class=\"active\"": "") ?> href="<?echo BASEURL?>">Home</a>
   <a href="<?echo BASEURL?>">Album</a>
+  <? if (isset($_SESSION["isAdmin"]) and $_SESSION["isAdmin"] == 1) {
+    echo "<a " . ((isset($data["route"]) and $data["route"] == 'Daftar User') ? "class=\"active\"": "") . " href=\"" . BASEURL . "/users\">Daftar User</a>";
+  }
+  ?>
   <?php 
   ?>
 </div>

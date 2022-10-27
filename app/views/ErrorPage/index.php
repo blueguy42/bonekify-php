@@ -5,6 +5,7 @@
       <meta charset="utf-8">
       <title>Bonekify | Error</title>
       <link href="<?echo BASEURL;?>/css/styles.css" rel="stylesheet">
+      <link rel="shortcut icon" href="<?echo BASEURL;?>/img/favicon.ico" type="image/x-icon"/>
    </head>
    <body>
       <div id="error-page">
