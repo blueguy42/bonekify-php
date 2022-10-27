@@ -577,6 +577,10 @@ body {
     text-align: center;
 }
 
+#list-user tr .bold{
+  color: white;
+}
+
 #list-user tr .id{
     width:10vw;
 }
