@@ -2,17 +2,17 @@
 <table id='list-lagu'>
 <?php if (isset($data["song"]) && count($data["song"])>0) {?>
     <tr>
-        <th>#</th>
+        <th style="text-align: center;">#</th>
         <th colspan=2>JUDUL</th>
         <th>TAHUN TERBIT</th>
         <th>GENRE</th>
-        <th>DURASI</th>
+        <th style="text-align: center;">DURASI</th>
     </tr>
     <?php $i=1; foreach($data["song"] as $id => $song){  ?>
-        <tr>
+        <tr class="list-lagu-item">
             <td class="nomertabel"><?echo $i?></td>
             <td>
-                <a href="<?echo BASEURL;?>/lagu/putar/<?echo $song["song_id"];?>">
+                <a class="tabel-lagu-img" href="<?echo BASEURL;?>/lagu/putar/<?echo $song["song_id"];?>">
                     <img id ="logo" src="<?echo BASEURL;?>/img/<?echo $song["Image_path"]?>" onerror="this.onerror=null;this.src='<?echo BASEURL;?>/img/cover-album.png';">
                 </a>
             </td>

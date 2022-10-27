@@ -177,16 +177,17 @@ body {
   width:100%;
   margin:0px;
   padding: 0px;
-    background-color: #1f1f1f;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
+  background-color: #1f1f1f;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
 }
 
 #list-lagu{
   margin: 0 auto;
   width: 75%;
   padding-bottom: 5vw;
+  border-collapse: collapse;
 }
 
 #list-lagu tr th {
@@ -230,7 +231,16 @@ body {
 }
 
 #list-lagu tr td .penyanyi{
-    font-size: 14px;
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+
+.list-lagu-item:hover {
+  background-color: #414141cf;
+}
+
+.tabel-lagu-img {
+  padding: 14px 16px 14px 0px !important;
 }
 
 #logo {
@@ -612,6 +622,7 @@ body {
 
 .nomertabel{
   width:5vw;
+  text-align: center;
 }
 
 #search {
