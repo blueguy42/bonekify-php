@@ -35,6 +35,7 @@
             <th>TAHUN TERBIT</th>
             <th>GENRE</th>
             <th style="text-align: center;">DURASI</th>
+            <th></th>
         </tr>
         <?php $i=1; foreach($data["song"] as $id => $song){  ?>
             <tr class="list-lagu-item">
@@ -65,6 +66,16 @@
                     } else {
                         echo $second;
                 }?></td>
+                <td>
+                <?if(isset($_SESSION['username']) && isset($_SESSION['isAdmin'])){
+                    if($_SESSION['isAdmin']==='1'){?>
+                        <form action="#" method="post">
+                            <input type="hidden" name="hapus-lagu" value="<?=$song['song_id']?>">
+                            <input type="submit" id="tombol-hapus" value="Hapus Lagu">
+                        </form>
+                    <?}
+                }?>
+                </td>
             </tr>
         <?php  $i++;  }?>
     </table>

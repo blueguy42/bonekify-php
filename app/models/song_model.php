@@ -49,6 +49,26 @@ class song_model{
         return mysqli_query($db,$query);
     }
 
+    public function hapusDariAlbum($albumid,$id){
+        $db = db_util::connect();
+        $query = sprintf("UPDATE Song
+                SET album_id=null
+                WHERE song_id=%u",$id);
+        if(!mysqli_query($db,$query)){
+            return False;
+        }
+
+        $query = "SELECT Duration FROM Song WHERE song_id=".$id;
+        $result = mysqli_query($db,$query);
+        $json = mysqli_fetch_assoc($result);
+        $duration = $json['Duration'];
+
+        $query = sprintf("UPDATE Album
+                SET Total_duration=Total_duration-%u
+                WHERE album_id=%u",$duration,$albumid);
+        return mysqli_query($db,$query);
+    }
+
     public function gantiCover($id,$coverbaru){
         $db = db_util::connect();
         $target_dir = "img/";
