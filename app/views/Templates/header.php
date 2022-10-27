@@ -2,6 +2,7 @@
 <html>
 <head>
     <title><? echo (isset($data["title"]) ? $data["title"] : "Bonekify")?></title>
+    <script src="<?echo BASEURL;?>/js/search.js"></script>
     <link href="<?echo BASEURL;?>/css/styles.css" rel="stylesheet">
     <link rel="shortcut icon" href="<?echo BASEURL;?>/img/favicon.ico" type="image/x-icon"/>
 </head>
@@ -21,9 +22,11 @@
 </div>
 <div id="side">
 <div class="topnav">
+  <?php if (isset($data["route"]) and $data["route"] != 'Search'){?>
   <form id="tes" method="post" action="<?= BASEURL?>/search">
     <input id="navbar-search" name="navbar-search" type="text" placeholder="Apa yang ingin kamu dengarkan ?">
   </form>
+  <?php }?>
   <!-- DROP DOWN BOS -->
   <div class="dropdown">
     <button class="dropbtn"><?php

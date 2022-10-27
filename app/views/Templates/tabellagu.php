@@ -1,4 +1,6 @@
+
 <table id='list-lagu'>
+<?php if (isset($data["song"]) && count($data["song"])>0) {?>
     <tr>
         <th>#</th>
         <th colspan=2>JUDUL</th>
@@ -41,5 +43,5 @@
                     echo $second;
             }?></td>
         </tr>
-    <?php  $i++;  } ?>
+    <?php  $i++;  }} ?>
 </table>

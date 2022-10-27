@@ -20,8 +20,22 @@ class Search extends Controller{
         else{
             $this->view('Templates/header',$data);
             $this->view('Search/index');
+            $this->view('Templates/tabellagu',$data);
             $this->view('Templates/footer');
         }
+    }
+
+    public function livesearchphp($search){
+        // PAGINATION CONFIG
+        $data=[];
+        $rowsperpage = 10;
+        $currentPage = 1;
+        $startRow = ($rowsperpage * $currentPage) - $rowsperpage ;
+
+        $data["song"] = $this->model('song_model')->getQuerySong($search, $startRow, $rowsperpage);
+        $data["exists"] = (count($data["song"]) > 0) ? 1 : 0 ;
+
+        echo json_encode($data);
     }
 }
 ?>
