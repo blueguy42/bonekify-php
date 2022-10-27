@@ -34,6 +34,7 @@ class Lagu extends Controller{
 
         $data["song"] = $this->model('song_model')->getSong($id);
         $data["title"] = $data["song"]["Judul"] . ' - ' . $data["song"]["Penyanyi"] . " | Bonekify";
+        $data['route']='lagu';
         $this->view('Templates/header',$data);
         $this->view('Lagu/putar',$data);
         $this->view('Templates/footer');
