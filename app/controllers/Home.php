@@ -15,7 +15,7 @@ class Home extends Controller{
         }
 
         $this->view('Templates/header',$data);
-        echo "<div id=\"list-user-heading\"><h1>Our Newest Additions</h1></div>";
+        echo "<div id=\"list-user-heading\"><h1>Tambahan Lagu Terbaru</h1></div>";
         $this->view('Templates/tabellagu',$data);
         $this->view('Templates/footer');
     }

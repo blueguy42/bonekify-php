@@ -1,3 +1,4 @@
+<div id="list-album-heading"><h1>Daftar Album</h1></div>
 <section class="main-section">
     <?foreach($data['album'] as $id=>$album){?>
         <a class="clickable" href="<?=BASEURL?>/album/detail/<?=$album['album_id']?>">

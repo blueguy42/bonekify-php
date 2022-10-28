@@ -625,6 +625,14 @@ body {
   flex-direction: column;
 }
 
+#list-album-heading{
+  padding-top: 15px;
+  color: white; 
+  margin: 0 auto;
+  width: 80%;
+}
+
+
 /* For List User */
 
 #list-user-heading{
