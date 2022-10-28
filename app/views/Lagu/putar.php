@@ -1,4 +1,4 @@
-<div id="container-putar-lagu">
+<div id="container-putar-lagu" class="col-9 col-s-7">
     <div id='img-container'>
         <a href="<?=BASEURL?>/album/<?= $data["song"]["album_id"] ? "detail/".$data["song"]["album_id"] : ""?>">
             <img src="<?echo BASEURL?>/img/<?echo $data["song"]["Image_path"]?>">
