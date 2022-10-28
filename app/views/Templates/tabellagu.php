@@ -43,7 +43,7 @@
                     echo $second;
             }?></td>
         </tr>
-    <?php  $i++;  }} else {echo "<p id='kagakada' class='kagakada'>Tidak ada lagu dengan query tersebut :(</p>";} ?>
+    <?php  $i++;  }} else {echo "<div id='gaadacontainer'><p id='kagakada' class='kagakada'>Tidak ada lagu dengan query tersebut :(</p></div>";} ?>
 </table>
 
 <!-- PAGINATION -->

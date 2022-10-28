@@ -59,7 +59,7 @@
     <div class="deskripsi">
         <?
             $dateTemp = explode('-', $data["song"]["Tanggal_terbit"]);
-            echo $dateTemp[2] . " " . DateTime::createFromFormat('!m', $dateTemp[1])->format('F') . " " . $dateTemp[0];?> 
+            echo (int)$dateTemp[2] . " " . DateTime::createFromFormat('!m', $dateTemp[1])->format('F') . " " . (int)$dateTemp[0];?> 
         <?if(isset($_SESSION['username']) && isset($_SESSION['isAdmin'])){
             if($_SESSION['isAdmin']==='1'){?>
                 <span>
