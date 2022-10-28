@@ -9,6 +9,7 @@ function livesearch(clicked_id = 1){ // CLICKED ID BUAT PAGINATION
     }
     else{
         searchquery = searchbox.value
+        searchquery = searchquery.replaceAll(" ", "-")
     }
 
     // DAPET SORTNYA

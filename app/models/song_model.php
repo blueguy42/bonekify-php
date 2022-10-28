@@ -201,6 +201,13 @@ class song_model{
 
     public function getQuerySong($search, $firstdata){
         $db = db_util::connect();
+        //SET SEARCH
+        if ($search == "tampilkansemua"){
+            $search = '';
+        }else{
+            $search = str_replace("-"," ",$search);
+        }
+
         $query = "SELECT * FROM Song" ;
         $query2 = " WHERE Judul LIKE '%$search%' OR Penyanyi LIKE '%$search%' OR YEAR(Tanggal_terbit) LIKE '%$search%' ";
         $query3 = " ORDER BY Judul ASC LIMIT $firstdata, 10";
@@ -216,6 +223,8 @@ class song_model{
         //SET SEARCH
         if ($search == "tampilkansemua"){
             $search = '';
+        }else{
+            $search = str_replace("-"," ",$search);
         }
         //SET ORDER
         $arr_OrderBy = explode('-', $Orderby);
@@ -253,6 +262,8 @@ class song_model{
         //SET SEARCH
         if ($search == "tampilkansemua"){
             $search = '';
+        }else{
+            $search = str_replace("-"," ",$search);
         }
 
         //SET FILTERS
