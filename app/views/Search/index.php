@@ -1,8 +1,8 @@
 <script src="<?echo BASEURL;?>/js/search.js"></script>
 
 <br><br>
-<h1 id="judulsearch">Search results!</h1>
-<input <?php if (isset($data["search"])){echo "value='" . $data["search"] . "'"; } ?> class="col-6 col-s-5 center" class="search" id="search" type="text" placeholder="Integrated livesearch feature" onkeyup="livesearch()">
+<h1 id="judulsearch">Cari lagu!</h1>
+<input <?php if (isset($data["search"])){echo "value='" . $data["search"] . "'"; } ?> class="col-6 col-s-5 center search" id="search" type="text" placeholder="Integrated livesearch feature" onkeyup="livesearch()">
 
 <br><br>
 <!-- FILTER -->
@@ -21,15 +21,15 @@ echo "<label for=\"" . $genre["GENRE"] . "\">" . $genre["GENRE"] . "</label>";
 <br><br>
 
 <div id='sorts' class="col-9 col-s-7">
-<label for="sort1">Sort by:</label>
+<label for="sort1">Urut berdasarkan:</label>
 <select id="sort1" name="sort1" onchange="livesearch()">
   <option value="Judul">Judul</option>
   <option value="Penyanyi">Penyanyi</option>
   <option value="Tanggal_terbit">Tanggal</option>
 </select>
 <select id="sort2" name="sort2" onchange="livesearch()">
-  <option value="asc">asc</option>
-  <option value="desc">desc</option>
+  <option value="asc">ASC</option>
+  <option value="desc">DESC</option>
 </select>
 </div>
 

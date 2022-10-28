@@ -26,7 +26,7 @@
 <div class="topnav">
   <?php if (isset($data["route"]) and $data["route"] != 'Search'){?>
   <form id="tes" method="post" action="<?= BASEURL?>/search">
-    <input id="navbar-search" name="navbar-search" type="text" class ="col-11 col-s-7" placeholder="Apa yang ingin kamu dengarkan ?">
+    <input id="navbar-search" name="navbar-search" type="text" class ="col-11 col-s-7" placeholder="Apa yang ingin kamu dengarkan?">
   </form>
   <?php }?>
   <!-- DROP DOWN BOS -->

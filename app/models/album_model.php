@@ -91,5 +91,11 @@ class album_model{
         
         return mysqli_query($db,$query);
     }
+
+    public function hapusAlbum($id){
+        $db = db_util::connect();
+        $query = sprintf("DELETE FROM Album WHERE album_id=%u",$id);
+        return mysqli_query($db,$query);
+    }
 }
 ?>

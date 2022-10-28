@@ -14,7 +14,7 @@ class TambahAlbum extends Controller{
             $data["title"] = 'Tambah Album | Bonekify';
             
             if (isset($_FILES["file"]) and isset($_POST["judul"]) and isset($_POST["penyanyi"]) and isset($_POST["tanggalterbit"]) and isset($_POST["genre"])) {
-                if ($_FILES["file"] != "" and $_POST["judul"] != "" and $_POST["penyanyi"] != "" and $_POST["tanggalterbit"] != "" and $_POST["genre"] != "") {
+                if ($_FILES["file"]["name"] != "" and $_POST["judul"] != "" and $_POST["penyanyi"] != "" and $_POST["tanggalterbit"] != "" and $_POST["genre"] != "") {
                     $this->model('album_model')->addAlbum($_FILES["file"], $_POST["judul"], $_POST["penyanyi"], $_POST["tanggalterbit"], $_POST["genre"]);
                     unset($_FILES["file"]);
                     header('Location: ' . BASEURL . '/tambahalbum');
