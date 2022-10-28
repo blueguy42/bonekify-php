@@ -7,11 +7,12 @@ Users are able to search and listen to a variety of songs. Surfing and exploring
 Bonekify is built on vanilla HTML, CSS, and JavaScript with native PHP. Data is stored on a MySQL server.
 
 ## Table of Contents
-* [Requirements](#requirements)
-* [Installation](#installation)
-* [Running the Server](#running-the-server)
-* [Screenshots](#screenshots)
-* [Tasks Allocation](#task-allocation)
+  - [Table of Contents](#table-of-contents)
+  - [Requirements](#requirements)
+  - [Installation](#installation)
+  - [Running the Server](#running-the-server)
+  - [Screenshots](#screenshots)
+  - [Tasks Allocation](#tasks-allocation)
 ## Requirements
 As the server is running on a Docker container, make sure to first install Docker.
 
