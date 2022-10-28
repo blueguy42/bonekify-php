@@ -43,14 +43,25 @@
                     echo $second;
             }?></td>
         </tr>
-    <?php  $i++;  }} else {echo "<div id='gaadacontainer'><p id='kagakada' class='kagakada'>Tidak ada lagu dengan query tersebut :(</p></div>";} ?>
+    <?php  $i++;  }} ?>
 </table>
+
+<div id='gaadacontainer'>
+<?php if (!(isset($data["song"]) && count($data["song"])>0)) {?>
+    <p id='kagakada' class='kagakada'>Tidak ada lagu dengan query tersebut :(</p>
+<?php } ?>
+</div>
 
 <!-- PAGINATION -->
 <?php echo "<div id=\"pagination\" class=\"pagination\">" ;
 if (isset($data["banyakPage"]) && $data["banyakPage"]>1){
     for ($i = 1; $i <= $data["banyakPage"]; $i++) {
-        echo '<button id="' . $i . '" onClick="livesearch(this.id)">' . $i . '</button>';
+        if ($i == 1){
+            echo '<button class="dipilih" id="' . $i . '" onClick="livesearch(this.id)">' . $i . '</button>';
+        }
+        else {
+            echo '<button id="' . $i . '" onClick="livesearch(this.id)">' . $i . '</button>';
+        }
     }
 echo "</div>" ;
 }

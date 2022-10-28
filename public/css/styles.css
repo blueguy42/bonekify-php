@@ -543,36 +543,6 @@ body {
   }
 }
 
-.pagination {
-  text-align:center;
-  margin:0 auto;
-  padding-top:30px;
-  width:400px;
-}
-
-.pagination a {
-  color: lightslategray;
-  text-decoration: none;
-  padding: 0 8px;
-}
-
-.pagination a[class="currentpage"] {
-  color: white;
-  text-decoration: none;
-  padding: 0 8px;
-}
-
-.pagination a:hover {
-  transition: 0.3s;
-  color: greenyellow;
-  text-decoration: none;
-}
-
-.pagination a:active{
-  color: green;
-  text-decoration: none;
-} 
-
 /* SIDEBAR */
 #sidebar{
   width:150px;
@@ -698,16 +668,6 @@ body {
   text-align: center;
 }
 
-.kagakada{
-  width: 45%;
-  color:white;
-  text-align: center;
-  margin: 0 auto;
-  margin-top:50px;
-  padding:50px;
-  border: 2px solid white;
-}
-
 #checkboxes {
   align-items: center;
   justify-content: center;
@@ -800,20 +760,30 @@ label[for*=sort] {
 }
 
 #sorts {
-  align-items: center;
-  justify-content: center;
+  padding-top:30px;
+  width: 75%;
   margin : 0 auto;
   display: flex;
   flex-direction: row;
 }
 
-#sorts > label, #sorts > select {
-  margin: 20px;
+#sorts > label {
+  margin: 5px;
 }
+#sorts > select{
+  margin:2px;
+  background-color: #1F1F1F;
+  color:white;
+}
+
 #labelfilter{
   color:white;
   margin:0 auto;
   text-align: center;
+}
+
+#labelfilter h1{
+  text-decoration: underline;
 }
 /* Tambah Album Form */
 #tambah-form{
@@ -895,7 +865,8 @@ label[for*=sort] {
   
   cursor: pointer;
   transition: all .6s;
-  margin-right:4%;
+  margin-right:2%;
+  margin-left:2%;
   color:white;
   border: 2px solid darkslategray;
   border-radius: 8px;
@@ -920,4 +891,50 @@ label[for*=sort] {
 }
 #form-hapus-album{
   padding-left:60px;
+}
+
+#gaadacontainer{
+  width:75%;
+  margin: 0 auto;
+}
+
+.kagakada{
+  color:white;
+  text-align: center;
+  margin: 0 auto;
+  margin-top:10px;
+  padding:50px;
+  border: 2px solid white;
+}
+
+.pagination {
+  text-align:center;
+  margin:0 auto;
+  padding-top:30px;
+  width:400px;
+  padding-bottom: 50px;
+}
+
+.pagination button {
+  border:none;
+  background: none;
+  text-decoration: none;
+  padding: 0 8px;
+}
+
+.pagination button:hover {
+  transition: 0.3s;
+  background-color: greenyellow;
+  color: red !important;
+  text-decoration: none;
+}
+
+.pagination button:active{
+  background-color: green;
+  text-decoration: none;
+} 
+
+.pagination button[class=dipilih] {
+  background-color: green;
+  color: white !important;
 }

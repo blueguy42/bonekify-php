@@ -78,7 +78,12 @@ function livesearch(clicked_id = 1){ // CLICKED ID BUAT PAGINATION
             document.getElementById("list-lagu").innerHTML = "";
         }
         for (var k = 1; k <= Math.ceil(data.banyakData/10); k++) {
-            stringpagination += '<button id="' + k + '" onClick="livesearch(this.id)">' +k+ '</button>';
+            if (k==clicked_id) {
+                stringpagination += '<button class="dipilih" id="' + k + '" onClick="livesearch(this.id)">' +k+ '</button>';
+            }else{
+                stringpagination += '<button id="' + k + '" onClick="livesearch(this.id)">' +k+ '</button>';
+            }
+            
         }
         
         document.getElementById("pagination").innerHTML = stringpagination;
