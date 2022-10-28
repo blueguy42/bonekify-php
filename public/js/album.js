@@ -37,11 +37,11 @@ span1.onclick = function() {
     modal_ganti_judul.style.display = "none";
 }
 
-span1.onclick = function() {
+span2.onclick = function() {
     modal_ganti_genre.style.display = "none";
 }
 
-span1.onclick = function() {
+span3.onclick = function() {
     modal_ganti_tanggal.style.display = "none";
 }
 

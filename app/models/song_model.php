@@ -48,7 +48,13 @@ class song_model{
                 WHERE song_id=%u",$genrebaru,$id);
         return mysqli_query($db,$query);
     }
-
+    public function hapusAlbum($id){
+        $db = db_util::connect();
+        $query = sprintf("UPDATE Song
+                SET album_id=null
+                WHERE album_id=%u",$id);
+        return mysqli_query($db,$query);
+    }
     public function hapusDariAlbum($albumid,$id){
         $db = db_util::connect();
         $query = sprintf("UPDATE Song
