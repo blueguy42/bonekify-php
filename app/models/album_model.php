@@ -25,7 +25,7 @@ class album_model{
         return $json;
     }
 
-    public function updateAlbum($id){
+    public function updateDuration($id){
         $db = db_util::connect();
         $query = "UPDATE Album SET Total_duration = (select IFNULL(sum(`Duration`),0) from Song where album_id=". $id . ") FROM Album WHERE album_id=".$id;
         return mysqli_query($db, $query);
