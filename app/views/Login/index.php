@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="<?echo BASEURL;?>/img/favicon.ico" type="image/x-icon"/>
 </head>
 
-<body class ="col-4 col-s-2 center">
+<body class ="col-4 col-s-3 center">
     <div id="register-page">
     <a href="<?echo BASEURL;?>/" ><img src = "<?echo BASEURL;?>/img/bonekify.png" id ="logo"></a>
         <h1>To continue,<br> log in to Bonekify.</h1>

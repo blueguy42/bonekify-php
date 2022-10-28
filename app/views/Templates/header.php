@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="<?echo BASEURL;?>/img/favicon.ico" type="image/x-icon"/>
 </head>
 <body id="bodyflex">
-<div id="sidebar">
+<div id="sidebar" class = "col-s-1 col-13">
   <img id="headerlogo" src="<?echo BASEURL;?>/img/bonekify.png">
   <!-- SIDEBAR LINKS -->
   <a class="navbar-links <? echo ((isset($data["route"]) and $data["route"] == 'Home') ? " active": "") ?>" href="<?echo BASEURL?>">Home</a>
@@ -26,7 +26,7 @@
 <div class="topnav">
   <?php if (isset($data["route"]) and $data["route"] != 'Search'){?>
   <form id="tes" method="post" action="<?= BASEURL?>/search">
-    <input id="navbar-search" name="navbar-search" type="text" placeholder="Apa yang ingin kamu dengarkan ?">
+    <input id="navbar-search" name="navbar-search" type="text" class ="col-11 col-s-7" placeholder="Apa yang ingin kamu dengarkan ?">
   </form>
   <?php }?>
   <!-- DROP DOWN BOS -->
