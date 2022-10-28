@@ -2,7 +2,7 @@
 
 <br><br>
 <h1 id="judulsearch">Cari lagu!</h1>
-<input <?php if (isset($data["search"])){echo "value='" . $data["search"] . "'"; } ?> class="col-6 col-s-5 center search" id="search" type="text" placeholder="Integrated livesearch feature" onkeyup="livesearch()">
+<input <?php if (isset($data["search"])){echo "value='" . $data["search"] . "'"; } ?> class="col-6 col-s-5 center search" id="search" type="text" placeholder="Apa yang ingin kamu dengarkan?" onkeyup="livesearch()">
 
 <br><br>
 <!-- FILTER -->
