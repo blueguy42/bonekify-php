@@ -20,7 +20,7 @@ echo "<label for=\"" . $genre["GENRE"] . "\">" . $genre["GENRE"] . "</label>";
 </div>
 <br><br>
 
-<div id='sorts'>
+<div id='sorts' class="col-9 col-s-7">
 <label for="sort1">Sort by:</label>
 <select id="sort1" name="sort1" onchange="livesearch()">
   <option value="Judul">Judul</option>

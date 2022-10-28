@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <body>
-<div class="center">
+<div class ="col-14 col-s-4 center">
   <form id="tambah-form" method="post" enctype="multipart/form-data" action="#">
   <h1>Tambah Lagu</h1>
       <div id ="div-album">

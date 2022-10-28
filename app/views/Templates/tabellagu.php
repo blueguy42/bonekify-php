@@ -1,5 +1,5 @@
 <!-- TABEL LAGUNYA -->
-<table id='list-lagu'>
+<table id='list-lagu' class="col-9 col-s-7">
 <?php if (isset($data["song"]) && count($data["song"])>0) {?>
     <tr>
         <th style="text-align: center;">#</th>
@@ -46,7 +46,7 @@
     <?php  $i++;  }} ?>
 </table>
 
-<div id='gaadacontainer'>
+<div id='gaadacontainer' class="col-9 col-s-7">
 <?php if ((isset($data["song"]) && !count($data["song"])>0)) {?>
     <p id='kagakada' class='kagakada'>Tidak ada lagu dengan query tersebut :(</p>
 <?php } ?>
