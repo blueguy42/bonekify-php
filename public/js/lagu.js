@@ -129,23 +129,24 @@ function AddPlayCount(){
   }
 };
 
-function upload(){    
-    var files = document.getElementById('lagu-baru').files;
-    var file = files[0];
-    var reader = new FileReader();
-    var audio = document.createElement('audio');
-    reader.onload = async (e) => {
-        audio.src = e.target.result
-        audio.addEventListener('durationchange', function() {
-            console.log("durationchange: " + audio.duration);
-            var hidden_input= document.getElementById("durasi-lagu-baru");
-            hidden_input.value = Math.round(audio.duration);
-            document.getElementById("form-upload-lagu").submit();
-        },false);
+document.querySelector("#submit-btn-lagu").addEventListener('click', async (e) => {  
+  e.preventDefault();  
+  var files = document.getElementById('lagu-baru').files;
+  var file = files[0];
+  var reader = new FileReader();
+  var audio = document.createElement('audio');
+  reader.onload = async (e) => {
+      audio.src = e.target.result
+      audio.addEventListener('durationchange', function() {
+          console.log("durationchange: " + audio.duration);
+          var hidden_input= document.getElementById("durasi-lagu-baru");
+          hidden_input.value = Math.round(audio.duration);
+          document.getElementById("form-upload-lagu").submit();
+      },false);
 
-        audio.addEventListener('onerror', function() {
-            alert("Cannot get duration of this file.");
-        }, false);
-    };
-    reader.readAsDataURL(file);
-};
+      audio.addEventListener('onerror', function() {
+          alert("Cannot get duration of this file.");
+      }, false);
+  };
+  reader.readAsDataURL(file);
+});

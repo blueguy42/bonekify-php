@@ -9,7 +9,8 @@ function albumParam() {
     }
 }
 
-function upload(){    
+document.querySelector("#submit-btn").addEventListener('click', async (e) => {  
+    e.preventDefault();  
     var files = document.getElementById('lagu').files;
     var file = files[0];
     var reader = new FileReader();
@@ -28,4 +29,4 @@ function upload(){
         }, false);
     };
     reader.readAsDataURL(file);
-};
+});

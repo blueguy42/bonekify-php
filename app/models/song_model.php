@@ -72,13 +72,13 @@ class song_model{
     public function gantiCover($id,$coverbaru,$note){
         $db = db_util::connect();
         $target_dir = "img/";
-        $file_name = basename($_FILES["cover-baru"]["name"]);
-        $target_file = $target_dir . $file_name;
-        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+        $arrFileName = explode(".",basename($_FILES["cover-baru"]["name"]));
+        $target_filename = md5(date("Y-m-d H:i:s")) . "." . $arrFileName[count($arrFileName)-1];
+        $target_file = $target_dir . $target_filename;
         // Check if file already exists
         while (file_exists($target_file)) {
-            $file_name = "copy" . $file_name;
-            $target_file = $target_dir . $file_name;
+            $target_filename = "copy" . $target_filename;
+            $target_file = $target_dir . $target_filename;
         }
 
         
@@ -101,33 +101,31 @@ class song_model{
         
         $result = mysqli_query($db,$query);
         $json = mysqli_fetch_assoc($result);
-        unlink("img/".$json['Image_path']);
+        if (file_exists("img/".$json['Image_path'])) {
+            unlink("img/".$json['Image_path']);
+        }
         #update cover saat ini ke db
         if($note=='one'){
-            $query = sprintf("UPDATE Song SET Image_path='%s' WHERE song_id=%u;",$file_name,$id);
+            $query = sprintf("UPDATE Song SET Image_path='%s' WHERE song_id=%u;",$target_filename,$id);
         }else{
-            $query = sprintf("UPDATE Song SET Image_path='%s' WHERE album_id=%u;",$file_name,$id);
+            $query = sprintf("UPDATE Song SET Image_path='%s' WHERE album_id=%u;",$target_filename,$id);
         }
         
         unset($_FILES["cover-baru"]);
         mysqli_query($db,$query);
-        return $file_name;
+        return $target_filename;
     }
 
     public function gantiLagu($id,$lagubaru,$durasibaru){
         $db = db_util::connect();
         $target_dir = "music/";
-        $file_name = basename($_FILES["lagu-baru"]["name"]);
-        $target_file = $target_dir . $file_name;
-        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+        $arrFileName = explode(".",basename($_FILES["lagu-baru"]["name"]));
+        $target_filename = md5(date("Y-m-d H:i:s")) . "." . $arrFileName[count($arrFileName)-1];
+        $target_file = $target_dir . $target_filename;
         // Check if file already exists
         while (file_exists($target_file)) {
-            $file_name = "copy" . $file_name;
-            $target_file = $target_dir . $file_name;
-        }
-        
-        if($fileType!=="mp3") {
-            return False;
+            $target_filename = "copy" . $target_filename;
+            $target_file = $target_dir . $target_filename;
         }
 
         if(!move_uploaded_file($_FILES["lagu-baru"]["tmp_name"], $target_file)){
@@ -140,10 +138,12 @@ class song_model{
         $json = mysqli_fetch_assoc($result);
         $durasilama = $json['Duration'];
         $albumid = $json["album_id"];
-        unlink("music/".$json['Audio_path']);
+        if (file_exists("music/".$json['Audio_path'])) {
+            unlink("music/".$json['Audio_path']);
+        }
 
         #update lagu saat ini ke db
-        $query = sprintf("UPDATE Song SET Audio_path='%s',Duration=%u WHERE song_id=%u;",$file_name,$durasibaru,$id);
+        $query = sprintf("UPDATE Song SET Audio_path='%s',Duration=%u WHERE song_id=%u;",$target_filename,$durasibaru,$id);
         if(!mysqli_query($db,$query)){
             return False;
         }
@@ -185,12 +185,17 @@ class song_model{
             if(!mysqli_query($db,$query)){
                 return False;
             }
-            unlink("img/".$img);
+            if (file_exists("img/".$img)) {
+                unlink("img/".$img);
+
+            }
         }
 
         #hapus audio
-        unlink("music/".$audio);
+        if (file_exists("music/".$audio)) {
+            unlink("music/".$audio);
 
+        }
         return True;
     }
     
@@ -318,9 +323,11 @@ class song_model{
         
         if ($single) {
             $target_dir = "img/";
-            $target_file = $target_dir . basename($image["name"]);
+            $arrImgFileName = explode(".",basename($image["name"]));
+            $target_img_filename = md5(date("Y-m-d H:i:s")) . "." . $arrImgFileName[count($arrImgFileName)-1];
+            $target_img_file = $target_dir . $target_img_filename;
             // Check if file already exists
-            if (file_exists($target_file)) {
+            if (file_exists($target_img_file)) {
                 return false;
             }
             
@@ -329,29 +336,30 @@ class song_model{
                 return false;
             }
     
-            if(!move_uploaded_file($image["tmp_name"], $target_file)){
+            if(!move_uploaded_file($image["tmp_name"], $target_img_file)){
                 return false;
             }    
         }
-        
         $target_dir = "music/";
-        $target_file = $target_dir . basename($audio["name"]);
+        $arrAudioFileName = explode(".",basename($audio["name"]));
+        $target_audio_filename = md5(date("Y-m-d H:i:s")) . "." . $arrAudioFileName[count($arrAudioFileName)-1];
+        $target_audio_file = $target_dir . $target_audio_filename;
         // Check if file already exists
-        if (file_exists($target_file)) {
+        if (file_exists($target_audio_file)) {
             return False;
         }
 
-        if(!move_uploaded_file($audio["tmp_name"], $target_file)){
+        if(!move_uploaded_file($audio["tmp_name"], $target_audio_file)){
             return False;
         }
 
         # insert song
         if (!$single) {
             $query = "INSERT INTO Song (judul, penyanyi, tanggal_terbit, genre, duration, audio_path, image_path, album_id) VALUES 
-            ('" . $judul . "', '" . $penyanyi . "', '" . $tanggalterbit . "', '" . $genre . "', " . $duration . ", '" . basename($audio["name"]) . "', '" . $image . "', " . ($album != -1 ? $album : "null") . ")";
+            ('" . $judul . "', '" . $penyanyi . "', '" . $tanggalterbit . "', '" . $genre . "', " . $duration . ", '" . $target_audio_filename . "', '" . $image . "', " . ($album != -1 ? $album : "null") . ")";
         } else {
             $query = "INSERT INTO Song (judul, penyanyi, tanggal_terbit, genre, duration, audio_path, image_path, album_id) VALUES 
-            ('" . $judul . "', '" . $penyanyi . "', '" . $tanggalterbit . "', '" . $genre . "', " . $duration . ", '" . basename($audio["name"]) . "', '" . basename($image["name"]) . "', " . ($album != -1 ? $album : "null") . ")";
+            ('" . $judul . "', '" . $penyanyi . "', '" . $tanggalterbit . "', '" . $genre . "', " . $duration . ", '" . $target_audio_filename . "', '" . $target_img_filename . "', " . ($album != -1 ? $album : "null") . ")";
         }
         return mysqli_query($db,$query);
 
