@@ -35,11 +35,13 @@ class album_model{
         $db = db_util::connect();
         
         $target_dir = "img/";
-        $target_file = $target_dir . basename($file["name"]);
+        $file_name = basename($file["name"]);
+        $target_file = $target_dir . $file_name;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         // Check if file already exists
-        if (file_exists($target_file)) {
-            return false;
+        while (file_exists($target_file)) {
+            $file_name = "copy" . $file_name;
+            $target_file = $target_dir . $file_name;
         }
         
         $check = getimagesize($file["tmp_name"]);
@@ -85,7 +87,7 @@ class album_model{
         $db = db_util::connect();
 
         #update cover saat ini ke db
-        $query = sprintf("UPDATE Album SET Image_path='%s' WHERE album_id=%u;",basename($coverbaru["name"]),$id);
+        $query = sprintf("UPDATE Album SET Image_path='%s' WHERE album_id=%u;",$coverbaru,$id);
         
         return mysqli_query($db,$query);
     }

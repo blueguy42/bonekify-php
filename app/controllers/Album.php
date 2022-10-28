@@ -29,7 +29,7 @@ class Album extends Controller{
         }
         if(isset($_FILES["cover-baru"])){
             $cover_baru = $_FILES['cover-baru'];
-            $berhasil = $this->model('song_model')->gantiCover($id,$cover_baru,'all');
+            $cover_baru = $this->model('song_model')->gantiCover($id,$cover_baru,'all');
             $berhasil = $this->model('album_model')->gantiCover($id,$cover_baru);
         }
         $data['album_detail'] = $this->model('album_model')->getAlbumDetail($id);

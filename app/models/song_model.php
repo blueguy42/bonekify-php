@@ -72,12 +72,16 @@ class song_model{
     public function gantiCover($id,$coverbaru,$note){
         $db = db_util::connect();
         $target_dir = "img/";
-        $target_file = $target_dir . basename($_FILES["cover-baru"]["name"]);
+        $file_name = basename($_FILES["cover-baru"]["name"]);
+        $target_file = $target_dir . $file_name;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         // Check if file already exists
-        if (file_exists($target_file)) {
-            return False;
+        while (file_exists($target_file)) {
+            $file_name = "copy" . $file_name;
+            $target_file = $target_dir . $file_name;
         }
+
+        
         
         $check = getimagesize($_FILES["cover-baru"]["tmp_name"]);
         if($check == false) {
@@ -100,22 +104,29 @@ class song_model{
         unlink("img/".$json['Image_path']);
         #update cover saat ini ke db
         if($note=='one'){
-            $query = sprintf("UPDATE Song SET Image_path='%s' WHERE song_id=%u;",basename($_FILES["cover-baru"]["name"]),$id);
+            $query = sprintf("UPDATE Song SET Image_path='%s' WHERE song_id=%u;",$file_name,$id);
         }else{
-            $query = sprintf("UPDATE Song SET Image_path='%s' WHERE album_id=%u;",basename($_FILES["cover-baru"]["name"]),$id);
+            $query = sprintf("UPDATE Song SET Image_path='%s' WHERE album_id=%u;",$file_name,$id);
         }
         
         unset($_FILES["cover-baru"]);
-        return mysqli_query($db,$query);
+        mysqli_query($db,$query);
+        return $file_name;
     }
 
     public function gantiLagu($id,$lagubaru,$durasibaru){
         $db = db_util::connect();
         $target_dir = "music/";
-        $target_file = $target_dir . basename($_FILES["lagu-baru"]["name"]);
-        $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+        $file_name = basename($_FILES["lagu-baru"]["name"]);
+        $target_file = $target_dir . $file_name;
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         // Check if file already exists
-        if (file_exists($target_file)) {
+        while (file_exists($target_file)) {
+            $file_name = "copy" . $file_name;
+            $target_file = $target_dir . $file_name;
+        }
+        
+        if($fileType!=="mp3") {
             return False;
         }
 
@@ -132,7 +143,7 @@ class song_model{
         unlink("music/".$json['Audio_path']);
 
         #update lagu saat ini ke db
-        $query = sprintf("UPDATE Song SET Audio_path='%s',Duration=%u WHERE song_id=%u;",basename($_FILES["lagu-baru"]["name"]),$durasibaru,$id);
+        $query = sprintf("UPDATE Song SET Audio_path='%s',Duration=%u WHERE song_id=%u;",$file_name,$durasibaru,$id);
         if(!mysqli_query($db,$query)){
             return False;
         }
@@ -202,7 +213,7 @@ class song_model{
     public function getQuerySong($search, $firstdata){
         $db = db_util::connect();
         $query = "SELECT * FROM Song" ;
-        $query2 = " WHERE Judul LIKE '%$search%' OR Penyanyi LIKE '%$search%' OR YEAR(Tanggal_terbit) LIKE '%$search%' ";
+        $query2 = " WHERE Judul LIKE '%$search%' OR Penyanyi LIKE '%$search%'";
         $query3 = " ORDER BY Judul ASC LIMIT $firstdata, 10";
 
         $allquery = $query . $query2 . $query3;
@@ -239,7 +250,7 @@ class song_model{
         }
 
         $query = "SELECT * FROM Song" ;
-        $query2 = " WHERE (Judul LIKE '%$search%' OR Penyanyi LIKE '%$search%' OR YEAR(Tanggal_terbit) LIKE '%$search%')";
+        $query2 = " WHERE (Judul LIKE '%$search%' OR Penyanyi LIKE '%$search%')";
         $query4 = " ORDER BY $Orderby_kiri $Orderby_kanan LIMIT $firstdata, 10";
 
         $allquery = $query . $query2 . $query3 . $query4 ;
@@ -248,7 +259,7 @@ class song_model{
         return $json;
     }
 
-    public function countQuerySong($search, $filters = "none"){
+    public function countQuerySong($search, $filters){
         $db = db_util::connect();
         //SET SEARCH
         if ($search == "tampilkansemua"){
@@ -272,7 +283,7 @@ class song_model{
             $query3 = $query3 . ") ";
         }
         $query = "SELECT * FROM Song" ;
-        $query2 = " WHERE (Judul LIKE '%$search%' OR Penyanyi LIKE '%$search%' OR YEAR(Tanggal_terbit) LIKE '%$search%')";
+        $query2 = " WHERE (Judul LIKE '%$search%' OR Penyanyi LIKE '%$search%')";
 
         $allquery = $query . $query2 . $query3;
         // echo $allquery;
@@ -290,7 +301,7 @@ class song_model{
         $json = mysqli_fetch_all($result, MYSQLI_ASSOC);
         return $json;
     }
-    
+
     public function addSong($judul, $penyanyi, $tanggalterbit, $genre, $duration, $audio, $image, $album, $single){
         $db = db_util::connect();
         
