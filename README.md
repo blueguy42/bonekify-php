@@ -61,21 +61,6 @@ This project is made by:
 - <a href="https://www.linkedin.com/in/saulsayers/?originalSubdomain=id">Saul Sayers (13520094)</a>
 - <a href="https://www.linkedin.com/in/rizky-ramadhana-putra-kusnaryanto-6037a51aa/">Rizky Ramadhana Putra Kusnaryanto (13520151)</a>
 
-<style>
-    .heatMap {
-        margin-top:30px;
-        width: 70%;
-        text-align: center;
-    }
-    .heatMap th {
-        background: #1469AD;
-        word-wrap: break-word;
-        text-align: center;
-    }
-
-</style>
-<div class="heatMap"> 
-
 Halaman | Client-side | Server-side 
 --- | --- | ---
 Login | 13520094 | 13520094
@@ -88,5 +73,3 @@ Detail Album | 13520023, 13520151 |  13520023, 13520151
 Tambah Lagu | 13520023 | 13520023, 13520151
 Tambah Album | 13520023 |  13520023, 13520151
 Daftar User | 13520023 | 13520023  
-
-</div>
