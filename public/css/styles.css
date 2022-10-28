@@ -507,7 +507,7 @@ body {
   transition: 0.3s;
   cursor: pointer;
   background-color: white;
-  color: #0d0d0d;
+  color: #0d0d0d !important;
 }
 
 .tombol-ganti-file{
@@ -516,7 +516,7 @@ body {
   padding: 7px 15px !important;
   border : 1px solid white;
   border-radius: 15px;
-  color:#000000;
+  color:#000000 !important;
 }
 
 .tombol-ganti-file:hover{
@@ -525,7 +525,7 @@ body {
   background-color: #000000;
   border : 1px solid white;
   border-radius: 15px;
-  color:#ffffff;
+  color:#ffffff !important;
 }
 
 
@@ -534,14 +534,14 @@ body {
   border-radius: 15px;
   padding: 7px 15px !important;
   border : 1px solid #b3b3b3;
-  color:#b3b3b3;
+  color:#b3b3b3 !important;
 }
 
 .tombol-ganti-deskripsi:hover{
   transition: 0.3s;
   cursor: pointer;
   background-color: #b3b3b3;
-  color:#0d0d0d;
+  color:#0d0d0d !important;
 }
 
 .tombol-hapus{
@@ -625,6 +625,14 @@ body {
   flex-direction: column;
 }
 
+#list-album-heading{
+  padding-top: 15px;
+  color: white; 
+  margin: 0 auto;
+  width: 80%;
+}
+
+
 /* For List User */
 
 #list-user-heading{
@@ -694,7 +702,6 @@ body {
 }
 
 #search {
-  width:600px;
   height:40px;
   border-radius: 20px;
   text-indent: 20px;
@@ -885,8 +892,10 @@ label[for*=sort] {
 }
 
 .hiddenCB div {
-  display: inline;
-  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content: center;
   padding: 0;
   list-style: none;
 }
@@ -894,7 +903,7 @@ label[for*=sort] {
 .hiddenCB input[type="checkbox"],
 .hiddenCB input[type="radio"] {
   display: none;
-  
+  margin-bottom:20px;
 }
 
 .hiddenCB label {
@@ -903,6 +912,7 @@ label[for*=sort] {
   transition: all .6s;
   margin-right:2%;
   margin-left:2%;
+  margin-bottom:20px;
   color:white;
   border: 2px solid darkslategray;
   border-radius: 8px;
