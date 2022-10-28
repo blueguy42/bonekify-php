@@ -47,7 +47,7 @@
 </table>
 
 <div id='gaadacontainer'>
-<?php if (!(isset($data["song"]) && count($data["song"])>0)) {?>
+<?php if ((isset($data["song"]) && !count($data["song"])>0)) {?>
     <p id='kagakada' class='kagakada'>Tidak ada lagu dengan query tersebut :(</p>
 <?php } ?>
 </div>

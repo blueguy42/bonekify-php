@@ -229,7 +229,7 @@ class song_model{
         return $json;
     }
 
-    public function getQuerySongLengkap($search, $firstdata, $Orderby, $filters){
+    public function getQuerySongLengkap($search, $firstdata, $Orderby, $filters="none"){
         $db = db_util::connect();
         //SET SEARCH
         if ($search == "tampilkansemua"){
@@ -268,7 +268,7 @@ class song_model{
         return $json;
     }
 
-    public function countQuerySong($search, $filters){
+    public function countQuerySong($search, $filters="none"){
         $db = db_util::connect();
         //SET SEARCH
         if ($search == "tampilkansemua"){
