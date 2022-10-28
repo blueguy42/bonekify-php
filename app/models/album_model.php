@@ -27,7 +27,7 @@ class album_model{
 
     public function updateDuration($id){
         $db = db_util::connect();
-        $query = "UPDATE Album SET Total_duration = (select IFNULL(sum(`Duration`),0) from Song where album_id=". $id . ") FROM Album WHERE album_id=".$id;
+        $query = "UPDATE Album SET Total_duration = (select IFNULL(sum(`Duration`),0) from Song where album_id=". $id . ") WHERE album_id=".$id;
         return mysqli_query($db, $query);
     }
 
@@ -35,13 +35,13 @@ class album_model{
         $db = db_util::connect();
         
         $target_dir = "img/";
-        $file_name = basename($file["name"]);
-        $target_file = $target_dir . $file_name;
-        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+        $arrFileName = explode(".",basename($file["name"]));
+        $target_filename = md5(date("Y-m-d H:i:s")) . "." . $arrFileName[count($arrFileName)-1];
+        $target_file = $target_dir . $target_filename;
         // Check if file already exists
         while (file_exists($target_file)) {
-            $file_name = "copy" . $file_name;
-            $target_file = $target_dir . $file_name;
+            $target_filename = "copy" . $target_filename;
+            $target_file = $target_dir . $target_filename;
         }
         
         $check = getimagesize($file["tmp_name"]);
@@ -55,7 +55,7 @@ class album_model{
 
         # insert album
         $query = "INSERT INTO Album (judul, penyanyi, total_duration, image_path, tanggal_terbit, genre) VALUES 
-        ('" . $judul . "', '" . $penyanyi . "', 0, '" . basename($file["name"]) . "', '" . $tanggalterbit . "', '" . $genre . "')";
+        ('" . $judul . "', '" . $penyanyi . "', 0, '" . $target_filename . "', '" . $tanggalterbit . "', '" . $genre . "')";
         return mysqli_query($db,$query);
     }
 

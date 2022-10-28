@@ -132,10 +132,8 @@
                                 <label for="lagu-baru">Lagu baru :</label><br>
                                 <input type="file" name="lagu-baru" id="lagu-baru" accept=".mp3,.wav">
                                 <input type="hidden" name="durasi-lagu-baru" id="durasi-lagu-baru">
-                                
-                                <!--<input type="submit">-->
+                                <input type="submit" value="submit" id="submit-btn-lagu">
                             </form>
-                            <button onclick=upload()>submit</button>
                         </div>
                     </div>
                 </span>

@@ -44,7 +44,7 @@
       </div> 
       <input type="hidden" name="durasi-lagu" id="durasi-lagu">
     
-      <input type="submit" value="Tambah Lagu" onclick="upload()">
+      <input type="submit" value="Tambah Lagu" id="submit-btn">
       <div id ="submitWarning"><?echo (isset($data["error"]) ? $data["error"] : "")?></div>
   </form>
 </div>
