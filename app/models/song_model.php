@@ -27,18 +27,20 @@ class song_model{
 
     public function gantiJudul($id,$judulbaru){
         $db = db_util::connect();
-        $query = sprintf("UPDATE Song
-                SET Judul='%s'
-                WHERE song_id=%u;",$judulbaru,$id);
-        return mysqli_query($db,$query);
+        $stmt = $db->prepare("UPDATE Song SET Judul=? WHERE song_id=?;");
+        $stmt->bind_param("si", $judulbaru, $id);
+        $stmt->execute();
+        $stmt->close();
+        $db->close();
     }
 
     public function gantiTanggal($id,$tanggalbaru){
         $db = db_util::connect();
-        $query = sprintf("UPDATE Song
-                SET Tanggal_terbit='%s'
-                WHERE song_id=%u",$tanggalbaru,$id);
-        return mysqli_query($db,$query);
+        $stmt = $db->prepare("UPDATE Song SET Tanggal_terbit=? WHERE song_id=?");
+        $stmt->bind_param("si", $tanggalbaru, $id);
+        $stmt->execute();
+        $stmt->close();
+        $db->close();
     }
 
     public function gantiGenre($id,$genrebaru){
@@ -46,7 +48,11 @@ class song_model{
         $query = sprintf("UPDATE Song
                 SET Genre='%s'
                 WHERE song_id=%u",$genrebaru,$id);
-        return mysqli_query($db,$query);
+        $stmt = $db->prepare("UPDATE Song SET Genre=? WHERE song_id=?");
+        $stmt->bind_param("si", $genrebaru, $id);
+        $stmt->execute();
+        $stmt->close();
+        $db->close();
     }
     public function hapusAlbum($id){
         $db = db_util::connect();
@@ -361,15 +367,21 @@ class song_model{
 
         # insert song
         if (!$single) {
-            $query = "INSERT INTO Song (judul, penyanyi, tanggal_terbit, genre, duration, audio_path, image_path, album_id) VALUES 
-            ('" . $judul . "', '" . $penyanyi . "', '" . $tanggalterbit . "', '" . $genre . "', " . $duration . ", '" . $target_audio_filename . "', '" . $image . "', " . ($album != -1 ? $album : "null") . ")";
+            // $query = "INSERT INTO Song (judul, penyanyi, tanggal_terbit, genre, duration, audio_path, image_path, album_id) VALUES 
+            // ('" . $judul . "', '" . $penyanyi . "', '" . $tanggalterbit . "', '" . $genre . "', " . $duration . ", '" . $target_audio_filename . "', '" . $image . "', " . ($album != -1 ? $album : "null") . ")";
+            $stmt = $db->prepare("INSERT INTO Song (judul, penyanyi, tanggal_terbit, genre, duration, audio_path, image_path, album_id) VALUES (?,?,?,?,?,?,?,?)");
+            $album_fix = ($album != -1 ? $album : null);
+            $stmt->bind_param("ssssissi", $judul, $penyanyi, $tanggalterbit, $genre, $duration, $target_audio_filename, $image, $album_fix);
         } else {
-            $query = "INSERT INTO Song (judul, penyanyi, tanggal_terbit, genre, duration, audio_path, image_path, album_id) VALUES 
-            ('" . $judul . "', '" . $penyanyi . "', '" . $tanggalterbit . "', '" . $genre . "', " . $duration . ", '" . $target_audio_filename . "', '" . $target_img_filename . "', " . ($album != -1 ? $album : "null") . ")";
+            // $query = "INSERT INTO Song (judul, penyanyi, tanggal_terbit, genre, duration, audio_path, image_path, album_id) VALUES 
+            // ('" . $judul . "', '" . $penyanyi . "', '" . $tanggalterbit . "', '" . $genre . "', " . $duration . ", '" . $target_audio_filename . "', '" . $target_img_filename . "', " . ($album != -1 ? $album : "null") . ")";
+            $stmt = $db->prepare("INSERT INTO Song (judul, penyanyi, tanggal_terbit, genre, duration, audio_path, image_path, album_id) VALUES (?,?,?,?,?,?,?,?)");
+            $album_fix = ($album != -1 ? $album : null);
+            $stmt->bind_param("ssssissi", $judul, $penyanyi, $tanggalterbit, $genre, $duration, $target_audio_filename, $target_img_filename, $album_fix);
         }
-        return mysqli_query($db,$query);
-
-
+        $stmt->execute();
+        $stmt->close();
+        $db->close();
     }
 }
 ?>

@@ -54,25 +54,33 @@ class album_model{
         }
 
         # insert album
-        $query = "INSERT INTO Album (judul, penyanyi, total_duration, image_path, tanggal_terbit, genre) VALUES 
-        ('" . $judul . "', '" . $penyanyi . "', 0, '" . $target_filename . "', '" . $tanggalterbit . "', '" . $genre . "')";
-        return mysqli_query($db,$query);
+        // $query = "INSERT INTO Album (judul, penyanyi, total_duration, image_path, tanggal_terbit, genre) VALUES 
+        // ('" . $judul . "', '" . $penyanyi . "', 0, '" . $target_filename . "', '" . $tanggalterbit . "', '" . $genre . "')";
+
+        $stmt = $db->prepare("INSERT INTO Album (judul, penyanyi, total_duration, image_path, tanggal_terbit, genre) VALUES (?,?,?,?,?,?)");
+        $zero =0;
+        $stmt->bind_param("ssisss", $judul, $penyanyi, $zero, $target_filename, $tanggalterbit, $genre);
+        $stmt->execute();
+        $stmt->close();
+        $db->close();
     }
 
     public function gantiJudul($id,$judulbaru){
         $db = db_util::connect();
-        $query = sprintf("UPDATE Album
-                SET Judul='%s'
-                WHERE album_id=%u;",$judulbaru,$id);
-        return mysqli_query($db,$query);
+        $stmt = $db->prepare("UPDATE Album SET Judul=? WHERE album_id=?;");
+        $stmt->bind_param("si", $judulbaru, $id);
+        $stmt->execute();
+        $stmt->close();
+        $db->close();
     }
 
     public function gantiTanggal($id,$tanggalbaru){
         $db = db_util::connect();
-        $query = sprintf("UPDATE Album
-                SET Tanggal_terbit='%s'
-                WHERE Album_id=%u",$tanggalbaru,$id);
-        return mysqli_query($db,$query);
+        $stmt = $db->prepare("UPDATE Album SET Tanggal_terbit=? WHERE album_id=?;");
+        $stmt->bind_param("si", $tanggalbaru, $id);
+        $stmt->execute();
+        $stmt->close();
+        $db->close(); 
     }
 
     public function gantiGenre($id,$genrebaru){
@@ -80,7 +88,11 @@ class album_model{
         $query = sprintf("UPDATE Album
                 SET Genre='%s'
                 WHERE Album_id=%u",$genrebaru,$id);
-        return mysqli_query($db,$query);
+        $stmt = $db->prepare("UPDATE Album SET Genre=? WHERE album_id=?;");
+        $stmt->bind_param("si", $genrebaru, $id);
+        $stmt->execute();
+        $stmt->close();
+        $db->close();
     }
 
     public function gantiCover($id,$coverbaru){
