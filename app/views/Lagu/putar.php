@@ -1,6 +1,8 @@
 <div id="container-putar-lagu">
     <div id='img-container'>
-        <img src="<?echo BASEURL?>/img/<?echo $data["song"]["Image_path"]?>">
+        <a href="<?=BASEURL?>/album/<?= $data["song"]["album_id"] ? "detail/".$data["song"]["album_id"] : ""?>">
+            <img src="<?echo BASEURL?>/img/<?echo $data["song"]["Image_path"]?>">
+        </a>
         <?if(isset($_SESSION['username']) && isset($_SESSION['isAdmin'])){
             if($_SESSION['isAdmin']==='1'){?>
                 <span>
@@ -143,7 +145,7 @@
             if($_SESSION['isAdmin']==='1'){?>
                 <form action="#" method="post">
                     <input type="hidden" name="hapus-lagu" value="1">
-                    <input type="submit" id="tombol-hapus" value="Hapus Lagu">
+                    <input type="submit" class="tombol-hapus" value="Hapus Lagu">
                 </form>
             <?}
         }?>

@@ -353,11 +353,11 @@ body {
 
 #container-putar-lagu audio::-webkit-media-controls-panel{
   width:100%;
-  background-color: #ededed;
+  background-color: #e0e0e0;
 }
 
 #container-putar-lagu audio::-webkit-media-controls-timeline-container{
-  background-color: #ededed;
+  background-color: #e0e0e0;
 }
 
 /* The dropdown container */
@@ -458,11 +458,11 @@ body {
 
 #tombol-ganti-judul{
   margin-left: 10px;
-  background-color: #0d0d0d;
-  padding: 2px 10px;
+  background-color: #1f1f1f;
+  padding: 7px 15px !important;
   border-radius: 15px;
-  border : 1px solid white;
-  color:white;
+  border : 1px solid white !important;
+  color:white !important;
 }
 
 #tombol-ganti-judul:hover{
@@ -492,9 +492,9 @@ body {
 
 
 .tombol-ganti-deskripsi{
-  background-color: #0d0d0d;
+  background-color: #1f1f1f;
   border-radius: 15px;
-  padding: 2px 10px !important;
+  padding: 7px 15px !important;
   border : 1px solid #b3b3b3;
   color:#b3b3b3;
 }
@@ -506,7 +506,7 @@ body {
   color:#0d0d0d;
 }
 
-#tombol-hapus{
+.tombol-hapus{
   background-color:rgba(255, 0, 0, 0.638);
   color:rgba(255, 255, 255, 0.667);
   border : none;
@@ -517,7 +517,7 @@ body {
   box-sizing: border-box;
 }
 
-#tombol-hapus:hover{
+.tombol-hapus:hover{
   background-color:red;
   color:white;
   transition: 0.3s;
@@ -773,7 +773,7 @@ body {
   flex-direction: row;
 }
 
-#detail-album span {
+#detail-album > span {
   margin-top:60px;
   margin-left:60px;
 }
@@ -791,7 +791,7 @@ body {
 
 #detail-album span .deskripsi-album-detail{
   color:#b3b3b3;
-  font-size: 30px;
+  font-size: 20px;
   padding-top:5px;
 }
 
@@ -917,4 +917,7 @@ label[for*=sort] {
 #labelfilter {
   font-size: 10px;
   margin-bottom:20px;
+}
+#form-hapus-album{
+  padding-left:60px;
 }

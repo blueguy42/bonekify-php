@@ -69,7 +69,7 @@ class song_model{
         return mysqli_query($db,$query);
     }
 
-    public function gantiCover($id,$coverbaru){
+    public function gantiCover($id,$coverbaru,$note){
         $db = db_util::connect();
         $target_dir = "img/";
         $target_file = $target_dir . basename($_FILES["cover-baru"]["name"]);
@@ -89,13 +89,22 @@ class song_model{
         }
 
         #hapus cover lama
-        $query = "SELECT Image_path FROM Song WHERE song_id=".$id;
+        if($note=='one'){
+            $query = "SELECT Image_path FROM Song WHERE song_id=".$id;
+        }else{
+            $query = "SELECT Image_path FROM Song WHERE album_id=".$id." LIMIT 1";
+        }
+        
         $result = mysqli_query($db,$query);
         $json = mysqli_fetch_assoc($result);
         unlink("img/".$json['Image_path']);
-
         #update cover saat ini ke db
-        $query = sprintf("UPDATE Song SET Image_path='%s' WHERE song_id=%u;",basename($_FILES["cover-baru"]["name"]),$id);
+        if($note=='one'){
+            $query = sprintf("UPDATE Song SET Image_path='%s' WHERE song_id=%u;",basename($_FILES["cover-baru"]["name"]),$id);
+        }else{
+            $query = sprintf("UPDATE Song SET Image_path='%s' WHERE album_id=%u;",basename($_FILES["cover-baru"]["name"]),$id);
+        }
+        
         unset($_FILES["cover-baru"]);
         return mysqli_query($db,$query);
     }
