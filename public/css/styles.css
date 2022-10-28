@@ -694,7 +694,6 @@ body {
 }
 
 #search {
-  width:600px;
   height:40px;
   border-radius: 20px;
   text-indent: 20px;
@@ -885,8 +884,10 @@ label[for*=sort] {
 }
 
 .hiddenCB div {
-  display: inline;
-  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content: center;
   padding: 0;
   list-style: none;
 }
@@ -894,7 +895,7 @@ label[for*=sort] {
 .hiddenCB input[type="checkbox"],
 .hiddenCB input[type="radio"] {
   display: none;
-  
+  margin-bottom:20px;
 }
 
 .hiddenCB label {
@@ -903,6 +904,7 @@ label[for*=sort] {
   transition: all .6s;
   margin-right:2%;
   margin-left:2%;
+  margin-bottom:20px;
   color:white;
   border: 2px solid darkslategray;
   border-radius: 8px;
