@@ -2,16 +2,16 @@
 class Lagu extends Controller{
     public function putar($id){
         $data=[];
-        if(isset($_POST["judul-baru"])){
+        if(isset($_POST["judul-baru"]) and $_POST["judul-baru"] != ""){
             $berhasil = $this->model('song_model')->gantiJudul($id,$_POST["judul-baru"]);
         }
-        if(isset($_POST["tanggal-baru"])){
+        if(isset($_POST["tanggal-baru"]) and $_POST["tanggal-baru"] != ""){
             $berhasil = $this->model('song_model')->gantiTanggal($id,$_POST["tanggal-baru"]);
         }
-        if(isset($_POST["genre-baru"])){
+        if(isset($_POST["genre-baru"]) and $_POST["genre-baru"] != ""){
             $berhasil = $this->model('song_model')->gantiGenre($id,$_POST["genre-baru"]);
         }
-        if(isset($_FILES["cover-baru"])){
+        if(isset($_FILES["cover-baru"]) and $_FILES["cover-baru"]["name"] != ""){
             $berhasil = $this->model('song_model')->gantiCover($id,$_FILES["cover-baru"],'one');
         }
         if(isset($_FILES["lagu-baru"]) && isset($_POST['durasi-lagu-baru'])){

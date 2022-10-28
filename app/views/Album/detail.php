@@ -53,32 +53,7 @@
                     <?}
                 }?>
             </div>
-            <div class="deskripsi-album-detail">
-                <?=$data['album_detail']['Genre']?>
-                <?if(isset($_SESSION['username']) && isset($_SESSION['isAdmin'])){
-                    if($_SESSION['isAdmin']==='1'){?>
-                        <span>
-                            <!-- Trigger/Open The Modal -->
-                            <button class="tombol-ganti-deskripsi">edit</button>
-
-                            <!-- The Modal -->
-                            <div id="modal-ganti-genre" class="modal">
-
-                                <!-- Modal content -->
-                                <div class="modal-content">
-                                    <span class="close">x</span>
-                                    <form action="#" method="post">
-                                        <label for="genre-baru">Genre baru :</label><br>
-                                        <input type="text" name="genre-baru" id="genre-baru">
-                                        <input type="submit">
-                                    </form>
-                                </div>
-
-                            </div>
-                        </span>
-                    <?}
-                }?>
-            </div>
+            <div class='deskripsi-album-detail'><?=$data['album_detail']['Penyanyi']?></div>
             <div class='deskripsi-album-detail'>
                 <?
                 $dateTemp = explode('-', $data["album_detail"]["Tanggal_terbit"]);
@@ -107,7 +82,32 @@
                     <?}
                 }?>
             </div>
-            <div class='deskripsi-album-detail'><?=$data['album_detail']['Penyanyi']?></div>
+            <div class="deskripsi-album-detail">
+                <?=$data['album_detail']['Genre']?>
+                <?if(isset($_SESSION['username']) && isset($_SESSION['isAdmin'])){
+                    if($_SESSION['isAdmin']==='1'){?>
+                        <span>
+                            <!-- Trigger/Open The Modal -->
+                            <button class="tombol-ganti-deskripsi">edit</button>
+
+                            <!-- The Modal -->
+                            <div id="modal-ganti-genre" class="modal">
+
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <span class="close">x</span>
+                                    <form action="#" method="post">
+                                        <label for="genre-baru">Genre baru :</label><br>
+                                        <input type="text" name="genre-baru" id="genre-baru">
+                                        <input type="submit">
+                                    </form>
+                                </div>
+
+                            </div>
+                        </span>
+                    <?}
+                }?>
+            </div>
             <div class='deskripsi-album-detail'><?
                     $hour = floor($data['album_detail']["Total_duration"]/3600);
                     $left = $data['album_detail']["Total_duration"]%3600;
