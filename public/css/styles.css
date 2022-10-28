@@ -821,7 +821,7 @@ label[for*=sort] {
   margin-bottom: 40px;
 }
 
-#tambah-form h1 {
+#tambah-form h1, #judulsearch {
   padding-top: 15px;
   text-align: center;
   color: white;
@@ -874,6 +874,50 @@ label[for*=sort] {
   margin:0 auto;
 }
 
+.hiddenCB {
+  text-align: center;
+}
+
+.hiddenCB div {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hiddenCB input[type="checkbox"],
+.hiddenCB input[type="radio"] {
+  display: none;
+  
+}
+
+.hiddenCB label {
+  
+  cursor: pointer;
+  transition: all .6s;
+  margin-right:4%;
+  color:white;
+  border: 2px solid darkslategray;
+  border-radius: 8px;
+  padding:5px;
+}
+
+.hiddenCB input[type="checkbox"]+label:hover{
+  background: rgba(0, 128, 128, .8);
+}
+
+.hiddenCB input[type="checkbox"]:checked+label {
+  background: rgba(0, 128, 128, .4);
+}
+
+.hiddenCB input[type="checkbox"]:checked+label:hover{
+  background: rgba(0, 128, 128, 0, .7);
+}
+
+#labelfilter {
+  font-size: 10px;
+  margin-bottom:20px;
+}
 #form-hapus-album{
   padding-left:60px;
 }

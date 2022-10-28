@@ -1,20 +1,23 @@
 <script src="<?echo BASEURL;?>/js/search.js"></script>
 
 <br><br>
-<input <?php if (isset($data["search"])){echo "value='" . $data["search"] . "'"; } ?> class="search" id="search" type="text" placeholder="Disini juga bisa live search maszeh" onkeyup="livesearch()">
+<h1 id="judulsearch">Search songs here!</h1>
+<input <?php if (isset($data["search"])){echo "value='" . $data["search"] . "'"; } ?> class="search" id="search" type="text" placeholder="Integrated livesearch feature" onkeyup="livesearch()">
 
 <br><br>
 <!-- FILTER -->
-<div id='labelfilter'><p>FILTERS:</p></div>
-<div id='checkboxes'>
+<div id='buatfilter'>
+<div id='labelfilter'><h1>Filter your choice(s)</h1></div>
+<div class="hiddenCB">
+  <div>
 <?php 
 foreach($data["genres"] as $id => $genre){ 
-echo "<label class=\"container\">" . $genre["GENRE"];
-echo "<input onclick=\"livesearch()\" class=\"checkbox\" type=\"checkbox\" id=\"" . $genre["GENRE"] ."\">";
-echo "</label>";
+echo "<input name ='choice' onclick=\"livesearch()\" class=\"checkbox\" type=\"checkbox\" id=\"" . $genre["GENRE"] ."\">";
+echo "<label for=\"" . $genre["GENRE"] . "\">" . $genre["GENRE"] . "</label>";
 }?>
 </div>
-
+</div>
+</div>
 <br><br>
 
 <div id='sorts'>
