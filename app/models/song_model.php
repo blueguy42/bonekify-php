@@ -220,7 +220,7 @@ class song_model{
         }
 
         $query = "SELECT * FROM Song" ;
-        $query2 = " WHERE Judul LIKE '%$search%' OR Penyanyi LIKE '%$search%'";
+        $query2 = " WHERE (Judul LIKE '%$search%' OR Penyanyi LIKE '%$search%' OR YEAR(Tanggal_terbit) LIKE '%$search%')";
         $query3 = " ORDER BY Judul ASC LIMIT $firstdata, 10";
 
         $allquery = $query . $query2 . $query3;
@@ -259,7 +259,7 @@ class song_model{
         }
 
         $query = "SELECT * FROM Song" ;
-        $query2 = " WHERE (Judul LIKE '%$search%' OR Penyanyi LIKE '%$search%')";
+        $query2 = " WHERE (Judul LIKE '%$search%' OR Penyanyi LIKE '%$search%' OR YEAR(Tanggal_terbit) LIKE '%$search%')";
         $query4 = " ORDER BY $Orderby_kiri $Orderby_kanan LIMIT $firstdata, 10";
 
         $allquery = $query . $query2 . $query3 . $query4 ;
@@ -294,7 +294,7 @@ class song_model{
             $query3 = $query3 . ") ";
         }
         $query = "SELECT * FROM Song" ;
-        $query2 = " WHERE (Judul LIKE '%$search%' OR Penyanyi LIKE '%$search%')";
+        $query2 = " WHERE (Judul LIKE '%$search%' OR Penyanyi LIKE '%$search%' OR YEAR(Tanggal_terbit) LIKE '%$search%')";
 
         $allquery = $query . $query2 . $query3;
         // echo $allquery;
