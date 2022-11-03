@@ -24,8 +24,10 @@ class Register extends Controller{
         $this->model("user_model")->addAccount($email,$sandi,$nama);
         setcookie("username", $nama, time() + (86400 * 30), "/"); 
         setcookie("isAdmin", 0, time() + (86400 * 30), "/"); 
-        $_SESSION["username"] = $nama;
+        setcookie("playCount_LoggedIn", 0, time() + (86400 * 30), "/"); 
         $_SESSION["isAdmin"] = 0;
+        $_SESSION["playCount_LoggedIn"] =0;
+        $_SESSION["username"] = $nama;
         header('Location: ' . BASEURL . '/');
     }
 }
