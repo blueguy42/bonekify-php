@@ -2,8 +2,8 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-CREATE DATABASE IF NOT EXISTS song_database;
-USE song_database;
+CREATE DATABASE IF NOT EXISTS plain_database;
+USE plain_database;
 
 CREATE TABLE IF NOT EXISTS `User` (
   `user_id` int NOT NULL AUTO_INCREMENT,

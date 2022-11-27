@@ -7,6 +7,7 @@ Users are able to search and listen to a variety of songs. Surfing and exploring
 Bonekify is built on vanilla HTML, CSS, and JavaScript with native PHP. Data is stored on a MySQL server.
 
 ## Table of Contents
+- [BONEKIFY - Tugas Besar 1 IF3110](#bonekify---tugas-besar-1-if3110)
   - [Table of Contents](#table-of-contents)
   - [Requirements](#requirements)
   - [Installation](#installation)
@@ -38,9 +39,9 @@ Make sure Docker is running and run:
 docker compose up
 ```
 
-The web application will now be up and running. It is now locally accessible through port 8080.
+The web application will now be up and running. It is now locally accessible through port 1300.
 
-<b><a href="http://localhost:8080/public">http://localhost:8080/public</a></b>
+<b><a href="http://localhost:1300/public">http://localhost:1300/public</a></b>
 
 ## Screenshots
 ![login.png](./public/img/screenshots/login.png)

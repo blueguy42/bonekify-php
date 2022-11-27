@@ -46,12 +46,12 @@ function livesearch(clicked_id = 1){ // CLICKED ID BUAT PAGINATION
             for (var i = 0; i < data.song.length; i++) {
                 string += "<tr class='list-lagu-item'><td class=\"nomertabel\">" + (10*(clicked_id-1)+i+1).toString() + "</td>";
 
-                string += "<td><a class='tabel-lagu-img' href =\"http://localhost:8080/public/lagu/putar/" + data.song[i].song_id + "\">"
-                string += "<img id = \"logo\" src=\"http://localhost:8080/public/img/" + data.song[i].Image_path + "\">"
+                string += "<td><a class='tabel-lagu-img' href =\"http://localhost:1300/public/lagu/putar/" + data.song[i].song_id + "\">"
+                string += "<img id = \"logo\" src=\"http://localhost:1300/public/img/" + data.song[i].Image_path + "\">"
                 string += "</a></td>"
 
                 string += "<td class='container'>"
-                string += "<div class='judul-lagu'><a href =\"http://localhost:8080/public/lagu/putar/" + data.song[i].song_id+ "\">" + data.song[i].Judul + "</a></div>"
+                string += "<div class='judul-lagu'><a href =\"http://localhost:1300/public/lagu/putar/" + data.song[i].song_id+ "\">" + data.song[i].Judul + "</a></div>"
                 string += "<div class='penyanyi'>" + data.song[i].Penyanyi + "</div>"
 
                 string += "<td class='tahun-terbit'>" + data.song[i].Tanggal_terbit.slice(0,4) + "</td>"
