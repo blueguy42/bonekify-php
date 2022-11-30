@@ -19,8 +19,8 @@ class App{
 
         //cek apakah ada file dengan nama tersebut, kalau ada jadikan nama controller
         if(isset($url[0])){
-            if(file_exists('../app/controllers/'.$url[0].'.php')){
-                $this->controller = $url[0];
+            if(file_exists('../app/controllers/'.ucfirst($url[0]).'.php')){
+                $this->controller = ucfirst($url[0]);
                 unset($url[0]);
             }
         }
