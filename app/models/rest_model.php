@@ -30,10 +30,10 @@ class rest_model{
     return json_decode($data,true);    
   }
 
-  public function getLaguPremium($user_id){
+  public function getLaguPremium($creator_id,$subscriber_id){
     $webservice_url = "http://bonekify-rest-service:3000/subscription/listlagu";
     
-    $request_param = '{"user_id" : '.$user_id.'}';
+    $request_param = '{"creator_id" : '.$creator_id.',"subscriber_id" : '.$subscriber_id.'}';
 
     $headers = array(
         'Content-Type: application/json',

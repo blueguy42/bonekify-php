@@ -1,7 +1,7 @@
 <?
 class Lagupremium extends Controller{
-  public function index(){
-    $data['lagupremium'] = $this->model('rest_model')->getLaguPremium($_SESSION['user_id']);
+  public function detail($creator_id){
+    $data['lagupremium'] = $this->model('rest_model')->getLaguPremium($creator_id,$_SESSION['user_id']);
     $data['route'] = "lagupremium";
     $data['title'] = "Lagu Premium";
 

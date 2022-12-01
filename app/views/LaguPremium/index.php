@@ -1,12 +1,9 @@
-<table>
-  <th>
-    <td>Judul</td>
-    <td></td>
-  </th>
+  <div>
+    <div>Judul</div>
+</div>
   <?foreach($data['lagupremium'] as $id => $lagu){?>
-    <tr>
-      <td><?=$lagu['Judul']?></td>
-      <td> <audio><source src= <?=$lagu['Audio_path']?> > </audio> </td>
-  </tr>
+    <div>
+      <span class='judullagupremium'><?=$lagu['Judul']?></span>
+      <span> <audio controls controlsList="nodownload noplaybackrate" id="songplayer"><source src= '<?=REST.$lagu['Audio_path']?>' > </audio> </span>
+  </div>
   <?}?>
-</table>

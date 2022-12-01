@@ -8,7 +8,7 @@
       <td> <?=$penyanyi["name"]?> </td>
       <?if(isset($data["status"][$penyanyi['user_id']])){?>
         <?if($data["status"][$penyanyi['user_id']]=="ACCEPTED"){?>
-          <td>SUDAH SUBSCRIBE</td>
+          <td><a href='<?=BASEURL?>/lagupremium/detail/<?=$penyanyi['user_id']?>'>DENGARKAN</a></td>
         <?}elseif($data["status"][$penyanyi['user_id']]=="REJECTED"){?>
           <td>SUBSCRIBE DITOLAK</td>
         <?}elseif($data["status"][$penyanyi['user_id']]=="PENDING"){?>
