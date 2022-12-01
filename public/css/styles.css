@@ -988,11 +988,31 @@ label[for*=sort] {
   color: white
 }
 
-#subsbutton:hover {
+.subsbutton:hover {
   background-color: green;
   color: white;
 }
 
-#subsbutton{
+.subsbutton{
   font-size: 20px;
+}
+
+.putarpremium{
+  text-align: center;
+  margin: 0 auto;
+}
+
+.putarpremium{
+  width: 100%;
+  filter:invert(100%);
+  margin: 5px 5px 0px 0px;
+}
+
+.putarpremium::-webkit-media-controls-panel{
+  width:100%;
+  background-color: #e0e0e0;
+}
+
+.putarpremium::-webkit-media-controls-timeline-container{
+  background-color: #e0e0e0;
 }
