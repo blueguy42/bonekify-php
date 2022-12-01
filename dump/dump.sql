@@ -109,11 +109,10 @@ CREATE TABLE IF NOT EXISTS `Subscription` (
 );
 
 INSERT INTO `Subscription` VALUES
-(0,2,'PENDING'),
-(1,2,'PENDING'),
-(6,2,'PENDING'),
-(90,2,'PENDING'),
-(99,2,'PENDING'),
-(111,2,'ACCEPTED');
+(2,2,'PENDING'),
+(3,2,'ACCEPTED'),
+(4,2,'REJECTED'),
+(5,2,'PENDING');
+
 
 COMMIT;
