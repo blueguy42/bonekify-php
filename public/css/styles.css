@@ -987,3 +987,12 @@ label[for*=sort] {
 .judullagupremium {
   color: white
 }
+
+#subsbutton:hover {
+  background-color: green;
+  color: white;
+}
+
+#subsbutton{
+  font-size: 20px;
+}
