@@ -17,6 +17,7 @@ class Login extends Controller{
                     $_SESSION["username"] = $data["username"];
                     $_SESSION["isAdmin"] = $data["isAdmin"];
                     $_SESSION["playCount_LoggedIn"] = $data["playCount"];
+                    $_SESSION["user_id"] = $data["user_id"];
                     header('Location: ' . BASEURL . '/');
                 }
                 else{

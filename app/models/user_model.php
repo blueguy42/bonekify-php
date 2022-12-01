@@ -61,6 +61,11 @@ class user_model{
         $sql = "INSERT INTO User (email, password, username, isAdmin, playCount) VALUES
         ('" . $email . "','" . $passwordHashed . "','" . $nama ."',0,0)";
         mysqli_query($db, $sql) ;
+
+        $sql = "SELECT user_id FROM User WHERE username='".$nama."'";
+        $result = mysqli_query($db, $sql);
+        $result2 = mysqli_fetch_assoc($result);
+        return $result2["user_id"];
     }
 
     public function isLoginValid($emailnama, $sandi){
@@ -84,6 +89,7 @@ class user_model{
             $data["isAdmin"] = $result2["isAdmin"];
             $data["username"] = $result2["username"];
             $data["playCount"] = $result2["playCount"];
+            $data["user_id"] = $result2["user_id"];
         }
         else{
             $data["exists"] = 0;

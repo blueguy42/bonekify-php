@@ -21,13 +21,14 @@ class Register extends Controller{
         $email = $_POST["email"];
         $sandi = $_POST["sandi"];
         $nama = $_POST["nama"];
-        $this->model("user_model")->addAccount($email,$sandi,$nama);
+        $user_id = $this->model("user_model")->addAccount($email,$sandi,$nama);
         setcookie("username", $nama, time() + (86400 * 30), "/"); 
         setcookie("isAdmin", 0, time() + (86400 * 30), "/"); 
         setcookie("playCount_LoggedIn", 0, time() + (86400 * 30), "/"); 
         $_SESSION["isAdmin"] = 0;
         $_SESSION["playCount_LoggedIn"] =0;
         $_SESSION["username"] = $nama;
+        $_SESSION["user_id"] = $user_id;
         header('Location: ' . BASEURL . '/');
     }
 }
