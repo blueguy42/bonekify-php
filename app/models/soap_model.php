@@ -1,6 +1,6 @@
 <?
 class soap_model{
-  public function addSubscription($creator_id,$subscriber_id){
+  public static function addSubscription($creator_id,$subscriber_id){
     $webservice_url = "http://bonekify-soap-service:1401/";
     
     $request_param = '<?xml version="1.0" encoding="utf-8"?>

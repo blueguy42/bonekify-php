@@ -15,7 +15,7 @@
           <td>MENUNGGU PERSETUJUAN</td>
       <?}}else{?>
         <td>
-          <button> SUBSCRIBE </button>
+          <button onclick="location.href='<?=BASEURL?>/subscribe/add/<?=$penyanyi['user_id']?>/<?=$_SESSION['user_id']?>'" type="button"> SUBSCRIBE </button>
         </td>
       <?}?>
       <tr>
