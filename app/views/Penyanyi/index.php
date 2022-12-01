@@ -1,4 +1,4 @@
-<h1 id="judulsearch">Daftar Penyanyi!</h1>
+<h1 id="judulsearch">Daftar Penyanyi Premium!</h1>
 
 <div>
 <table id='list-lagu' class="col-8 col-s-6" style="font-size:20px; color:black; font-weight:bold; padding:30px">
