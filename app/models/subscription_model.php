@@ -1,6 +1,6 @@
 <?
 require_once "db_util.php";
-require_once "soap_model.php";
+
 class subscription_model{
   public function add($creator_id,$subscriber_id){
     $db = db_util::connect();
@@ -9,8 +9,6 @@ class subscription_model{
     $stmt->execute();
     $stmt->close();
     $db->close();
-
-    soap_model::addSubscription($creator_id,$subscriber_id);
   }
 
   public function setStatus($creator_id,$subscriber_id,$status){

@@ -15,7 +15,9 @@ class soap_model{
 
     $headers = array(
         'Content-Type: text/xml; charset=utf-8',
-        'Content-Length: '.strlen($request_param)
+        'Content-Length: '.strlen($request_param),
+        'x-api-key:321321',
+        'origin:PLAIN'
     );
     
     $ch = curl_init($webservice_url);
