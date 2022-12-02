@@ -9,32 +9,14 @@ Bonekify is built on vanilla HTML, CSS, and JavaScript with native PHP. Data is 
 ## Table of Contents
 - [BONEKIFY - Tugas Besar 1 IF3110](#bonekify---tugas-besar-1-if3110)
   - [Table of Contents](#table-of-contents)
-  - [Requirements](#requirements)
-  - [Installation](#installation)
   - [Running the Server](#running-the-server)
   - [Screenshots](#screenshots)
   - [Tasks Allocation](#tasks-allocation)
-## Requirements
-As the server is running on a Docker container, make sure to first install Docker.
-
-You can choose to install Docker with <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a> or a CLI.
-
-## Installation
-Once Docker is installed, run Docker.
-
-To run the server, first build the container. Go to the root directory of the repository and run:
-```
-docker compose up --build
-```
-The command will build and run the container for the first time.
-
-A container will be made with 3 containers for the Binotify App inside of it:
-- MySQL server
-- Web server
-- phpMyAdmin
+  - [Perubahan Implementasi](#perubahan-implementasi)
 
 ## Running the Server
-Make sure Docker is running and run:
+Make sure to refer requirements and installations in the Bonekify Config Repository first.
+Then, you can run Docker with the command:
 ```
 docker compose up
 ```
@@ -77,3 +59,9 @@ Tambah Album | 13520023 |  13520023, 13520151
 Daftar User | 13520023 | 13520023  
 Penyanyi Premium | 13520094 13520023 | 13520151
 Lagu Premium | 13520094 | 13520151
+
+## Perubahan Implementasi
+Berikut adalah beberapa perubahan implementasi / tambahan fitur yang dilakukan dari Tubes 1 ke 2:
+- Menambahkan halaman daftar penyanyi premium. User dapat melakukan request subscription ke penyanyi.
+- Menambahkan halaman daftar lagu premium. User dapat mendengarkan lagu premium apabilah sudah subscribe ke penyanyinya
+Kedua halaman ini akan memanfaatkan endpoint dari service REST.
