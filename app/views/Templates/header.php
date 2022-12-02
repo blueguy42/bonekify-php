@@ -19,6 +19,9 @@
   <? if (isset($_SESSION["isAdmin"]) and $_SESSION["isAdmin"] == 1) {
     echo "<a class=\"navbar-links " . ((isset($data["route"]) and $data["route"] == 'Daftar User') ? " active": "") . "\" href=\"" . BASEURL . "/users\">Daftar User</a>";
   }?>
+  <? if (isset($_SESSION["user_id"])) {
+    echo "<a class=\"navbar-links " . ((isset($data["route"]) and $data["route"] == 'penyanyi') ? " active": "") . "\" href=\"" . BASEURL . "/penyanyi\">Subscribe Penyanyi</a>";
+  }?>
   <?php 
   ?>
 </div>
