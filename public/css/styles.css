@@ -1035,3 +1035,10 @@ label[for*=sort] {
 .putarpremium::-webkit-media-controls-timeline-container{
   background-color: #e0e0e0;
 }
+
+.lagupremiumkiri {
+  width: 40%;
+}
+.lagupremiumkanan {
+  width: 60%;
+}
