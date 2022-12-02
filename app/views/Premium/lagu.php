@@ -1,6 +1,10 @@
 <div id="list-user-heading"><h1>Lagu Premium <? echo $data['detailpenyanyi'] ?></h1></div>
 
-<table id='list-lagu' class="col-8 col-8" style="font-size:20px; color:black;padding:30px">
+<table id='list-lagu' class="col-8 col-s-6" style="font-size:20px; color:black;padding:30px;table-layout: fixed">
+<colgroup>
+    <col class="40persen" />
+    <col class="60persen" />
+  </colgroup>
 <thead>
         <tr>
           <th style="font-size:20px;padding-left:10px">JUDUL</th>

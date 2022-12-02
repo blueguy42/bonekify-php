@@ -990,10 +990,10 @@ label[for*=sort] {
 
 .subsbutton{
   font-size: 20px;
-  background-color: RGBA(150,20,20,0.5);
-  border: 1px solid RGB(150,20,20);
-  border-radius:5px;
-  width:10vw;
+  background-color: RGBA(200,20,20,0.7);
+  border-radius:30px;
+  width:9vw;
+  height:3vw;
 }
 
 .subsbutton:hover {
@@ -1003,11 +1003,12 @@ label[for*=sort] {
 }
 
 .listenbutton{
+  color: black !important;
   font-size: 20px;
-  background-color: RGBA(20,150,20,0.5);
-  border: 1px solid RGB(20,150,20);
-  border-radius:5px;
-  width:10vw;
+  background-color: RGBA(20,230,20,0.7);
+  border-radius:30px;
+  width:9vw;
+  height:3vw;
 }
 
 .listenbutton:hover {
@@ -1034,4 +1035,11 @@ label[for*=sort] {
 
 .putarpremium::-webkit-media-controls-timeline-container{
   background-color: #e0e0e0;
+}
+
+.lagupremiumkiri {
+  width: 40%;
+}
+.lagupremiumkanan {
+  width: 60%;
 }
