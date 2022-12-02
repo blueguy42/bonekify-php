@@ -7,6 +7,7 @@ class Search extends Controller{
         $currentPage = 1;
         $startRow = ($rowsperpage * $currentPage) - $rowsperpage ;
         $data["route"] = 'Search';
+        $data["title"] = 'Search | Bonekify';
         $data["genres"] = $this->model('song_model')->getGenres();
 
         if (isset($_POST["navbar-search"])){

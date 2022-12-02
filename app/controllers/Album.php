@@ -4,6 +4,7 @@ class Album extends Controller{
         $data = [];
         $data['album'] = $this->model('album_model')->getAllAlbum();
         $data['route'] = 'album';
+        $data["title"] = 'Daftar Album | Bonekify';
         $this->view('Templates/header',$data);
         $this->view('Album/index',$data);
         $this->view('Templates/footer');
@@ -33,6 +34,7 @@ class Album extends Controller{
             $berhasil = $this->model('album_model')->gantiCover($id,$cover_baru);
         }
         $data['album_detail'] = $this->model('album_model')->getAlbumDetail($id);
+        $data["title"] = $data["album_detail"]["Judul"] . ' - ' . $data["album_detail"]["Penyanyi"] . " | Bonekify";
         $data['route'] = 'detail_album';
         $data['song'] = $this->model('song_model')->getAlbumSong($id);
         $this->view('Templates/header',$data);

@@ -15,12 +15,12 @@
     echo "<a class=\"navbar-links " . ((isset($data["route"]) and $data["route"] == 'Tambah Lagu') ? " active": "") . "\" href=\"" . BASEURL . "/tambahlagu\">Tambah Lagu</a>";
     echo "<a class=\"navbar-links " . ((isset($data["route"]) and $data["route"] == 'Tambah Album') ? " active": "") . "\" href=\"" . BASEURL . "/tambahalbum\">Tambah Album</a>";
   }?>
-  <a href="<?echo BASEURL?>/album">Daftar Album</a>
+  <a class="navbar-links <? echo ((isset($data["route"]) and $data["route"] == 'album') ? " active": "") ?>" href="<?echo BASEURL?>/album">Daftar Album</a>
   <? if (isset($_SESSION["isAdmin"]) and $_SESSION["isAdmin"] == 1) {
     echo "<a class=\"navbar-links " . ((isset($data["route"]) and $data["route"] == 'Daftar User') ? " active": "") . "\" href=\"" . BASEURL . "/users\">Daftar User</a>";
   }?>
   <? if (isset($_SESSION["user_id"])) {
-    echo "<a class=\"navbar-links " . ((isset($data["route"]) and $data["route"] == 'penyanyi') ? " active": "") . "\" href=\"" . BASEURL . "/penyanyi\">Subscribe Penyanyi</a>";
+    echo "<a class=\"navbar-links " . ((isset($data["route"]) and $data["route"] == 'premium') ? " active": "") . "\" href=\"" . BASEURL . "/premium\">Premium</a>";
   }?>
   <?php 
   ?>

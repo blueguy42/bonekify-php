@@ -988,13 +988,32 @@ label[for*=sort] {
   color: white
 }
 
-.subsbutton:hover {
-  background-color: green;
-  color: white;
-}
-
 .subsbutton{
   font-size: 20px;
+  background-color: RGBA(150,20,20,0.5);
+  border: 1px solid RGB(150,20,20);
+  border-radius:5px;
+  width:10vw;
+}
+
+.subsbutton:hover {
+  background-color: RGBA(150,20,20,1);
+  color: white !important;
+  cursor: pointer;
+}
+
+.listenbutton{
+  font-size: 20px;
+  background-color: RGBA(20,150,20,0.5);
+  border: 1px solid RGB(20,150,20);
+  border-radius:5px;
+  width:10vw;
+}
+
+.listenbutton:hover {
+  background-color: RGBA(20,150,20,1);
+  color: white !important;
+  cursor: pointer;
 }
 
 .putarpremium{
