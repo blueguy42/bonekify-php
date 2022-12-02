@@ -2,7 +2,7 @@
 
 Bonekify is a music streaming web application service similar to Spotify.
 
-Users are able to search and listen to a variety of songs. Surfing and exploring new songs is a breeze as Bonekify has displays for song/album information and list. Bonekify features a song management system for admins to add, change, and delete songs/albums. Admins are also able to see the list of users using the service.
+Users are able to search and listen to a variety of songs. Surfing and exploring new songs is a breeze as Bonekify has displays for song/album information and list. Bonekify features a song management system for admins to add, change, and delete songs/albums. Admins are also able to see the list of users using the service. Users can also listen to premium songs feature. To do so, users can subscribe to the premium singers first which then will be validated by admin from the Binotify Premium App.
 
 Bonekify is built on vanilla HTML, CSS, and JavaScript with native PHP. Data is stored on a MySQL server.
 
@@ -28,7 +28,7 @@ docker compose up --build
 ```
 The command will build and run the container for the first time.
 
-A container will be made with 3 containers inside of it:
+A container will be made with 3 containers for the Binotify App inside of it:
 - MySQL server
 - Web server
 - phpMyAdmin
@@ -54,7 +54,8 @@ The web application will now be up and running. It is now locally accessible thr
 ![tambahlagu.png](./public/img/screenshots/tambahlagu.png)
 ![tambahalbum.png](./public/img/screenshots/tambahalbum.png)
 ![daftaruser.png](./public/img/screenshots/daftaruser.png)
-
+![penyanyipremium.png](./public/img/screenshots/penyanyipremium.png)
+![lagupremium.png](./public/img/screenshots/lagupremium.png)
 
 ## Tasks Allocation
 This project is made by:
@@ -74,3 +75,5 @@ Detail Album | 13520023, 13520151 |  13520023, 13520151
 Tambah Lagu | 13520023 | 13520023, 13520151
 Tambah Album | 13520023 |  13520023, 13520151
 Daftar User | 13520023 | 13520023  
+Penyanyi Premium | 13520094 13520023 | 13520151
+Lagu Premium | 13520094 | 13520151
