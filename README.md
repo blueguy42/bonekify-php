@@ -44,7 +44,7 @@ This project is made by:
 - <a href="https://www.linkedin.com/in/saulsayers/?originalSubdomain=id">Saul Sayers (13520094)</a>
 - <a href="https://www.linkedin.com/in/rizky-ramadhana-putra-kusnaryanto-6037a51aa/">Rizky Ramadhana Putra Kusnaryanto (13520151)</a>
 
-Page | Client-side | Server-side 
+Task | Client-side | Server-side 
 --- | --- | ---
 Login | 13520094 | 13520094
 Register | 13520094 |  13520094
