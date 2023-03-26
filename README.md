@@ -1,4 +1,4 @@
-# BONEKIFY - IF3110 Web based Application Development: Major Assignment 1
+# BONEKIFY PHP - IF3110 Web based Application Development: Major Assignment 1
 
 Bonekify is a music streaming web application service similar to Spotify.
 
