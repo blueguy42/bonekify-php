@@ -11,7 +11,7 @@ Bonekify is built on vanilla HTML, CSS, and JavaScript with native PHP. Data is 
   - [Running the Server](#running-the-server)
   - [Screenshots](#screenshots)
   - [Tasks Allocation](#tasks-allocation)
-  - [Perubahan Implementasi](#perubahan-implementasi)
+  - [Implementation Changes](#implementation-changes)
 
 ## Running the Server
 Make sure to refer requirements and installations in the Bonekify Config Repository first.
